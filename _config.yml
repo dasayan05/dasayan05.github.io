@@ -1,0 +1,23 @@
+# setup options
+title             : Ayan Das
+description       : '<b>Machine Learning</b> enthusiast and a Research Scholar (M.S) @ <a href="http://www.iitkgp.ac.in/">IIT Kharagpur</a>, India'
+baseurl           : /
+
+# author info
+author:
+  name            : 'Ayan Das'
+  email           : 'ayan.das@ee.iitkgp.ac.in'
+  url             : https://twitter.com/iayandas
+  github          : [metadata]
+
+
+# Custom vars
+version           : 1.0
+
+# Dependencies
+markdown: kramdown
+kramdown:
+  input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
+  hard_wrap: false
+highlighter: rouge
+excerpt_separator : "\n\n"
