@@ -15,13 +15,13 @@
 
       {% assign pages_list = site.pages %}
       {% for node in pages_list %}
-        {% if node.layout == "page" %}
+        {% if node.navigation == "include" %}
           <a class="sidebar-nav-item{% if page.title == node.title %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
         {% endif %}
       {% endfor %}
 
     </nav>
 
-    <p> [ {{ site.author.email }} ] </p>
+    <p> © 2018. All rights reserved. </p>
   </div>
 </div>
