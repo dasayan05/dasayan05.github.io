@@ -344,6 +344,11 @@ tbody tr:nth-child(odd) th {
   margin-top: 0;
 }
 
+.page-title span,
+.post-title span {
+  color: #6666ff;
+}
+
 /* Meta data line below post title */
 .post-date {
   display: block;
