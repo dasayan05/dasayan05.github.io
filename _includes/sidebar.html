@@ -13,7 +13,7 @@
       <!-- This name 'Homepage' is reserved only for the index page -->
       <a class="sidebar-nav-item{% if page.title == "Homepage" %} active{% endif %}" href="{{ "/" | relative_url }}">Homepage</a>
 
-      {% assign pages_list = site.pages %}
+      {% assign pages_list = site.pages | sort: "navorder" %}
       {% for node in pages_list %}
         {% if node.navigation == "include" %}
           <a class="sidebar-nav-item{% if page.title == node.title %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
