@@ -167,7 +167,7 @@ I am not showing the reconstruction loss here in this article but my [actual imp
 So that brings us to the end of the `CapsNet` architecture. Please feel free to comment in the `Disqus` section below or mail me.
 ### Thank you.
 
-[my-cap-article]: https://dasayan05.github.io/blog/jekyll/update/2017/11/20/an-intuitive-understanding-of-capsules.html
+[my-cap-article]: https://dasayan05.github.io/2017/11/20/an-intuitive-understanding-of-capsules.html
 [capsule-paper]: https://arxiv.org/abs/1710.09829
 [cs231n-site]: http://cs231n.github.io/linear-classify/
 [tensorflow-site]: https://www.tensorflow.org/
