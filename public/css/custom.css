@@ -5,16 +5,18 @@
  * Author: Ayan Das
  */
 
- .custom-nav-whole {
+.custom-nav-whole {
     margin-top: 2em;
     margin-bottom: 5px;
- }
+}
 
- .custom-nav-desc {
+.custom-nav-desc {
+    font-size: 18px;
+    font-family: "Bookman Old Style";
     text-align: justify;
     padding-left: 20px;
     padding-right: 20px;
     border-left-style: solid;
     border-right-style: solid;
     border-color: #aaaaaa;
- }
+}
