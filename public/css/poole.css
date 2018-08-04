@@ -342,6 +342,13 @@ tbody tr:nth-child(odd) th {
 }
 .page-title,
 .post-title {
+  background-color: #cccccc;
+  font-size: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  padding-top: 7px;
+  border-radius: 10px;
   margin-top: 0;
 }
 
@@ -353,8 +360,8 @@ tbody tr:nth-child(odd) th {
 /* Meta data line below post title */
 .post-date {
   display: block;
-  margin-top: -.5rem;
-  margin-bottom: 1rem;
+  /*margin-top: -.5rem;*/
+  /*margin-bottom: 1rem;*/
   color: #9a9a9a;
 }
 
