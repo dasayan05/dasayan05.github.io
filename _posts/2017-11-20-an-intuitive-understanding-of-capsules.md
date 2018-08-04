@@ -13,13 +13,13 @@ related_post_numbers: "2"
 comments: true
 ---
 
-Recently, [Geoffrey Hinton][hinton-link], the godfather of deep learning argued that one of the key principles in the ConvNet model is flawed, i.e., they don't work the way human brain does. Hinton also proposed an alternative idea (namely **capsules**), which he thinks is a better model of the human brain. In this post, I will try to present an intuitive explanation of this new proposal by Hinton and colleagues.
+Recently, [Geoffrey Hinton][hinton-link], the godfather of deep learning argued that one of the key principles in the ConvNet model is flawed, i.e., they don't work the way human brain does. Hinton also proposed an alternative idea (namely `capsules`), which he thinks is a better model of the human brain. In this post, I will try to present an intuitive explanation of this new proposal by Hinton and colleagues.
 
 ![Geoffrey Hinton](/public/posts_res/1/hinton-pic.jpg)
 
 In the ongoing renaissance of deep learning, if we have to chose one specific neural network model which has the most contribution, it has to be the [Convolutional Neural Networks][cnn-link] or ConvNets as we call. Popularized by [Yann LeCun][lecun-link] in the 90's, these models have gone through various modifications or improvements since then - be it from theoretical or engineering point-of-view. But the core idea remained more or less same.
 
-The recent fuss about **capsules** really started just after the publication of the paper named [Dynamic Routing Between Capsules][capsule-paper] by Sara Sabour, Nicholas Frosst and Geoffrey Hinton. But, it turned out that hinton had this idea way back in 2011 ([Transforming Auto-encoders][transAE-paper]) but for some reason it didn't catch much attention. This time it did. Equipped with the idea of capsules, hinton and team also achieved state-of-the-art performance on MNIST digit classification dataset.
+The recent fuss about `capsules` really started just after the publication of the paper named [Dynamic Routing Between Capsules][capsule-paper] by Sara Sabour, Nicholas Frosst and Geoffrey Hinton. But, it turned out that hinton had this idea way back in 2011 ([Transforming Auto-encoders][transAE-paper]) but for some reason it didn't catch much attention. This time it did. Equipped with the idea of capsules, hinton and team also achieved state-of-the-art performance on MNIST digit classification dataset.
 
 This article is roughly divided into 3 parts:
 * Description of the normal ConvNet model
@@ -35,7 +35,7 @@ Convolutional neural networks are specially designed to exploit the 2D structure
 Convolution operation or filtering is running a 2D kernel (usually of size quite smaller than the image itself) spatially all over an image which looks for a specific pattern in the image and generates an activation map (or feature map) which shows the locations where it was able to spot the pattern (Figure-2).
 ![ConvNet](/public/posts_res/1/normal_convnet.jpg)
 ### 2. Pooling:
-Most frequently used type of pooling, i.e. Max-pooling is used to reduce the size of the feature maps/activation maps (Figure-3) for computational benefit. **But**, it has one other purpose (which is exactly what Geoff Hinton has a problem with). The max-pooling is supposed to induce a small translation invariance in the learning process. If an entity in the image is translated by a small amount, the activation map corresponding to that entity will shift equally. But, the max-pooled output of the activation map remains unaltered.
+Most frequently used type of pooling, i.e. Max-pooling is used to reduce the size of the feature maps/activation maps (Figure-3) for computational benefit. _But_, it has one other purpose (which is exactly what Geoff Hinton has a problem with). The max-pooling is supposed to induce a small translation invariance in the learning process. If an entity in the image is translated by a small amount, the activation map corresponding to that entity will shift equally. But, the max-pooled output of the activation map remains unaltered.
 ![Max-pooling](/public/posts_res/1/maxpool.jpg)
 
 After stacking multiple convolution and pooling layers, usually all the neurons are flattened into one dimensional array and fed into a multilayer perceptron of proper depth and width.
@@ -44,7 +44,7 @@ After stacking multiple convolution and pooling layers, usually all the neurons 
 Trained with a supervised learning procedure, the network will be able to produce different levels of abstracted representation of a given image. For example, trained on a dataset with lots of facial images, a convnet will possibly learn to detect lower level features like edges, corners in its earliest layers. The layers above that will learn to detect smaller facial parts like eyes, noses etc. And the top most layer will be detecting whole faces.
 ![layer-abs](/public/posts_res/1/layer_abs.jpg)
 
-In the above illustration, the lower level convolutional layer is detecting facial parts and the layer above (the next convolutional layer) is detecting faces with the help of information from the layer below. The "*white dots*" in the image denote high responses in the activation map indicating a possible presence of the entity it was searching for. One thing to note, the above illustration is only a pictorial representation and does not **exactly** depict what a ConvNet learns in reality. The two convolutional layers in the figure can be any two successive layers in a deeper convnet.
+In the above illustration, the lower level convolutional layer is detecting facial parts and the layer above (the next convolutional layer) is detecting faces with the help of information from the layer below. The "*white dots*" in the image denote high responses in the activation map indicating a possible presence of the entity it was searching for. One thing to note, the above illustration is only a pictorial representation and does not _exactly_ depict what a ConvNet learns in reality. The two convolutional layers in the figure can be any two successive layers in a deeper convnet.
 
 ## What is wrong with ConvNets ?
 
@@ -61,7 +61,7 @@ If we consider the output of the flatten layer to be a **codified** representati
 
 #### How human brain does it - the "**Rate-coding**"
 
-The brain also represents an image with several layers of abstraction but according to Hinton's hypothesis, it learns to detect entities in each layer with `equivariance`. What it means is, the brain contains some "*modules/units*" for detecting different entities - **just one for each entity**. Such modules/units have the ability to "*explicitly represent*" the "*pose*" of an entity. This is called the `rate-coding`. Clearly, a scalar neuron is not enough to avail such representational power.
+The brain also represents an image with several layers of abstraction but according to Hinton's hypothesis, it learns to detect entities in each layer with **equivariance**. What it means is, the brain contains some "*modules/units*" for detecting different entities - **just one for each entity**. Such modules/units have the ability to "*explicitly represent*" the "*pose*" of an entity. This is called the `rate-coding`. Clearly, a scalar neuron is not enough to avail such representational power.
 
 ![idea-of-capsules](/public/posts_res/1/capsule_idea.jpg)
 
@@ -74,7 +74,7 @@ I will try to explain what he means by that. In a typical computer graphics rend
 
 ## The new idea of **Capsules**
 
-As I stated earlier, a neuron-model that spits out a scalar value is certainly not enough to represent explicit pose of an entity. This is where Hinton and team came up with the idea of `capsules` which is nothing but an **extension to the familiar neuron-model**. 
+As I stated earlier, a neuron-model that spits out a scalar value is certainly not enough to represent explicit pose of an entity. This is where Hinton and team came up with the idea of `capsules` which is nothing but an _extension to the familiar neuron-model_. 
 > A `capsule` is basically a "**vector-neuron**" which takes in a bunch of vectors and produces a single vector. They are simply "**vector-in-vector-out**" computation units.
 
 ![capsule-model](/public/posts_res/1/capsule_model.jpg)
@@ -100,7 +100,7 @@ Although we now have a structurally different neuron model, two consecutive `cap
 
 ![caps_layer](/public/posts_res/1/caps_layer.jpg)
 
-But as we now have more representation power in a single neuron (namely capsule), we should exploit it to ensure a **meaningful information flow** between two neurons of successive layers. Such parametric structure (\\(W_{ij}\\) and \\(c_{ij}\\)) of capsule has been carefully designed to do exactly that. The reader is advised to take extra care in understanding the next two sub-sections because they are the **heart** of the idea of capsules.
+But as we now have more representation power in a single neuron (namely capsule), we should exploit it to ensure a _meaningful information flow_ between two neurons of successive layers. Such parametric structure (\\(W_{ij}\\) and \\(c_{ij}\\)) of capsule has been carefully designed to do exactly that. The reader is advised to take extra care in understanding the next two sub-sections because they are the _heart_ of the idea of capsules.
 
 #### Interpretation of \\(W_{ij}\\) :
 
@@ -149,4 +149,4 @@ So, that brings us to the end of the general discussion on capsules. In the [nex
 [capsule-paper]: https://arxiv.org/abs/1710.09829
 [transAE-paper]: http://www.cs.toronto.edu/~fritz/absps/transauto6.pdf
 [convnet-article]: http://cs231n.github.io/convolutional-networks/
-[next-article]: https://dasayan05.github.io/blog/jekyll/update/2017/11/26/capsnet-architecture-for-MNIST.html
+[next-article]: https://dasayan05.github.io/2017/11/26/capsnet-architecture-for-mnist.html
