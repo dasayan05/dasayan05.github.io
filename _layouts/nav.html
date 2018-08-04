@@ -9,7 +9,11 @@ layout: page
 -->
 
 {% if page.navigation-on == "posts" %}
-    {% assign nav_list = site.posts %}
+    {% assign nav_list = site.categories.blog-tut %}
+{% elsif page.navigation-on == "projs" %}
+    {% assign nav_list = site.categories.projs %}
+{% elsif page.navigation-on == "pubs" %}
+    {% assign nav_list = site.categories.pubs %}
 {% endif %}
 
 {% for post in nav_list %} {% if post.publish == true %}
