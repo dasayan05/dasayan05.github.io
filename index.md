@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: page
 title: Homepage
+termcmd: cat ${HOME}
 ---
 
 ### Welcome, visitor !!

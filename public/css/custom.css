@@ -1,0 +1,20 @@
+/*
+ * This stylesheet defines styles which are
+ * exclusively for my website only and not
+ * part of the entire website theme
+ * Author: Ayan Das
+ */
+
+ .custom-nav-whole {
+    margin-top: 2em;
+    margin-bottom: 5px;
+ }
+
+ .custom-nav-desc {
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-color: #aaaaaa;
+ }

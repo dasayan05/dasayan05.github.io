@@ -1,0 +1,26 @@
+---
+layout: page
+---
+
+{{ page.content }}
+
+<!--
+    page.navigation-on determines which list to create a navigation for
+-->
+
+{% if page.navigation-on == "posts" %}
+    {% assign nav_list = site.posts %}
+{% endif %}
+
+{% for post in nav_list %} {% if post.publish == true %}
+    <div class="custom-nav-whole">
+        <h2> > <a href="{{ post.url }}"> {{ post.title }} </a> </h2>
+        <div class="custom-nav-desc">
+            <p> {{ post.excerpt }}
+                <strong>Author:</strong> {{ post.author }} <br>
+                <strong>Dated:</strong> {{ post.date | date_to_string }} <br>
+                <strong>Tags:</strong> | {% for a_tag in post.tags %} {{ a_tag }} | {% endfor %}
+            </p>
+        </div>
+    </div>
+{% endif %} {% endfor %}
