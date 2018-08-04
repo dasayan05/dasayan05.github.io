@@ -15,6 +15,7 @@ layout: default
   <ul class="related-posts">
     {% for post in site.posts %}
     {% if page.related_post_numbers contains post.post_number %}
+    {% if page.category == post.category %}
       <li>
         <h3>
           <a href="{{ post.url }}">
@@ -23,6 +24,7 @@ layout: default
           </a>
         </h3>
       </li>
+    {% endif %}
     {% endif %}
     {% endfor %}
   </ul>
