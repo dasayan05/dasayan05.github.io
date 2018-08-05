@@ -338,23 +338,28 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title,
 .post-title a {
-  color: #303030;
+  color: #202020;
 }
 .page-title,
 .post-title {
-  background-color: #cccccc;
+  /*background-color: #202020;*/
+  border-style: solid;
+  border-left: 0px;
+  border-right: 0px;
   font-size: 35px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: bolder;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 8px;
-  padding-top: 7px;
-  border-radius: 10px;
+  padding-top: 6px;
+  /*border-radius: 10px;*/
   margin-top: 0;
 }
 
 .page-title span,
 .post-title span {
-  color: #6666ff;
+  color: #888888;
 }
 
 /* Meta data line below post title */
