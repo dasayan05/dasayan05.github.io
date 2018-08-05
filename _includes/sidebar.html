@@ -11,12 +11,12 @@
 
     <nav class="sidebar-nav">
       <!-- This name 'Homepage' is reserved only for the index page -->
-      <a class="sidebar-nav-item" href="{{ "/" | relative_url }}">{% if page.title == "Homepage" %} > {% endif %}Homepage</a>
+      <a class="sidebar-nav-item{% if page.title == "Homepage" %} active{% endif %}" href="{{ "/" | relative_url }}">{% if page.title == "Homepage" %} >> {% endif %}Homepage{% if page.title == "Homepage" %} << {% endif %}</a>
 
       {% assign pages_list = site.pages | sort: "navorder" %}
       {% for node in pages_list %}
         {% if node.navigation == "include" %}
-          <a class="sidebar-nav-item" href="{{ node.url }}">{% if page.title == node.title %} > {% endif %}{{ node.title }}</a>
+          <a class="sidebar-nav-item{% if page.title == node.title %} active{% endif %}" href="{{ node.url }}">{% if page.title == node.title %} >> {% endif %}{{ node.title }}{% if page.title == node.title %} << {% endif %}</a>
         {% endif %}
       {% endfor %}
 
