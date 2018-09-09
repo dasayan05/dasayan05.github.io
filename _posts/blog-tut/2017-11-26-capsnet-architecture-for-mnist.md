@@ -12,6 +12,7 @@ post_number: "2"
 related_post_numbers: "1"
 comments: true
 category: blog-tut
+thumbnail-img: "public/posts_res/2/decoder.jpg"
 ---
 
 I recently wrote an [article][my-cap-article] explaining the intuitive idea of `capsule`s [proposed][capsule-paper] by Geoffrey Hinton and colleagues which created a buzz in the deep learning community. In that article, I explained in simple terms the motivation behind the idea of `capsule`s and its (minimal) mathematical formalism. It is highly recommended that you read that article as a prerequisite to this one. In this article, I would like to explain the specific `CapsNet` architecture proposed in the same [paper][capsule-paper] which managed to achieve state-of-the-art performance on the MNIST digit classification.

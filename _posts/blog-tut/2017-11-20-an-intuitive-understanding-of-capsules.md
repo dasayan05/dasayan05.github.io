@@ -12,6 +12,7 @@ post_number: "1"
 related_post_numbers: "2"
 comments: true
 category: blog-tut
+thumbnail-img: "public/posts_res/1/hinton-pic.jpg"
 ---
 
 Recently, [Geoffrey Hinton][hinton-link], the godfather of deep learning argued that one of the key principles in the ConvNet model is flawed, i.e., they don't work the way human brain does. Hinton also proposed an alternative idea (namely `capsules`), which he thinks is a better model of the human brain. In this post, I will try to present an intuitive explanation of this new proposal by Hinton and colleagues.
