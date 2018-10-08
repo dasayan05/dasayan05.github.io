@@ -6,7 +6,7 @@ termcmd: cd ${HOME}
 
 # Welcome, visitor !!
 
-![image](/public/me.jpeg)
+![image](/public/me_.png)
 
 ~~~python
 if __you__ == '__visitor__':
