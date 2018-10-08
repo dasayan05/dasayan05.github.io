@@ -6,8 +6,6 @@ termcmd: cd ${HOME}
 
 # Welcome, visitor !!
 
-![image](/public/me_.png)
-
 ~~~python
 if __you__ == '__visitor__':
     @love # with <3
