@@ -14,12 +14,12 @@ category: blog-tut
 thumbnail-img: "public/posts_res/4/python-banner.jpg"
 ---
 
-Let me make it very clear that this tutorial is **NOT** for absolute beginners. This is for the `Python` programmers who are already familiar with the standard concepts and syntax of Python. In this tutorial, we will specifically look at three features of Python namely `Generators`, `Decorators` and `Context Managers` which, in my opinion, are not used heavily by average or below-average python programmers. In my experience, these features are lesser known to programmers whose primary purpose for using python is not to focus on the language too much but just to get their own application/algorithm working. This leads to very monotonous, imparative-style codes which, in long run, become unmaintainable.
+Let me make it very clear that this tutorial is **NOT** for absolute beginners. This is for the `Python` programmers who are already familiar with the standard concepts and syntax of Python. In this three parts tutorial, we will specifically look at three features of Python namely `Generators`, `Decorators` and `Context Managers` which, in my opinion, are not heavily used by average or below-average python programmers. In my experience, these features are lesser known to programmers whose primary purpose for using python is not to focus on the language too much but just to get their own application/algorithm working. This leads to very monotonous, imparative-style codes which, in long run, become unmaintainable.
 
 
-`Python` is unarguably the most versatile and easy-to-use language ever created. Today, python enjoys a huge userbase spread accross different fields of science and engineering. The reason for such a level of popularity, at least in my opinion, is the *dynamic nature* of Python. It is almost the opposite of bare-metal languages like `C++`, which are known to be *stongly typed languages*. Python is able to achieve this *dynamicity* by the virtue of very careful and elegent design decisions made by [Guido Van Rossum](https://gvanrossum.github.io/), the creator of Python in the initial days of Python's development. At the end of this tutorial, the reader is expected to get a feel of what I mean by "dynamic nature" of Python.
+`Python` is unarguably the most versatile and easy-to-use language ever created. Today, python enjoys a huge userbase spread accross different fields of science and engineering. The reason for such a level of popularity is unarguably because of the *dynamic nature* of Python. It is almost the opposite of bare-metal languages like `C++`, which are known to be *stongly typed languages*. Python is able to achieve this *dynamicity* by the virtue of very careful and elegent design decisions made by the creators of Python in the initial days of it's development. At the end of this tutorial, the reader is expected to get a feel of Python's dynamicity.
 
-## Let's start with `Generators`:
+## Part-I will be all about `Generators`:
 
 Here is a motivating example - a very basic program
 ~~~python
@@ -27,7 +27,7 @@ for i in [0,1,2,3,4,5,6,7,8,9]:
     print(i)
 ~~~
 
-In the above program, a list object is created in memory containing all the elements and then travarsed as the loop unrolls. The problem with such approach is the space requirement for the list object - specially if the list is large. An efficient code would never leave a chance to take advantage of the fact that consecutive elements of the list are **logically related**. In this case, the logical relation being `list[i+1] = list[i] + 1`.
+In the above program, a "list object" is created in memory containing all the elements and then travarsed as the loop unrolls. The problem with such approach is the space requirement for the list object - specially if the list is large. An efficient code would never leave a chance to take advantage of the fact that consecutive elements of the list are *logically related*. In this case, the logical relation being `list[i+1] = list[i] + 1`.
 
 Without knowing anything about `Generators`, one can come up with an efficient solution of this problem by setting up a *generation process* which will *generate* one element at a time using the logical relation. It may sound complecated at first, but it's as easy as this:
 
@@ -54,7 +54,7 @@ def generator(upto):
 
 See, it is basically the same code, just wrapped in a function (*that's important*). The other difference is to use `yield i` instead of `print(i)`. It is to *offload* the usage of the generated elements to the caller/client who requested the generation. `yield i` basically does two things - it returns it's argument (i.e. the value of `i` in this case) and halts the execution at that `yield` statement.
 
-Although it looks like a normal function, but the invocation of generators is a little different. Using the `yield` keyword *anywhere* inside a function makes it a Generator. Calling the function with proper arguments will return a `Generator object`
+Although it looks like a normal function, but the invocation of generators is a little different. Using the `yield` keyword *anywhere* inside a function automatically makes it a Generator. Calling the function with proper arguments will return a `Generator object`
 
 ~~~python
 >>> g = generator(10)
@@ -82,7 +82,7 @@ def generates_three_elems():
         yield 3 # <- returns 3 and execution halts for the third time
 ~~~
 
-The obvious question now is, "What will happen when the `while` loop finishes and the control flow exits the Generator function ?". This is precisely what is used as the *condition of exhaustion* of the generation process. Python throws a `StopIteration` exception when the Generator exhausts. The client caller/client code is supposed to intercept the exception:
+The obvious question now is, "What will happen when the `while` loop finishes and the control flow exits the Generator function ?". This is precisely what is used as the *condition of exhaustion* of the Generator. Python throws a `StopIteration` exception when the Generator exhausts. The client caller/client code is supposed to intercept the exception:
 
 ~~~python
 g = generator(10)
@@ -98,7 +98,7 @@ while not gen_exhausted:
 # more code
 ~~~
 
-OR, equivalently, the caller/client code may use the the native `foreach` construct which internally takes care of the exception handling
+OR, equivalently, the caller/client code may use Python's native `foreach` construct which internally takes care of the exception handling
 
 ~~~python
 for elem in generator(10):
@@ -122,7 +122,7 @@ Both versions will produce the same output:
 
 ## Interfere into the `Generator`:
 
-There is couple of lesser known usage of the `yield` keyword, one of them being a way to *interfere/poke into* the generation process. Essentially, `yield` can be used as a value which can be introduced by the caller/client during a generation request. Here is the code:
+There are couple of lesser known usage of the `yield` keyword, one of them being a way to *interfere/poke into* the generation process. Essentially, `yield` can be used to introduce caller/client specified object(s) into a generation request. Here is the code:
 
 ~~~python
 >>> def generator(upto):
@@ -145,11 +145,11 @@ The way to generate elements now is:
 2.5
 ~~~
 
-Let me explain. The `yield` keyword in the `r = yield` statement will evaluate to be the object sent into the generator using `g.send(...)`. Then the value of `r` is added to `i` and then `yield`ed as usual which comes out of the generator via the `.send(...)` method. Also notice that we now have to make some extra effort of executing one `next(g)` before we can get the element from `.send(...)`; it is because the `yield i + r` statement halts the execution, but we need to get to the next `r = yield` statement before `g.send(...)` can be executed. So basically, that extra `next(g)` advances the control flow from one `yield i + r` statement in one iteration to the `r = yield` statement of the next iteration.
+Let me explain. The `yield` keyword in the `r = yield` statement will evaluate to be the object sent into the generator using `g.send(...)`. Then the value of `r` is added to `i` and then `yield`ed as usual which comes out of the generator via the `.send(...)` method. Also notice that we now have to make some extra effort of executing one `next(g)` before we can get the element from `.send(...)`; it is because the `yield i + r` statement halts the execution but we need to get to the next `r = yield` statement before `g.send(...)` can be executed. So basically, that extra `next(g)` advances the control flow from one `yield i + r` statement of one iteration to the `r = yield` statement of the next iteration.
 
 ## Interrupt the generation process with `Exception`s:
 
-Instead of `send(...)`ing objects into the generation process, you can send an `Exception` and blow it up from inside. The `g.throw(...)` is to be used:
+Instead of `.send(...)`ing object(s) into the generation process, you can send an `Exception` and blow it up from inside. The `g.throw(...)` is to be used:
 
 ~~~python
 >>> g = generator(10)
@@ -161,7 +161,7 @@ Traceback (most recent call last):
 StopIteration: just stop it
 ~~~
 
-What `g.throw(NameOfException, ValueOfException)` does is, it (somehow) penetrates the generator and replaces the `r = yield` statement with `raise <NameOfException>(<ValueOfException)` which blows up the generator and the exception propagates out of it as usual.
+What `g.throw(NameOfException, ValueOfException)` does is, it (somehow) penetrates the generator body and replaces the `r = yield` statement with `raise <NameOfException>(<ValueOfException)` which blows up the generator and the exception propagates out of it as usual.
 As you might have guessed, it is possible to catch the exception by building an exception handler around `r = yield`, like so:
 
 ~~~python
@@ -192,7 +192,7 @@ def delegating_gen():
     yield from generator(3)
 ~~~
 
-Look at that new `yield from` syntax. It does exactly what it literally means. invoking `delegating_gen()` will create a Generator object which, on generation request, will generate from `generator(5)` first and then hop onto generating from `generator(3)`. As you might have guessed, the `delegating_gen()` function will internally convert into something like this:
+Look at that new `yield from` syntax. It does exactly what it literally means. invoking `delegating_gen()` will create a Generator object which, on generation request, will generate from `generator(5)` first and then hop onto generating from `generator(3)`. As you might have guessed, the `delegating_gen()` function will be (internally) converted into something like this:
 
 ~~~python
 def delegating_gen():
@@ -203,7 +203,7 @@ def delegating_gen():
         yield elem
 ~~~
 
-Both versions of `delegating_gen()` above will produce same result:
+Both versions of `delegating_gen()` above will produce the same result:
 
 ~~~python
 >>> for e in delegating_gen():
@@ -221,7 +221,7 @@ Both versions of `delegating_gen()` above will produce same result:
 
 ## The `__next__(..)` and `__iter__(..)` methods - The **Iterator** protocol:
 
-A regular class can also be set up to behave like a Generator. Python defines a class to be a generator if it follows the **iterator protocol** which expects the class to implement two specific methods - `__next__(self)` and `__iter__(self)`. The `__next__(self)` method is the way to get one element out of the generator and the `__iter__(self)` methods acts as a switch to *start/reset* the generator. Here is how it works:
+A regular class can also be set up to behave like a Generator. A class in Python is a generator if it follows the **iterator protocol** which expects it to implement two specific methods - `__next__(self)` and `__iter__(self)`. The `__next__(self)` method is the way to get one element out of the generator and the `__iter__(self)` methods acts as a switch to *start/reset* the generator. Here is how it works:
 
 ~~~python
 >>> class Series:
@@ -236,8 +236,8 @@ A regular class can also be set up to behave like a Generator. Python defines a 
             return self.i
 
 >>> s = Series(10)
->>> s = iter(s)
->>> next(s)
+>>> s = iter(s) # starts the generator
+>>> next(s) # generates as usual
 0
 >>> next(s)
 1
@@ -245,9 +245,9 @@ A regular class can also be set up to behave like a Generator. Python defines a 
 2
 ~~~
 
-As one can easily infer from the code snippet, our familiar `next(..)` built-in function essentially calls `.__next__(..)` of the object and the newly introduced `iter(..)` built-in function calls the `.__iter__(..)`.
+As one can easily infer from the code snippet that our familiar `next(..)` built-in function essentially calls `.__next__(..)` member function of the object and the newly introduced `iter(..)` built-in function calls the `.__iter__(..)` function.
 
-Almost all real life generator classes have a very similar `__iter__()` function. It looks more or less like this:
+Almost all real life generator classes have a very similar `__iter__()` function. All it has to do is reset the state of the object and returns itself (*self*). It looks more or less like this:
 
 ~~~python
 class Generator:
@@ -258,5 +258,6 @@ class Generator:
         # ...
         return self # almost always
 ~~~
+---
 
 That is pretty much all I had to say about `Generators`. Feel free to comment/suggest in the **disqus** box below. Upcoming **Part II** will be all about `Decorators`.
