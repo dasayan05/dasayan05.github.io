@@ -8,7 +8,7 @@ termcmd: cd ${HOME}
 
 ~~~python
 import me
-from emotions import love
+from emotions import love, warm
 from greetings import appreciate
 
 if you in me.website( ):
@@ -30,12 +30,12 @@ if you in me.website( ):
         appreciate( me.website )
 ~~~
 
-I am Ayan, a Research Scholar pursuing Master of Science (M.S.) in the department of *[Electrical Engineering](http://ee.iitkgp.ac.in/) at Indian Institute of Technology (IIT), Kharagpur*. Alongside my masters degree, I am also involved in a project named "MIRIAD" funded by [Intel India Pvt. Ltd](https://www.intel.in/content/www/in/en/homepage.html). My broad area of research is the domain of *Artifical Intelligence (A.I.)*; I am specifically interested in the emerging field of Deep Learning - the theoretical perspective as well as it's efficient practical implementation. I am a hardcore techie with a lot of passion for research. I love to share knowledge, and so, I decided to maintain a tech blog in this website. I am currently a part of [Kharagpur Learning, Imaging and Visualization Research Group](https://iitkliv.github.io/) led by [Prof. Debdoot Sheet](http://www.facweb.iitkgp.ac.in/~debdoot/). I have also been selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. from IIT Kharagpur.
+I am Ayan, a Research Scholar pursuing Master of Science (M.S.) in the department of *[Electrical Engineering](http://ee.iitkgp.ac.in/) at Indian Institute of Technology (IIT), Kharagpur*. Alongside my masters degree, I am also involved in project "MIRIAD" funded by [Intel India Pvt. Ltd](https://www.intel.in/content/www/in/en/homepage.html). My broad area of research is the domain of *Artifical Intelligence (A.I.)*; I am specifically interested in the emerging field of Deep Learning - the theoretical perspective as well as it's efficient practical implementation. I am a hardcore techie with a lot of passion for research. I love to share knowledge, and so, I decided to maintain a tech blog in this website. I am currently a part of [Kharagpur Learning, Imaging and Visualization Research Group](https://iitkliv.github.io/) led by [Prof. Debdoot Sheet](http://www.facweb.iitkgp.ac.in/~debdoot/). I have also been selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. to serve in Asia Pacific & Japan.
 
 # Latest news and updates !!
 
 - **.. STAY TUNED ..**
-- Selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. from IIT Kharagpur
+- Selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. in Asia Pacific & Japan.
 - Talked about Intel performance libraries and Inference tools for Deep learning in `up.AI summit` in IIT Kharagpur recently. [Link](https://www.facebook.com/upaisummit)
 - Launched an *Open Source* project called `Tensor++`. [Check out and contribute](https://github.com/crystalcpp/tensorpp)
-- A tiny implementation of recently proposed `Capsule Network`. [Link](https://github.com/dasayan05/capsule-net-TF)
+- A tiny implementation of recently proposed `Capsule Network` [Link](https://github.com/dasayan05/capsule-net-TF) and a similar old idea called `Transforming AE` [Link](https://github.com/dasayan05/transAE-tf).

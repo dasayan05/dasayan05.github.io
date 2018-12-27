@@ -31,16 +31,16 @@ termcmd: whoami
 
 ## > Research experience:
 
-#### (present) Medical Imaging with Deep Learning
-- **Advisor:** [Dr. Debdoot Sheet](http://www.facweb.iitkgp.ac.in/~debdoot/), Ph.D.
+#### (Present) Medical Imaging with Deep Learning
+- **Guide/P.I.:** [Dr. Debdoot Sheet](http://www.facweb.iitkgp.ac.in/~debdoot/), Ph.D.
 - Dept. of EE, IIT Kharagpur
 
 #### Handwritten Text/Document Recognition
-- **Advisor:** [Dr. Partha Pratim Roy](https://sites.google.com/site/2partharoy/), Ph.D.
+- **Guide:** [Dr. Partha Pratim Roy](https://sites.google.com/site/2partharoy/), Ph.D.
 - Dept. of CSE, IIT Roorkee
 
 #### Evolutionary Computations & Machine Learning
-- **Advisor:** [Dr. Swagatam Das](https://www.isical.ac.in/~swagatam.das/), Ph.D.
+- **Guide:** [Dr. Swagatam Das](https://www.isical.ac.in/~swagatam.das/), Ph.D.
 - ECS Unit, ISI Kolkata
 
 -----
@@ -67,7 +67,7 @@ termcmd: whoami
 
 ## > Achievements:
 
-- An [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. from IIT Kharagpur
+- An [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. in Asia Pacific & Japan.
 - A member of "[Kharagpur Learning, Imaging and Visualization (KLIV) research group](https://iitkliv.github.io/)" at IIT Kharagpur
 - Former member of "Innovation and Entrepreneurship Development Center (IEDC Lab)" funded by "[Department of Science & Technology (DST), Govt. of India](http://www.dst.gov.in/)"
 - Former vice-president of R&D Dept., [Entrepreneurship-Cell (E-Cell)](http://iemecell.com/), IEM Kolkata
