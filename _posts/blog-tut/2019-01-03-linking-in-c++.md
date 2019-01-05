@@ -11,8 +11,14 @@ tags:
   - GCC
 layout: post
 post_number: "8"
-related_post_numbers: "1"
+related_post_numbers: ""
 comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/8/cpp.png"
 ---
+
+C++ is a general-purpose, multi-paradigm programming language invented by Bjarne Stroustrup which alongwith C, forms the backbone of the industry today. The three fundamental features which make C++ special are: 
+
+1. **Zero cost abstractions**
+2. **Genetic programming**
+3. **Direct mapping to hardware**
