@@ -20,7 +20,7 @@ thumbnail-img: "public/posts_res/8/cpp.png"
 C++ is a general-purpose, multi-paradigm programming language invented by Bjarne Stroustrup which alongwith C, forms the backbone of the industry today. The three fundamental features which make C++ special are: 
 
 1. **Zero cost abstractions**
-2. **Genetic programming**
+2. **Generic programming**
 3. **Direct mapping to hardware**
 
 Being developed on the principle of **_you don't pay for what you don't use_** , C++ allows us to write high-performant, efficient code. [Comparison of Deep Learning software](https://en.wikipedia.org/wiki/Comparison_of_deep_learning_software) shows clearly that most of the deep learning libraries use C++ as one of their core programming languages.
