@@ -23,7 +23,7 @@ C++ is a general-purpose, multi-paradigm programming language invented by Bjarne
 2. **Genetic programming**
 3. **Direct mapping to hardware**
 
-Being developed on the principle of "you don't pay for what you don't use", C++ allows us to write high-performant, efficient code. [Comparison of Deep Learning software](https://en.wikipedia.org/wiki/Comparison_of_deep_learning_software) shows clearly that most of the deep learning libraries use C++ as one of their core programming languages.
+Being developed on the principle of ***"you don't pay for what you don't use"***, C++ allows us to write high-performant, efficient code. [Comparison of Deep Learning software](https://en.wikipedia.org/wiki/Comparison_of_deep_learning_software) shows clearly that most of the deep learning libraries use C++ as one of their core programming languages.
 
 In this tutorial, I will be using a Linux environment throughout with a GCC compiler:
 
