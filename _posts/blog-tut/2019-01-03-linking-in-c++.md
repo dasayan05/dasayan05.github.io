@@ -46,3 +46,7 @@ You might be wondering that what's wrong in putting my source code in source fil
 Moreover storing large projects purely in the form of source files take up a lot of space. If you are writing a closed source library which you want to distribute, for example, the [Intel Math Kernel Library](https://software.intel.com/en-us/mkl), which is a very fast, closed source, Linear Algebra library; you would want ship your library API to other programmers so that they can use it in their code, without releasing your implementation; source files are simply out of the question.
 
 The solution to the above problems is using some sort of binary files which are present in an encoded form (zeroes and ones) and are compressed, so that they take up less space than raw source files. These files can then be somehow _linked_ to your source files and not recompiled every time you make changes to your own source files thus vastly speeding up the compilation process.
+
+### Overview of the C++ compilation steps:
+
+![C++ compilation steps](https://github.com/DarkStar1997/dasayan05.github.io/blob/master/public/posts_res/8/compilation_steps.png)
