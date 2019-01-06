@@ -75,3 +75,4 @@ Hello World
         /lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f7c3d00c000)
 [rohan@rohan-pc ~]$
 ```
+Here, [libstdc++](https://gcc.gnu.org/onlinedocs/libstdc++/) is GNU's implementation of the C++ Standard Library which is automatically linked dynamically to your executable binary i.e. a.out. libc is the C Standard library which is also linked dynamically. We will now delve into the details of linking.
