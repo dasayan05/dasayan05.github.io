@@ -50,3 +50,13 @@ The solution to the above problems is using some sort of binary files which are 
 ### Overview of the C++ compilation steps:
 
 ![C++ compilation steps](https://github.com/DarkStar1997/dasayan05.github.io/blob/master/public/posts_res/8/compilation_steps.png)
+
+This technique of linking is so important and widely used, that in case you didn't know about it, you were using it all this time unknowingly! Let's investigate a simple hello world code in C++ as a motivational example:
+
+```cpp
+#include <iostream>
+int main()
+{
+    std::cout << "Hello World\n";
+}
+```
