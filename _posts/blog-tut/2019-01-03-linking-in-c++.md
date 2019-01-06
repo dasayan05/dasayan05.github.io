@@ -60,3 +60,18 @@ int main()
     std::cout << "Hello World\n";
 }
 ```
+And running the commands:
+
+```bash
+[rohan@rohan-pc ~]$ g++ test.cpp
+[rohan@rohan-pc ~]$ ./a.out
+Hello World
+[rohan@rohan-pc ~]$ ldd a.out
+        linux-vdso.so.1 (0x00007ffcb0f66000)
+        libstdc++.so.6 => /usr/lib/libstdc++.so.6 (0x00007f7c3ce0e000)
+        libm.so.6 => /usr/lib/libm.so.6 (0x00007f7c3cc89000)
+        libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007f7c3cc6f000)
+        libc.so.6 => /usr/lib/libc.so.6 (0x00007f7c3caab000)
+        /lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f7c3d00c000)
+[rohan@rohan-pc ~]$
+```
