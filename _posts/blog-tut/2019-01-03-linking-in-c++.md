@@ -76,3 +76,12 @@ Hello World
 [rohan@rohan-pc ~]$
 ```
 Here, [libstdc++](https://gcc.gnu.org/onlinedocs/libstdc++/) is GNU's implementation of the C++ Standard Library which is automatically linked dynamically to your executable binary i.e. a.out. libc is the C Standard library which is also linked dynamically. We will now delve into the details of linking.
+
+There are two ways of linking in C++:
+
+1. **Static linking**
+2. **Dynamic linking**
+
+### Static Linking
+
+In static linking, the linker makes a copy of the library **implementation** and bundles it into a binary file. This binary is then linked to the final executable binary of the application being developed. Let us understand this concept clearly with a hands-on example.
