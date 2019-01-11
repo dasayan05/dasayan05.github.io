@@ -10,7 +10,7 @@ tags:
   - Virtual Machine
 layout: post
 post_number: "7"
-related_post_numbers: "4"
+related_post_numbers: "4 5"
 comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/4/python-banner.jpg"
