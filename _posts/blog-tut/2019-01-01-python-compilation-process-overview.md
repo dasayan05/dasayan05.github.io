@@ -13,7 +13,7 @@ post_number: "7"
 related_post_numbers: "4 5"
 comments: true
 category: blog-tut
-thumbnail-img: "public/posts_res/4/python-banner.jpg"
+thumbnail-img: "public/posts_res/7/process.jpg"
 ---
 
 Over the years, **Python** has become one of the major general purpose programming language that the industry and academia care about. But even with a vast community around the language, very few of them are aware of how Python is actually executed on a computer system. Some of them have a vague idea of how Python is executed, which is partly because it's totally possible to know nothing about it and still be a successful Python programmer. They believe that unlike C/C++, Python is "interpreted" instead of "compiled", i.e. they are *executed one statement at a time* rather that converting down to some kind of machine code. **It is not entirely correct**. This post is targeted towards programmers with a fair knowledge of Python's language fundamentals, to clear the fog around *what really goes on* when you hit `python script.py`.
