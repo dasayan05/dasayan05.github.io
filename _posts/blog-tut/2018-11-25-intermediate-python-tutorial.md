@@ -1,5 +1,5 @@
 ---
-title: 'Intermediate Python - Generators, Decorators and Context managers - Part I'
+title: 'Intermediate Python: Generators, Decorators and Context managers - Part I'
 publish: true
 author: Ayan Das
 date: 2018-11-25

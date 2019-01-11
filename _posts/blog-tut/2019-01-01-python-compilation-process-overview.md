@@ -1,5 +1,5 @@
 ---
-title: "Advanced Python - Bytecodes and the Python Virutal Machine (VM) - Part I"
+title: "Advanced Python: Bytecodes and the Python Virutal Machine (VM) - Part I"
 publish: true
 author: Ayan Das
 date: 2019-01-01
