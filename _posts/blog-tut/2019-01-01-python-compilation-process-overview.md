@@ -21,16 +21,16 @@ Over the years, **Python** has become one of the major general purpose programmi
 
 #### What exactly we mean by the term `Python` :
 
-Before we begin, I want to clear out a very common misconception. It is widely assumed among beginner Python programmers that the term `Python` refers to **the language and/or it's interpreter** - that's NOT technically correct. The term `Python` should refer to the "language" only, i.e., the grammer of the language and NOT the interpreter (the command line tool named `python` or `python2.7` or `python3.5` etc) that runs your python code. The interpreter you have access to is **one of the** implementations of the language grammer. There are more than one implementations of Python language interpreter:
+Before we begin, I want to clear out a very common misconception. It is widely assumed among beginner Python programmers that the term `Python` refers to **the language and/or it's interpreter** - that's NOT technically correct. The term `Python` should refer to the "language" only, i.e., the grammar of the language and NOT the interpreter (the command line tool named `python` or `python2.7` or `python3.5` etc) that runs your python code. The interpreter you have access to is **one of the** implementations of the language grammar. There are more than one implementations of Python language interpreter:
 
 1. [CPython](https://www.python.org/): A python interpreter written in **C language**
 1. [PyPy](https://pypy.org/): A python interpreter with **Just-in-time (JIT)** compilation
 2. [Jython](http://www.jython.org/): A python interpreter that uses the **Java Virtual Machine (JVM)**
 3. [IronPython](http://ironpython.net/): A python interpreter that uses **.NET framework**
 
-Now, it so happened that `CPython` is the implementation provided by the same group of people (including creator [Guido Van Rossum](https://gvanrossum.github.io/)) who are responsible for defining Python's language grammer as a [reference implementation](https://en.wikipedia.org/wiki/Reference_implementation). For several reasons, `CPython` is also the mostly used Python interpreter out there. So that's why it's fairly reasonable, although not technically correct, to refer to the "Python language" plus the `CPython` interpreter collectively as `Python`. I am going to follow this convention throughout these tutorials.
+Now, it so happened that `CPython` is the implementation provided by the same group of people (including creator [Guido Van Rossum](https://gvanrossum.github.io/)) who are responsible for defining Python's language grammar as a [reference implementation](https://en.wikipedia.org/wiki/Reference_implementation). For several reasons, `CPython` is also the mostly used Python interpreter out there. So that's why it's fairly reasonable, although not technically correct, to refer to the "Python language" plus the `CPython` interpreter collectively as `Python`. I am going to follow this convention throughout these tutorials.
 
-Apart from clearing the misconception, there is another reason I said all this at the very begining. The materials I am going to present in this tutorial are highly dependent of which interpreter we are talking about. Almost everything I am gonna talk about here is specific to `CPython` interpreter.
+Apart from clearing the misconception, there is another reason I said all this at the very beginning. The materials I am going to present in this tutorial are highly dependent of which interpreter we are talking about. Almost everything I am gonna talk about here is specific to `CPython` interpreter.
 
 ## Compilers vs Interpreters :
 
@@ -38,7 +38,7 @@ Before we describe Python's execution process, it is required to have a clear id
 
 1. **Compilers** are programs that consume a program written in high level language and converts them down to machine code which the native CPU is capable of running directly. C/C++ is a typical example of a "compiled" language which can be compiled by one of severals implementations of a C/C++ compiler (famous ones being [gcc](https://gcc.gnu.org/) by GNU, [msvc](https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B) by Microsoft, [Clang](https://clang.llvm.org/) by Google, [icc](https://software.intel.com/en-us/c-compilers) by Intel etc).
 
-2. **Interpreters**, on the other hand, reads a high level source program statement-by-statement and executes them in an interpreter while keeping some kind of context alive. But very often, a so-called "interpreted language" is not truely interpreted from their source program, rather they are interpreted after the source has been converted down to some form of **intermediate representation**. Precisely, Python falls into this category.
+2. **Interpreters**, on the other hand, reads a high level source program statement-by-statement and executes them in an interpreter while keeping some kind of context alive. But very often, a so-called "interpreted language" is not truly interpreted from their source program, rather they are interpreted after the source has been converted down to some form of **intermediate representation**. Precisely, Python falls into this category.
 
 <p align="center" style="padding-top: 20px; padding-bottom: 20px;">
     <img src="/public/posts_res/7/process.jpg">
@@ -93,7 +93,7 @@ In `CPython 3.6`, all bytecode instructions are of exactly *two bytes long* and 
 <INSTRUCTION> <ARGUMENT>
 ~~~
 
-with one byte each. There is a total of 118 unique instructions in the set, among which, some of the instructions do not care about it's argument as in they don't have an argument. The second byte of such instructions are to be ignored by the VM. Every (human readable) instruction has a representating integer (of course below 256, because it's one byte). One can easily figure out the mapping for few of them by comparing the above not-so-readable and the readable version of the bytecode.
+with one byte each. There is a total of 118 unique instructions in the set, among which, some of the instructions do not care about it's argument as in they don't have an argument. The second byte of such instructions are to be ignored by the VM. Every (human readable) instruction has integer representation (of course below 256, because it's one byte). One can easily figure out the mapping for few of them by comparing the above not-so-readable and the readable version of the bytecode.
 
 ~~~
 LOAD_FAST -> 124
@@ -102,7 +102,7 @@ BINARY_POWER -> 19
 ...
 ~~~
 
-There is a magic number defined along with the instruction set which determines wheather a particular instruction requires argument or not. If the integer representation of an instruction is less than that number, it doesn't have an argument - *that's the rule*. In `CPython 3.6`, the magic number happens to be 90. The "**BINARY_POWER**" does not have an argument (or rather ignores it) because it's byte representation (i.e., 19) is less than 90.
+There is a magic number defined along with the instruction set which determines whether a particular instruction requires argument or not. If the integer representation of an instruction is less than that number, it doesn't have an argument - *that's the rule*. In `CPython 3.6`, the magic number happens to be 90. The "**BINARY_POWER**" does not have an argument (or rather ignores it) because it's byte representation (i.e., 19) is less than 90.
 
 Now that you have seen it all, let me disclose how I compiled the python program and where did I get these bytecodes from. It turns out that it's very easy. The python interpreter allows you to peek into the bytecode from higher level python source code itself.
 
@@ -133,7 +133,7 @@ the exact sequence of bytes I showed earlier.
 
 ### Where are the data used by the program ?
 
-If you are a keen observer and had been looking at the bytecode since you saw it, you might have noticed that there is a discripency between the generated bytecode and the python source program. The "data" used by the program are missing. In this example, I have used a numeric value (12) in the statement `y = x ** 12`. Did you see that anywhere in the compiled bytecode ? The point here is, the code and the data of a source program lives in different objects. Just like `__code__.co_code` holds the raw bytecode instructions, there are few other attributes that are responsible for holding the data. One of them is
+If you are a keen observer and had been looking at the bytecode since you saw it, you might have noticed that there is a discrepancy between the generated bytecode and the python source program. The "data" used by the program are missing. In this example, I have used a numeric value (12) in the statement `y = x ** 12`. Did you see that anywhere in the compiled bytecode ? The point here is, the code and the data of a source program lives in different objects. Just like `__code__.co_code` holds the raw bytecode instructions, there are few other attributes that are responsible for holding the data. One of them is
 
 ~~~python
 >>> f.__code__.co_consts
@@ -158,11 +158,11 @@ which holds our numeric value (12) and a (useless) `None`. I will explain the ot
 
 If you are really interested, go explore the `dis` module. From my side, a detailed explanation of this output is the agenda of the next tutorial in this series.
 
-After seeing all these, an immediate question you might be tempted to ask is wheather these machine code lookalikes can be executed directly on a physical system ? **Unfortunately, NO**, they cannot. These bytecodes are not designed to be ran on any physical CPU. Rather, they are specially crafted to be consumed by a piece of software which is the second part of Python's execution process - the Virtual Machine (VM).
+After seeing all these, an immediate question you might be tempted to ask is whether these machine code lookalikes can be executed directly on a physical system ? **Unfortunately, NO**, they cannot. These bytecodes are not designed to be ran on any physical CPU. Rather, they are specially crafted to be consumed by a piece of software which is the second part of Python's execution process - the Virtual Machine (VM).
 
 ## `Python VM`: Interpreting the Bytecodes
 
-The Python Virtual Machine (VM) is a seperate program which comes into picture after the `Bytecode compiler` has generated the bytecode. It is literally a **simulation of a physical CPU** - it has software defined `stack`s,  instruction pointer (IP) and what not. Although, other virutal machines may have a lot of other components like registers etc., but the `CPython` VM is entirely based on a `stack` data structure which is why it is often referred to as a "stack-based" virtual machine.
+The Python Virtual Machine (VM) is a separate program which comes into picture after the `Bytecode compiler` has generated the bytecode. It is literally a **simulation of a physical CPU** - it has software defined `stack`s,  instruction pointer (IP) and what not. Although, other virtual machines may have a lot of other components like registers etc., but the `CPython` VM is entirely based on a `stack` data structure which is why it is often referred to as a "stack-based" virtual machine.
 
 If you cannot get a feel of what it is, I have a dumb little code to show how Python VM is literally implemented. In reality, `CPython` VM is implemented in `C` but for simplicity, I am showing an *equivalent* but *terribly simplified* version in python itself:
 
@@ -239,7 +239,7 @@ Please remember, this is just to show you the logical steps - the actual CPython
 
 ## Cached Bytecodes: The `.pyc` files
 
-In principle, everytime you run a script, python has to go through both *Compilation* and *Interpretation* steps. If you are running the same script over and over again, it is wasteful to execute bytecode compilation everytime because a particular python source code will produce the same bytecode everytime you do the compilation.
+In principle, every time you run a script, python has to go through both *Compilation* and *Interpretation* steps. If you are running the same script over and over again, it is wasteful to execute bytecode compilation every time because a particular python source code will produce the same bytecode every time you do the compilation.
 
 CPython uses a *caching* mechanism to avoid this. It writes down the bytecode the first time you load a module - yes, it happens at module level. If you load it again without modification, it will read the *cached* bytecode and go through the interpretation process only. These cached bytecodes are kept inside `.pyc` files which you must have seen before:
 
@@ -253,7 +253,7 @@ prompt $ tree
 1 directory, 2 files
 ~~~
 
-The bytecodes along with the data are *serialized* into these `.pyc` files using a very special serialization format called `marshal` which is scrictly an internal format to python interpreter implementation and not supposed to be used by application programs. If you really want to know more about `marshal`, see [Stephane Wirtel's video](https://www.youtube.com/watch?v=45BhX5wSeVs) on youtube.
+The bytecodes along with the data are *serialized* into these `.pyc` files using a very special serialization format called `marshal` which is strictly an internal format to python interpreter implementation and not supposed to be used by application programs. If you really want to know more about `marshal`, see [Stephane Wirtel's video](https://www.youtube.com/watch?v=45BhX5wSeVs) on Youtube.
 
 ---
 
