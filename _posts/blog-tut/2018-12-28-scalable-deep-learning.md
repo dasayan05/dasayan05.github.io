@@ -1,5 +1,5 @@
 ---
-title: 'Deep Learning at scale: Distributed training with MPI & PyTorch'
+title: 'Deep Learning at scale: Distributed training with MPI & PyTorch - The Setup'
 publish: true
 author: Ayan Das
 date: 2018-12-28
@@ -146,3 +146,85 @@ that entry `miriad2a:/home/cluster/nfs /home/cluster/nfs nfs` means: I want to m
 Finally, restart your master node first and then restart all the other ones.
 
 **Important Note:** Make sure you have successfully setup passwordless shh before restarting.
+
+**If everything goes well, you should have a cluster of nodes ready for distributed computing.**
+
+---
+
+## The programming & execution model :
+
+Let's *briefly* talk about `MPI`'s programming model/interface. Although the original `Intel-MPI` implementations is in **C language**, I would suggest using Intel distribution of Python which comes with a very convenient python wrapper on top of `Intel-MPI` called `mpi4py` ([See doc here](https://mpi4py.readthedocs.io/en/stable/index.html)). For the sake of this tutorial and making it easy to digest, I have decided to use the same for the rest of this tutorial.
+
+Before writing any code, it is essential to understanding how to execute them. Because, the distributed system clearly is different from executing typical executables on a single platform. You need a way to "distribute" *processes* - your application program written using `MPI`'s programming interface. Here comes the most important command-line utility in any MPI implementation: `mpiexec`. Let's see a trivial example of executing distributed processes with `mpiexec`.
+
+~~~bash
+cluster@miriad1a:~/nfs$ mpiexec -n 2 -ppn 1 -hosts miriad1a,miriad1b "hostname"
+miriad1a
+miriad1b
+~~~
+
+Woo hoo .. We just ran our first distributed application. Let's analyze it thoroughly:
+
+1. Although the utility can be invoked from any one of the nodes in a cluster, it is always advisable to choose one *master* node and use it for scheduling.
+2. `mpiexec` is basically a distributed scheduler which goes inside (via passwordless ssh) each of your *slave* nodes and runs the command given to it.
+3. The `-n 2` signifies the number of nodes to use (master plus slaves).
+4. The `-ppn 1` signifies the number of *processes per node*.
+5. The `-hosts <hostname1>,<hostname2>`, as you can guess, tells `mpiexec` which nodes to run your code on. No need to specify	username here because they all have same username - MPI can figure that out.
+6. The command inside the quote is what we want `mpiexec` to run on all the specified nodes. In this stupid example, I only tried executing the command `hostname` on all the specified nodes. If your application is in python, you need to change it to `mpiexec ... "python <script.py>"`.
+
+#### A python example using `mpi4py` :
+
+~~~python
+from mpi4py import MPI
+import platform
+
+comm = MPI.COMM_WORLD
+rank = comm.Get_rank()
+
+hostname = platform.node()
+
+if rank == 0:
+    comm.send(hostname, dest = 1, tag = 6)
+elif rank == 1:
+    recieved_data = comm.recv(source = 0, tag = 6)
+    print('{} got "{}" from rank 0'.format(platform.node(), recieved_data))
+~~~
+
+Upon invoking the scheduler from `miriad1a`, we got the following output
+
+~~~bash
+cluster@miriad1a:~/nfs$ mpiexec -n 2 -ppn 1 -hosts miriad1a,miriad1b "python mpitest.py" 
+miriad1b got "miriad1a" from rank 0
+~~~
+
+1. This python program will be executed on both the nodes specified - *miriad1a* and *miriad1b*.
+2. They both will create a a variable called "hostname" which will store their respective hostnames (that's what [platform.node()](https://docs.python.org/3.6/library/platform.html#platform.node) does).
+3. **Important:** Understanding the concept of `world` and `rank`
+	* The term `world` refers to the collection of all the nodes that have been specified in a particular context of `mpiexec` invocation.
+	* `Rank` is an unique integer assigned by the MPI runtime to each of those nodes. It starts from 0. The order in which they are specified in the argument of `-hosts` is used to assign the numbers. So in this case, `miriad1a` will be assigned "rank 0" and `miriad1b` will be "rank 1".
+4. A very common pattern used in distributed programming is 
+~~~python
+if rank == <some rank>:
+	# .. do this
+elif rank == <another rank>:
+	# .. do that
+~~~
+which helps us to separate different pieces of code to be executed on different ranks (by ranks, I mean nodes with that rank).
+5. In this example, Rank 0 is supposed to `send` a piece of data (i.e., the "hostname" variable) to Rank 1.
+~~~python
+# send "hostname" variable to Rank 1 (i.e., dest = 1) with tag = 6
+comm.send(hostname, dest = 1, tag = 6)
+~~~
+Although optional, the `tag` is a number assigned to a particular message/data to be sent; it is then used by destination rank for *identification* purpose.
+6. Rank is supposed to `receive` the data from Rank 0
+~~~python
+# the tag 6 properly identifies the message sent by Rank 0
+recieved_data = comm.recv(source = 0, tag = 6)
+~~~
+and print it out.
+
+---
+
+Phew, that was one hell of a tutorial. Before moving onto `PyTorch` and `Deep learning` in the , it is required to have PyTorch installed and *properly linked to your MPI implementation*. I would recommend to have the `PyTorch` source code and compile yourself by following the [official instructions](https://github.com/pytorch/pytorch#from-source). If you have only one MPI implementation in usual location, `PyTorch`'s build engine is smart enough to detect and link to it.
+
+Okay then, see you in the next one.
