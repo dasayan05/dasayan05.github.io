@@ -300,7 +300,21 @@ You might have expected this because the runtime linker cannot find **libexample
 Integer value : 57
 [rohan@archlinux LinkingExamples]$
 ```
-Thus we can edit the path to be searched by the linker at runtime! Thus both static libraries and shared libraries have their own pros and cons. Static libraries will be used when speed is important and the size of the executable binary is not important and no runtime dependencies should be involved. Shared libraries are used to reduce the size of the executable binary and to share code at runtime. Moreover it's extremely useful in making changes to the underlying library at runtime without affecting the production client code. Let's see how it is done.
+Thus we can edit the path to be searched by the linker at runtime! Thus both static libraries and shared libraries have their own pros and cons. Static libraries will be used when speed is important and the size of the executable binary is not important and no runtime dependencies should be involved. On running the **ldd** command on **test1**, **libexample.so** is clearly listed as a runtime dependency found at */home/rohan*:
+
+```bash
+[rohan@archlinux LinkingExamples]$ ldd test1
+        linux-vdso.so.1 (0x00007fff1c1f3000)
+        libexample.so => /home/rohan/libexample.so (0x00007f776e456000)
+        libstdc++.so.6 => /usr/lib/libstdc++.so.6 (0x00007f776e264000)
+        libm.so.6 => /usr/lib/libm.so.6 (0x00007f776e0df000)
+        libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007f776e0c5000)
+        libc.so.6 => /usr/lib/libc.so.6 (0x00007f776df01000)
+        /lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f776e462000)
+[rohan@archlinux LinkingExamples]$
+```
+
+Shared libraries are used to reduce the size of the executable binary and to share code at runtime. Moreover it's extremely useful in making changes to the underlying library at runtime without affecting the production client code. Let's see how it is done.
 
 Let us edit the **ex.cpp** file and add an extra line to the display function:
 
