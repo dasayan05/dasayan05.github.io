@@ -151,7 +151,7 @@ A static library is a library of **object code** which when linked at compile-ti
 
 `[rohan@archlinux LinkingExamples]$ g++ -fPIC -c example.cpp`
 
-This creates a new object file **example.o**. And we will no longer need **example.cpp**. Let us first rename **example.cpp** as **ex.cpp** to make sure that if **example.cpp** was used, it will throw an error:
+This creates a new object file **example.o**. The **-c** flag tells GCC to stop after the compilation process and not run the linker and the **-fPIC** flag stands for *position independent code* which is required for shared libraries but we will also use them for static linking to maintain unniformity. We will no longer need **example.cpp**. Let us first rename **example.cpp** as **ex.cpp** to make sure that if **example.cpp** was used, it will throw an error:
 
 `[rohan@archlinux LinkingExamples]$ mv example.cpp ex.cpp`. 
 
@@ -180,6 +180,14 @@ Please look at the above command very carefully. The -L flag gives the path of t
 ```bash
 [rohan@archlinux LinkingExamples]$ ./test1
 Integer value : 57
+[rohan@archlinux LinkingExamples]$ ls -l
+total 40
+-rwxrwxrwx 1 rohan rohan   136 Jan  6 21:45 example.hpp
+-rw-r--r-- 1 rohan rohan  3240 Jan 26 18:16 example.o
+-rwxrwxrwx 1 rohan rohan   233 Jan  6 21:44 ex.cpp
+-rw-r--r-- 1 rohan rohan  3468 Jan 27 02:53 libexample.a
+-rwxr-xr-x 1 rohan rohan 17592 Jan 27 02:53 test1
+-rwxrwxrwx 1 rohan rohan   107 Jan 26 18:01 test1.cpp
 [rohan@archlinux LinkingExamples]$
 ```
 
@@ -221,3 +229,100 @@ Let's run the *ldd* command on test1:
 ```
 
 We can only see .so files i.e. shared libraries. These are runtime-dependencies of test1. We cannot find any static libraries listed as a dependency. Thus you can try deleting **example.a** or **libexample.a** and then running test1. It'll run fine as usual as it already has been bundled into our executable binary test1. Another important thing to be remembered is that no matter how many times we want to make changes to **test1.cpp** we need not recompile **example.cpp** ever again. In fact, if you want to hide your source code, you can always ship your **example.hpp** and **libexample.a** files which the user can use in their production code which is **test1.cpp** in the present case. This is why static libraries are so important and are used extensively.
+
+### Dynamic Linking
+
+In dynamic linking, the library object code is linked to the executable binary at **runtime**. Thus now we have a runtime dependency on the library file. If that shared object (.so) file is not present at runtime, the executable binary won't run. Let's understand dynamic linking with the help of the same example we used to understand static linking. Before we start let's perform a small cleanup first.
+
+```bash
+[rohan@archlinux LinkingExamples]$ rm example.a test1
+[rohan@archlinux LinkingExamples]$ tree
+.
+├── example.hpp
+├── example.o
+├── ex.cpp
+└── test1.cpp
+
+0 directories, 4 files
+[rohan@archlinux LinkingExamples]$
+```
+
+The shared library **libexample.so** is created using the following command: 
+
+`[rohan@archlinux LinkingExamples]$ g++ -shared -o libexample.so example.o`
+
+The *-shared* flag tells GCC that a shared library is being created. Let us now create the final executable binary and run it:
+
+```bash
+[rohan@archlinux LinkingExamples]$ g++ test1.cpp -L. -lexample -o test1
+[rohan@archlinux LinkingExamples]$ ./test1
+Integer value : 57
+[rohan@archlinux LinkingExamples]$
+```
+
+Now it all looks very familiar and is exactly the same as static linking. But let's have a look at the directory structure and the sizes of the files: 
+
+```bash
+[rohan@archlinux LinkingExamples]$ ls -l
+total 56
+-rwxrwxrwx 1 rohan rohan   136 Jan  6 21:45 example.hpp
+-rw-r--r-- 1 rohan rohan  3240 Jan 26 18:16 example.o
+-rwxrwxrwx 1 rohan rohan   233 Jan  6 21:44 ex.cpp
+-rwxr-xr-x 1 rohan rohan 16744 Jan 27 02:42 libexample.so
+-rwxr-xr-x 1 rohan rohan 17128 Jan 27 02:46 test1
+-rwxrwxrwx 1 rohan rohan   107 Jan 26 18:01 test1.cpp
+[rohan@archlinux LinkingExamples]$
+```
+
+If you compare the size of test1 executable now and in the case of static linking (shown before), you'll notice that in the previous case it was **17592B** and now it is **17128B**. The 464 bytes of memory saved is due to linking it dynamically at runtime and not  bundling it into test1. You might say that 464 bytes is an absolutely negligible amount of memory, but then the shared and static libraries we have created hardly have any code in them, the Integer class having only a constructor and two methods all of which being one liners. As the source code size increases, it begins to create massive differences. Let's us do something interesting. We will move libexample.so to a different directory and then try running test1 see what happens!!!
+
+```bash
+[rohan@archlinux LinkingExamples]$ mv libexample.so ~/libexample.so
+[rohan@archlinux LinkingExamples]$ tree
+.
+├── example.hpp
+├── example.o
+├── ex.cpp
+├── test1
+└── test1.cpp
+
+0 directories, 5 files
+[rohan@archlinux LinkingExamples]$ ./test1
+./test1: error while loading shared libraries: libexample.so: cannot open shared object file: No such file or directory
+[rohan@archlinux LinkingExamples]$
+```
+
+You might have expected this because the runtime linker cannot find **libexample.so**. This can be fixed by altering the **LD_LIBRARY_PATH** variable. Since the linker searches for the shared object at runtime, recompilation is no longer needed and we will append the path in which the linker will search at runtime to the **LD_LIBRARY_PATH** variable and then run test1 **in the same terminal**. This is because the next time a terminal is opened, the environment variables are loaded freshly without the temporary change we will make. For a permanent change, we will put the command in the *~/.bashrc* file.
+
+```bash
+[rohan@archlinux LinkingExamples]$ export LD_LIBRARY_PATH=~:$LD_LIBRARY_PATH
+[rohan@archlinux LinkingExamples]$ ./test1
+Integer value : 57
+[rohan@archlinux LinkingExamples]$
+```
+Thus we can edit the path to be searched by the linker at runtime! Thus both static libraries and shared libraries have their own pros and cons. Static libraries will be used when speed is important and the size of the executable binary is not important and no runtime dependencies should be involved. Shared libraries are used to reduce the size of the executable binary and to share code at runtime. Moreover it's extremely useful in making changes to the underlying library at runtime without affecting the production client code. Let's see how it is done.
+
+Let us edit the **ex.cpp** file and add an extra line to the display function:
+
+```cpp
+void Integer::display()
+{
+    std::cout << "This is the new display function\n";
+    std::cout << "Integer value : " << data << '\n';
+}
+```
+
+We will now compile it, create the shared library and use it in our production code:
+
+```cpp
+[rohan@archlinux LinkingExamples]$ g++ -fPIC -c ex.cpp -o example.o
+[rohan@archlinux LinkingExamples]$ g++ -shared -o libexample.so example.o
+[rohan@archlinux LinkingExamples]$ ./test1
+This is the new display function
+Integer value : 57
+[rohan@archlinux LinkingExamples]$
+```
+
+That's it!!! We did not have to recompile test1.cpp, just simply recompile our shared library. This is a very useful feature of shared libraries. With shared libraries we can easily update our library code and release a patched version without touching our final executable binary. Thus shared libraries are also very important in real-life production environments.
+
+That's pretty much everything I had to say about linking in C++. For further reading and better understanding, go through the detailed working of the [GNU linker](ftp://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_mono/ld.html).
