@@ -63,19 +63,42 @@ int main()
 And running the commands:
 
 ```bash
-[rohan@rohan-pc ~]$ g++ test.cpp
-[rohan@rohan-pc ~]$ ./a.out
+[rohan@archlinux LinkingExamples]$ g++ test.cpp
+[rohan@archlinux LinkingExamples]$ ./a.out
 Hello World
-[rohan@rohan-pc ~]$ ldd a.out
+[rohan@archlinux LinkingExamples]$ ldd a.out
         linux-vdso.so.1 (0x00007ffcb0f66000)
         libstdc++.so.6 => /usr/lib/libstdc++.so.6 (0x00007f7c3ce0e000)
         libm.so.6 => /usr/lib/libm.so.6 (0x00007f7c3cc89000)
         libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007f7c3cc6f000)
         libc.so.6 => /usr/lib/libc.so.6 (0x00007f7c3caab000)
         /lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007f7c3d00c000)
-[rohan@rohan-pc ~]$
+[rohan@archlinux LinkingExamples]$
 ```
-Here, [libstdc++](https://gcc.gnu.org/onlinedocs/libstdc++/) is GNU's implementation of the C++ Standard Library which is automatically linked dynamically to your executable binary i.e. a.out. libc is the C Standard library which is also linked dynamically. We will now delve into the details of linking.
+Here, [libstdc++](https://gcc.gnu.org/onlinedocs/libstdc++/) is GNU's implementation of the C++ Standard Library which is automatically linked dynamically to your executable binary i.e. a.out. The **ldd** command lists the runtime library dependencies. libc is the C Standard library which is also linked dynamically. Let us now try to link the standard libraries statically so that our new executable **a1.out** does not have any runtime dependencies. This can be conveniently done in GCC with the help of the **-static** flag.
+
+```bash
+[rohan@archlinux LinkingExamples]$ g++ test.cpp -o a1.out -static
+[rohan@archlinux LinkingExamples]$ ./a1.out
+Hello World
+[rohan@archlinux LinkingExamples]$
+```
+So far so good. Let us now run the **ldd** command on **a1.out** and investigate the sizes of the executable binaries:
+
+```bash
+[rohan@archlinux LinkingExamples]$ ldd a1.out
+        not a dynamic executable
+[rohan@archlinux LinkingExamples]$ ls -l
+total 2124
+-rwxr-xr-x 1 rohan rohan 2150128 Jan 27 04:05 a1.out
+-rwxr-xr-x 1 rohan rohan   17056 Jan 27 04:01 a.out
+-rw-r--r-- 1 rohan rohan      68 Jan 27 04:01 test.cpp
+[rohan@archlinux LinkingExamples]$ rm *
+[rohan@archlinux LinkingExamples]$
+```
+The output of the **ldd** command on **a1.out** is quite expected but on comparing the sizes of **a.out** and **a1.out**, the results absolutely astonishing!!! The size of **a.out** is 17,056 bytes whereas that of **a1.out** is 2,150,128 bytes which is about **126 times** more than the size of **a.out**. Thus I hope you have got an idea of how much the difference between the sizes of a shared and a static library can occur when the size of the code grows. In the above example, even though we ourselves have written very little code, the C and C++ standard libraries which we had statically linked contains a **lot of code** which resulted in a very fat binary. In our own handwritten examples, the difference will be very less because the amount of code present in the shared libraries will be very less. The purpose of this tutorial being to clear the concept of linking in C++.
+
+We will now delve into the details of linking.
 
 There are two ways of linking in C++:
 
@@ -274,7 +297,7 @@ total 56
 [rohan@archlinux LinkingExamples]$
 ```
 
-If you compare the size of test1 executable now and in the case of static linking (shown before), you'll notice that in the previous case it was **17592B** and now it is **17128B**. The 464 bytes of memory saved is due to linking it dynamically at runtime and not  bundling it into test1. You might say that 464 bytes is an absolutely negligible amount of memory, but then the shared and static libraries we have created hardly have any code in them, the Integer class having only a constructor and two methods all of which being one liners. As the source code size increases, it begins to create massive differences. Let's us do something interesting. We will move libexample.so to a different directory and then try running test1 see what happens!!!
+If you compare the size of test1 executable now and in the case of static linking (shown before), you'll notice that in the previous case it was **17592B** and now it is **17128B**. The 464 bytes of memory saved is due to linking it dynamically at runtime and not  bundling it into test1. You might say that 464 bytes is an absolutely negligible amount of memory, but then the shared and static libraries we have created hardly have any code in them, the Integer class having only a constructor and two methods all of which being one liners. As the source code size increases, it begins to create massive differences like the Hello World program I demonstrated in the beginning. Let's us do something interesting. We will move libexample.so to a different directory and then try running test1 see what happens!!!
 
 ```bash
 [rohan@archlinux LinkingExamples]$ mv libexample.so ~/libexample.so
