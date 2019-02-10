@@ -37,5 +37,6 @@ I am Ayan, a Research Scholar pursuing Master of Science (M.S.) in the departmen
 - **.. STAY TUNED ..**
 - Selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. in Asia Pacific & Japan.
 - Talked about Intel performance libraries and Inference tools for Deep learning in `up.AI summit` in IIT Kharagpur recently. [Link](https://www.facebook.com/upaisummit)
+- Tutored a 2-day workshop on "*Deep learning with High Performance Computing (DL-HPC)*" at [Institute of Technical Education and Research (ITER)](http://www.soa.ac.in/iter/), Siksha 'O' Anusandhan, Bhubaneswar on 23-24th August 2018 with my [supervisor](http://www.facweb.iitkgp.ac.in/~debdoot/) and colleagues.
 - Launched an *Open Source* project called `Tensor++`. [Check out and contribute](https://github.com/crystalcpp/tensorpp)
 - A tiny implementation of recently proposed `Capsule Network` [Link](https://github.com/dasayan05/capsule-net-TF) and a similar old idea called `Transforming AE` [Link](https://github.com/dasayan05/transAE-tf).
