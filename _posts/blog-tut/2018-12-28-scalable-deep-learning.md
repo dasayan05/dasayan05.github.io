@@ -9,10 +9,10 @@ tags:
   - Model Training
 layout: post
 post_number: "6"
-related_post_numbers: ""
+related_post_numbers: "9"
 comments: true
 category: blog-tut
-thumbnail-img: "public/posts_res/4/python-banner.jpg"
+thumbnail-img: "public/posts_res/6/dist-nodes.png"
 ---
 
 Welcome to an in-depth tutorial on **Distributed Deep learning** with some standard tools and frameworks available to everyone. From the very beginning of my journey with DL when I was an undergrad student, I realized that it's not as easy as it seems to achieve what the mainstream industry has achieved with Deep learning even thought I was quite confident about my knowledge of "DL algorithms". Because clearly, algorithm wasn't the only driving force that the industry survives on - it's also the *scale* at which they execute their well-planned implementation on high-end hardwares, which was near to impossible for me to get access to. So it's extremely important to understand the concept of *scale* and the consequences that comes with it. This tutorial is targeted towards people who have working knowledge of Deep learning and have access to *somewhat* industry standard hardware or at least a well-equipped academic research lab. If not, you can still follow along as the techniques shown here can be scaled down with proper changes.
