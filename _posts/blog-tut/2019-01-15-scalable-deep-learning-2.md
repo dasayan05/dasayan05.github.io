@@ -12,7 +12,7 @@ post_number: "9"
 related_post_numbers: "6"
 comments: true
 category: blog-tut
-thumbnail-img: "/public/posts_res/9/all_reduce.png"
+thumbnail-img: "/public/posts_res/9/parallel-dl.png"
 ---
 
 In the last post, we went through the basics of `Distributed computing` and `MPI`, and also demonstrated the steps of setting up a distributed environment. This post will focus on the practical usage of distributed computing strategies to accelerate the training of Deep learning (DL) models. To be specific, we will focus on one particular distributed training algorithm (namely `Synchronous SGD`) and implement it using `PyTorch`'s distributed computing API (i.e., `torch.distributed`). I will use 4 nodes for demonstration purpose, but it can easily be *scaled up* with minor changes. This tutorial assumes the reader to have working knowledge of Deep learning model implementation as I won't go over typical concepts of deep learning.
@@ -30,7 +30,6 @@ Model parallelism refers to a model being split into two parts, i.e., some layer
 
 <figure align="center" style="padding-top: 20px; padding-bottom: 20px;">
     <img src ="/public/posts_res/9/parallel-dl.png" />
-    <figcaption>Image source: <a href="https://xiandong79.github.io/Intro-Distributed-Deep-Learning">Xiandong QI's blog</a></figcaption>
 </figure>
 
 #### Data parallelism
@@ -110,7 +109,6 @@ The common `collective`s are:
 
 <figure align="center" style="padding-top: 20px; padding-bottom: 20px;">
     <img src ="/public/posts_res/9/all_reduce.png" />
-    <figcaption>Image source: <a href="https://pytorch.org/tutorials/intermediate/dist_tuto.html">PyTorch Documentation</a></figcaption>
 </figure>
 
 **All-reduce** is basically a way of synchronized communication where "*a given reduction operation is operated on all the ranks and the reduced result is made available to all of them*". The above illustration hopefully makes it clear. Now, it's time for some codes.
