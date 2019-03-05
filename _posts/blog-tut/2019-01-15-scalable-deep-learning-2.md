@@ -1,6 +1,6 @@
 ---
 title: 'Deep Learning at scale: The "torch.distributed" API'
-publish: true
+publish: false
 author: Ayan Das
 date: 2018-12-28
 tags:
