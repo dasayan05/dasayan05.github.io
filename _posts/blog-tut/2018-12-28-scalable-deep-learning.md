@@ -1,6 +1,6 @@
 ---
 title: 'Deep Learning at scale: Setting up distributed cluster'
-publish: false
+publish: true
 author: Ayan Das
 date: 2018-12-28
 tags:
