@@ -12,7 +12,7 @@ post_number: "9"
 related_post_numbers: "6"
 comments: true
 category: blog-tut
-thumbnail-img: "/public/posts_res/9/parallel-dl.png"
+thumbnail-img: "public/posts_res/9/parallel-dl.png"
 ---
 
 In the last post, we went through the basics of `Distributed computing` and `MPI`, and also demonstrated the steps of setting up a distributed environment. This post will focus on the practical usage of distributed computing strategies to accelerate the training of Deep learning (DL) models. To be specific, we will focus on one particular distributed training algorithm (namely `Synchronous SGD`) and implement it using `PyTorch`'s distributed computing API (i.e., `torch.distributed`). I will use 4 nodes for demonstration purpose, but it can easily be *scaled up* with minor changes. This tutorial assumes the reader to have working knowledge of Deep learning model implementation as I won't go over typical concepts of deep learning.
