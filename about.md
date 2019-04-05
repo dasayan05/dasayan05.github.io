@@ -25,7 +25,6 @@ termcmd: whoami
 
 ### Institute of Engineering & Management (IEM), Kolkata [2017]
 - Department of Electronics & Communication Engineering
-- B.Tech Thesis: "Gender recognition from body images using part-based model"
 
 -----
 
