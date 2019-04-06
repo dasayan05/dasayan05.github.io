@@ -1,1 +1,17 @@
+---
+title: "Intermediate C++ : Speeding up iostreams in C++"
+publish: true
+author: <a href="https://in.linkedin.com/in/rohan-mark-gomes"> Rohan Mark Gomes </a>
+date: 2019-04-06
+tags:
+  - C++
+  - FastIO
+  - iostream
+layout: post
+post_number: "10"
+related_post_numbers: ""
+comments: true
+category: blog-tut
+thumbnail-img: ""
+---
 
