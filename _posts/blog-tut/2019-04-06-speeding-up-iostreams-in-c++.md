@@ -109,3 +109,10 @@ real    0m1.792s
 user    0m1.767s
 sys     0m0.023s
 ```
+#### Final results to sample problem:
+
+Language | Time
+--------   -----
+Java | 0.595s
+Python | 0.516s
+C++ | 1.792s
