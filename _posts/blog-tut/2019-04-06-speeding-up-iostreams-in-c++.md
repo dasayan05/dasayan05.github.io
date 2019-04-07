@@ -381,6 +381,6 @@ user    0m8.684s
 sys     0m0.173s
 ```
 
-That's a decent performance boost over normal cin and cout!!! But this was expected. Let's try scanf and printf which are often recommended as alternatives when cin and cout perform slow.
+That's a decent performance boost over normal cin and cout!!! But this was expected. We have improved our timings to **0.122s**, **0.911s** and **8.865s**. Let's try scanf and printf which are often recommended as alternatives when cin and cout perform slow.
 
 ### Attempt 3: scanf and printf
