@@ -223,3 +223,164 @@ These two programs should be enough to demonstrate the strange behaviour when IO
 ### The Problem
 
 Let's have a look at the [Enormous Input Test](https://www.codechef.com/problems/INTEST) problem in [Codechef](https://www.codechef.com/). This is one of the earliest beginner problems in [Codechef](https://www.codechef.com/) and I feel that this is a great problem to start our discussion. The problem statement basically states that in the first line there will be two space separated integers **n** and **k**. The next **n** lines will have one integer (**t[i]**) each not exceeding 10^9. It's also given that both **n** and **k** are positive integers <= 10^7. Our job is to find the number of integers **t[i]** which are divisible by **k**. To make it a bit more interesting, we will design our own code to generate the test cases and increase the bounds of **n** and **k** to 10^8.
+
+### Designing our test case generator
+
+```cpp
+#include <iostream>
+#include <random>
+
+int main()
+{
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+    int n, k;
+    std::cin >> n >> k;
+    std::mt19937_64 rng; rng.seed(std::random_device()());
+    std::uniform_int_distribution<int> dis(1, 1000000000);
+    std::cout << n << ' ' << k << '\n';
+    for(int i = 1; i <= n; i++)
+        std::cout << dis(rng) << '\n';
+}
+```
+
+Integers n and k are taken as input and the [Mersenne Twister Engine](https://en.cppreference.com/w/cpp/numeric/random/mersenne_twister_engine) is used as our Random Number Generator. With these, we are preparing our test case generator and saving our code to a file **generator.cpp** and compiling with the following commands:
+
+```
+[rohan@archlinux BlogCodes]$ c++ --version
+c++ (GCC) 8.2.1 20181127
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[rohan@archlinux BlogCodes]$ c++ generator.cpp -std=c++17 -Ofast -march=native -o generator
+```
+
+I am using GCC 8.2.1 which has support for C++17. In case you are using older compilers, adjust your flags accordingly. To understand the optimization flags, have a look at the [GCC optimization flags](http://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html). In this case, I do not care about synchronization, so I have turned it off to speed up the generation process. Let us now generate three text files **test1.txt**, **test2.txt** and **test3.txt** with the bounds of **n** and **k** being 10^6, 10^7 and 10^8 respectively.
+
+```
+[rohan@archlinux BlogCodes]$ ./generator > test1.txt 
+1000000 3
+[rohan@archlinux BlogCodes]$ ./generator > test2.txt 
+10000000 4
+[rohan@archlinux BlogCodes]$ ./generator > test3.txt 
+100000000 5
+[rohan@archlinux BlogCodes]$ ls -l
+total 1071980
+-rwxr-xr-x 1 rohan rohan     19792 Apr  8 03:22 generator
+-rw-r--r-- 1 rohan rohan       384 Apr  8 03:20 generator.cpp
+-rw-r--r-- 1 rohan rohan   9888480 Apr  8 03:48 test1.txt
+-rw-r--r-- 1 rohan rohan  98890665 Apr  8 03:48 test2.txt
+-rw-r--r-- 1 rohan rohan 988890850 Apr  8 03:49 test3.txt
+```
+
+Hurray!!! So we have created the three text files of size **9.4 MB**, **94.3 MB** and **943.1 MB** for testing. Let's now start our attempts at solving this problem. We will be using the **time** command in Linux to maintain uniformity which gives reasonably accurate results for our purpose. 
+
+### Attempt 1: cin
+
+```cpp
+#include <iostream>
+int main()
+{
+    int n, k, count = 0;
+    std::cin >> n >> k;
+    for(int i = 1; i <= n; i++)
+    {
+        int x; std::cin >> x;
+        if(x % k == 0)
+            count++;
+    }
+    std::cout << count << '\n';
+}
+```
+
+The code is straight-forward and doesn't need any explanation. Let's compile it and then verify that it is correct before testing it with our big text files.
+
+```
+[rohan@archlinux BlogCodes]$ c++ cin.cpp -O3 -march=native -o cin
+[rohan@archlinux BlogCodes]$ ./generator > tmp.txt
+7 5
+[rohan@archlinux BlogCodes]$ cat tmp.txt 
+7 5
+7852651
+987500822
+941299498
+165101286
+342858592
+854548561
+978235080
+[rohan@archlinux BlogCodes]$ ./cin < tmp.txt 
+1
+```
+
+Thus the code is correct!!! Because it is clearly evident that there is just one number which is divisible by 5. Let's now test it against our big guns :)
+
+```
+[rohan@archlinux BlogCodes]$ time ./cin < test1.txt 
+333392
+
+real    0m0.292s
+user    0m0.286s
+sys     0m0.004s
+[rohan@archlinux BlogCodes]$ time ./cin < test2.txt 
+2500370
+
+real    0m2.664s
+user    0m2.623s
+sys     0m0.024s
+[rohan@archlinux BlogCodes]$ time ./cin < test3.txt 
+20002602
+
+real    0m27.761s
+user    0m27.563s
+sys     0m0.163s
+```
+
+Thus our timings for the big guns are **0.292s**, **2.664s** and **27.761s**. The timings for subsequent runs give more or less same timings. So there goes *cin*, can we do better??? 
+
+### Attempt 2: cin with synchronization turned off
+```cpp
+#include <iostream>
+int main()
+{
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+    int n, k, count = 0;
+    std::cin >> n >> k;
+    for(int i = 1; i <= n; i++)
+    {
+        int x; std::cin >> x;
+        if(x % k == 0)
+            count++;
+    }
+    std::cout << count << '\n';
+}
+```
+
+I am sure that you guessed that this was coming. Turning off synchronization is an obvious solution, because we do not want the output to be interactive here and neither do we need interoperability with C streams. Let's compile this code and test it against our big guns.
+
+```
+[rohan@archlinux BlogCodes]$ c++ cin_nosync.cpp -O3 -march=native -o cin_nosync
+[rohan@archlinux BlogCodes]$ time ./cin_nosync < test1.txt 
+333392
+
+real    0m0.122s
+user    0m0.118s
+sys     0m0.004s
+[rohan@archlinux BlogCodes]$ time ./cin_nosync < test2.txt 
+2500370
+
+real    0m0.911s
+user    0m0.896s
+sys     0m0.013s
+[rohan@archlinux BlogCodes]$ time ./cin_nosync < test3.txt 
+20002602
+
+real    0m8.865s
+user    0m8.684s
+sys     0m0.173s
+```
+
+That's a decent performance boost over normal cin and cout!!! But this was expected. Let's try scanf and printf which are often recommended as alternatives when cin and cout perform slow.
+
+### Attempt 3: scanf and printf
