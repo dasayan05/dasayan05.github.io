@@ -154,3 +154,68 @@ A drastic 16x improvement just by adding two more lines!!! Let's try to understa
 Historically C++ was designed as an extension to C. So much so that, C++ was initially known as *C with Classes* before it was renamed to *C++* in 1983. Till today, backwards compatibility with C and the older standards of C++ is of **big importance** to the [ISO C++ Committee](https://isocpp.org/std/the-committee). Due to this reason, the C-streams for input-output and the C++ iostreams also need to be synchronized so that when both of them are used in the same code, no undefined behaviour occurs. By default C++ streams are synchronized with their C-stream counterparts, i.e., the moment any operation is applied to any C++ stream, the same operation is also applied to the corresponding C-stream. This allows the free mixing of C and C++ streams in the same code but that comes at a big performance penalty as seen in the above case. The IO operations are unbuffered and are thread-safe by default when they're synchronized. Thus the unbuffered nature of the iostreams and their synchronization with C-streams is the real reason why C++ iostreams are very slow. The line `std::ios_base::sync_with_stdio(false);` removes this very synchronization between C and C++ streams. Then the C++ streams and the C streams maintain their buffers independently. Thus the removal of this synchronization and the conversion from an unbuffered to buffered behaviour gives a big speedup. The next line `std::cin.tie(0);` is generally not required because in this case the removal of synchronization is generally enough to get the big speedup, but the next line removes the synchronization between the C++ input and output buffers which gives a slight more speedup in most cases.
 
 On reading the above paragraph, it might appear to us that if we get such a big speedup why not add these two lines everytime we use C++ iostreams to speed up our input and output operations. Sounds too good to be true??? Had it been so, the synchronization would have been turned off by default. Let's look at some big caveats on removing the synchronization to get a better understanding of the concept.
+
+### First Caveat
+
+Here I will show the problem which arises on removing synchronization between C and C++ streams. Let's investigate a seemingly innocent-looking code:
+
+```cpp
+#include <iostream>
+#include <stdio.h>
+int main()
+{
+    std::ios_base::sync_with_stdio(false);
+    for(int i = 0; i < 10; i++)
+        if(i % 2 == 0)
+            std::cout << i << '\n';
+        else
+            printf("%d\n", i);
+}
+```
+
+Can you try to predict the output by yourself without looking at the answer below??? If you guessed the program to print the digits from 0 to 9 sequentially with one digit per line, you are surely mistaken!!!
+
+```
+[rohan@archlinux BlogCodes]$ c++ test.cpp 
+[rohan@archlinux BlogCodes]$ ./a.out 
+1
+3
+5
+7
+9
+0
+2
+4
+6
+8
+```
+
+The reason for this strange output should become obvious by now. Since the synchronization between C and C++ streams have been removed, both of them maintain their buffers independent of each other. So when we are writing `printf("%d\n", i);` or `std::cout << i << '\n';` the respective buffer is filled. After the loop is terminated, before the program ends, the output buffer needs to be emptied. So while putting the data to the output stream, the C stream gets the preference and so the odd numbers which were present in the output buffer of printf gets printed followed by the data in the output buffer of cout. This preference is purely implementation dependant and might vary across different platforms.
+
+### Second Caveat
+
+Let's now try to understand the problem faced on using `std::cin.tie(0);`. To do that, let us investigate another piece of code:
+
+```cpp
+#include <iostream>
+int main()
+{
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+    std::string name; int age;
+    std::cout << "Enter your name: \n";
+    std::cin >> name;
+    std::cout << "Enter your age: \n";
+    std::cin >> age;
+    std::cout << "Your name: " << name << '\n';
+    std::cout << "Your age: " << age << '\n';
+}
+```
+
+Please try to predict the input-output behaviour of the program before going forward. As you expected, the behaviour won't be straightforward. If you thought that the program will first promt you to **Enter your name:** and then you enter your name, then prompts you to **Enter your age:** and then you enter your age and after that your name and age are printed with **Your name:** and **Your age:** prompts respectively; you are wrong again!!! Please look at the video carefully to understand the peculiar behaviour:
+
+[![The Second Caveat](https://asciinema.org/a/239441.svg)](https://asciinema.org/a/239441)
+
+The video should be self explanatory. The pecularity occurs because with `std::cin.tie(0)` the synchronization between cin and cout has been removed. Thus the data of the output buffer of cout is not printed as long as it is not full or the or the program has not reached it's end. This is why the prompts **Enter your name:** and **Enter your age:** are sent to the output buffer but does not get printed and the program asks for input from the standard input stream. When all the input operations have been completed and there is no other job left other than printing the data to the standard output stream, the data gets printed.
+
+These two programs should be enough to demonstrate the strange behaviour when IO synchronization is turned off. So please be careful and think twice before using these functions. With all these knowledge gained, let's try to solve a problem which needs high speed input processing.
