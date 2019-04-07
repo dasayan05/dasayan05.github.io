@@ -1,7 +1,7 @@
 ---
 title: "Intermediate C++ : Static and Dynamic linking"
 publish: true
-author: <a href="https://in.linkedin.com/in/rohan-mark-gomes-43752a13a"> Rohan Mark Gomes </a>
+author: <a href="https://in.linkedin.com/in/rohan-mark-gomes"> Rohan Mark Gomes </a>
 date: 2019-01-05
 tags:
   - C++
