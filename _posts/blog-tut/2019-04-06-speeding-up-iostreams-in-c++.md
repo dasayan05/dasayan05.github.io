@@ -116,3 +116,41 @@ Language | Time
 Java | 0.595s
 Python | 0.516s
 C++ | 1.792s
+
+From the results, it is evident that C++ is lagging a lot behind here which is very bad considering the fact that C++ is a fast, compiled language used in performance critical situations and is a lower level programming language than both Python and JAVA.
+
+#### Improving the C++ solution:
+
+Before trying to explain the reason for it's slowness, let's look at the optimized code first:
+
+```cpp
+#include <iostream>
+int main()
+{
+    std::ios_base::sync_with_stdio(false);
+    std::cin.tie(0);
+    size_t lines = 0; std::string line = "";
+    while(getline(std::cin, line))
+        lines++;
+    std::cout << "Number of lines: " << lines << '\n';
+}
+```
+
+Testing this code we obtain:
+
+```
+[rohan@archlinux BlogCodes]$ c++ test.cpp -O3
+[rohan@archlinux BlogCodes]$ time ./a.out < test.txt 
+Number of lines: 3031040
+
+real    0m0.111s
+user    0m0.080s
+sys     0m0.030s
+```
+A drastic 16x improvement just by adding two more lines!!! Let's try to understand what's going on here which brings such a massive improvement.
+
+### The real reason for it's slowness
+
+Historically C++ was designed as an extension to C. So much so that, C++ was initially known as *C with Classes* before it was renamed to *C++* in 1983. Till today, backwards compatibility with C and the older standards of C++ is of **big importance** to the **ISO C++ Committee**. Due to this reason, the C-streams for input-output and the C++ iostreams also need to be synchronized so that when both of them are used in the same code, no undefined behaviour occurs. By default C++ streams are synchronized with their C-stream counterparts, i.e., the moment any operation is applied to any C++ stream, the same operation is also applied to the corresponding C-stream. This allows the free mixing of C and C++ streams in the same code but that comes at a big performance penalty as seen in the above case. The IO operations are unbuffered and are thread-safe by default when they're synchronized. Thus the unbuffered nature of the iostreams and their synchronization with C-streams is the real reason why C++ iostreams are very slow. The line `std::ios_base::sync_with_stdio(false);` removes this very synchronization between C and C++ streams. Then the C++ streams and the C streams maintain their buffers independently. Thus the removal of this synchronization and the conversion from an unbuffered to buffered behaviour gives a big speedup. The next line `std::cin.tie(0);` is generally not required because in this case the removal of synchronization is generally enough to get the big speedup, but the next line removes the synchronization between the C++ input and output buffers which gives a slight more speedup in most cases.
+
+On reading the above paragraph, it might appear to us that if we get such a big speedup why not add these two lines everytime we use C++ iostreams to speed up our input and output operations. Sounds too good to be true??? Had it been so, the synchronization would have been turned off by default. Let's look at some big caveats on removing the synchronization to get a better understanding of the concept.
