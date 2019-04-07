@@ -112,7 +112,7 @@ sys     0m0.023s
 #### Final results to sample problem:
 
 Language | Time
---------   -----
+-------- | ------
 Java | 0.595s
 Python | 0.516s
 C++ | 1.792s
