@@ -384,3 +384,46 @@ sys     0m0.173s
 That's a decent performance boost over normal cin and cout!!! But this was expected. We have improved our timings to **0.122s**, **0.911s** and **8.865s**. Let's try scanf and printf which are often recommended as alternatives when cin and cout perform slow.
 
 ### Attempt 3: scanf and printf
+
+```cpp
+#include <cstdio>
+
+int main()
+{
+    int n, k, count = 0;
+    scanf("%d %d", &n, &k);
+    for(int i = 1; i <= n; i++)
+    {
+        int x; scanf("%d", &x);
+        if(x % k == 0)
+            count++;
+    }
+    printf("%d\n", count);
+}
+```
+
+Testing it:
+
+```
+[rohan@archlinux BlogCodes]$ c++ scanf.cpp -O3 -march=native -o scanf
+[rohan@archlinux BlogCodes]$ time ./scanf < test1.txt 
+333392
+
+real    0m0.088s
+user    0m0.081s
+sys     0m0.007s
+[rohan@archlinux BlogCodes]$ time ./scanf < test2.txt 
+2500370
+
+real    0m0.802s
+user    0m0.791s
+sys     0m0.010s
+[rohan@archlinux BlogCodes]$ time ./scanf < test3.txt 
+20002602
+
+real    0m8.244s
+user    0m7.989s
+sys     0m0.216s
+```
+
+The results are quite impressive!!! And we have further improved our timings by a slight margin. We have reached **0.088s**, **0.802s** and **8.244s**. Here we have seen that **scanf** and **printf** have outperformed **cin** and **cout**. But the results may vary slightly on other platforms and compilers.
