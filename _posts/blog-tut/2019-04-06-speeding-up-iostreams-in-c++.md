@@ -427,3 +427,145 @@ sys     0m0.216s
 ```
 
 The results are quite impressive!!! And we have further improved our timings by a slight margin. We have reached **0.088s**, **0.802s** and **8.244s**. Here we have seen that **scanf** and **printf** have outperformed **cin** and **cout**. But the results may vary slightly on other platforms and compilers.
+
+Till now, we have been dealing with buffered input with scanf and unsynchronized cin where the data read from the standard input stream is stored internally in a buffer. Let's now try a new approach where the data from the standard input stream are read one character at a time and instead of storing it in a buffer, it will be put to use immediately. We will use **getchar_unlocked** for this purpose.
+
+### Attempt 4: getchar_unlocked
+
+It is to be kept in mind that, **getchar_unlocked** is a *[POSIX](https://en.wikipedia.org/wiki/POSIX) function* and is available for *[POSIX](https://en.wikipedia.org/wiki/POSIX)* systems (Linux, Mac etc). If you are using Windows, use **getchar** which is cross platform and is part of the C++ Standard. I will be using **getchar_unlocked** here because it is faster as it is *not thread-safe*, which does not matter as these are sequential programs, moreover I am using a Linux distribution, so I have this function available. Let's look at the usage of this function for our use-case:
+
+```cpp
+#include <iostream>
+
+int input()
+{
+    char c;
+    c = getchar_unlocked();
+    while(c <= ' ')
+        c = getchar_unlocked();
+    int s = 0;
+    while(c > ' ')
+    {
+        s = s * 10 + (c - '0');
+        c = getchar_unlocked();
+    }
+    return s;
+}
+int main()
+{
+    int a, b, count = 0;
+    a = input();
+    b = input();
+    while(a--)
+    {
+        int x = input();
+        if(!(x % b))
+            ++count;
+    }
+    std::cout << count << '\n';
+	return 0;
+}
+```
+
+The **input** function takes in a positive integer using **getchar_unlocked** and returns it. If you have to use this function for taking input floating points, numbers or any other formats, modify the **input** function accordingly. I have deliberately not generalized the **input** function to keep it absolutely simple and specific for this problem. ASCII value of **space** is **32**. The digits **0 - 9** have ASCII values from **48** to **57**. In the **input** function, we input one character and as long as it is space or any character before that, we keep on taking input as it is redundant data. The moment we get a character with ASCII value greater than 32, we break out of the while loop. We initialize an integer variable *s* with 0 which will store the final integer which is being entered by the user. So we enter another loop where we keep on taking input character by character as long as the ASCII value is greater than 32. Since we are dealing with numbers **only**, I need not give any other long if condition. The input character is then changed to the appropriate digit and appended at the end of **s**. For example, let's say the user entered **956**.
+Initially, s = 0, so `s = 0 * 10 + (57 - 48)` => `s = 0 * 10 + 9` => `s = 9`, as the ASCII value of **9** is **57** and that of **0** is **48**.
+Then when **5** is input, `s = 9 * 10 + (53 - 48)` => `s = 90 + 5` => `s = 95`. Continuing in this manner,
+`s = 95 * 10 + (54 - 48)` => `s = 95 * 10 + 6` => `s = 956`.
+This is how the **input** function works. The **main** function is same as before. Let's look at how this solution performs:
+
+```
+[rohan@archlinux BlogCodes]$ c++ getchar.cpp -O3 -march=native -o getchar
+[rohan@archlinux BlogCodes]$ time ./getchar < test1.txt 
+333392
+
+real    0m0.023s
+user    0m0.016s
+sys     0m0.007s
+[rohan@archlinux BlogCodes]$ time ./getchar < test2.txt 
+2500370
+
+real    0m0.173s
+user    0m0.159s
+sys     0m0.014s
+[rohan@archlinux BlogCodes]$ time ./getchar < test3.txt 
+20002602
+
+real    0m1.648s
+user    0m1.499s
+sys     0m0.147s
+```
+
+That's quite **FAST** and is a big improvement over the previous methods. We have processed a text file of size **943 MB** in **1.65s**, which gives a processing speed of about **572 MB/s**. Hence, this approach works like a charm. We have improved our timings to **0.023s**, **0.173s** and **1.648s**. Can we do any better???
+
+Let's pause for a moment and think about what we have done till now. We started out with **cin** which was synchronized with C-streams and unbuffered. We improved it by removing the synchronization, making it thread-unsafe and buffered. Then we tried **scanf** which gives nearly the same performance. In both these approaches, the Input Buffer is maintained internally. We have very less control over it. In our next approach with **getchar_unlocked** we completely removed the concept of buffers and are taking input character by character and processing it directly. This significantly reduced the input time.
+
+Let's take one more shot at buffered input with the subtle difference that, now we are going to manage the buffer **manually**. We will create and maintain our own buffer of a specific size. We will read a chunk of characters with every read operation and store that data in the buffer we are maintaining. And now we will iterate over that buffer and access the chunk of characters and process them. In this way, we are reducing the number of disk read operations, and are accessing the characters in the buffer which are stored in the **RAM** which is way faster.
+
+### Attempt 5: fread
+
+To implement the idea of the manual buffered input, we will use **fread**. Let's have a look at the code to get a proper insight:
+
+```cpp
+#include <iostream>
+#include <vector>
+
+int main()
+{
+	int n, k, count=0, num=0, ans=0; std::cin >> n >> k;
+	std::cin.get();
+	size_t size=1024 * 1024;
+	std::vector<char> vec(size);
+	while(count < n)
+	{
+		size_t len = std::fread(vec.data(), sizeof(char), size, stdin);
+		if(len == 0)
+			break;
+		for(size_t i = 0; i < len; i++)
+		{
+            const char &ch=vec[i];
+            if(ch>='0' && ch<='9')
+                num=num*10+ch-'0';
+            else
+            {
+                if(num%k==0)
+                    ans++;
+                num=0;
+                count++;
+            }
+		}
+	}
+	std::cout << ans << '\n';
+}
+```
+
+I have used **cin** to take input for **n** and **k**. Now before using **fread** directly, we should keep in mind that, the trailing newline after **k** is not input by **cin**, so it will remain in the stream and will cause problems in our processing if taken in by **fread**. So I have used **cin.get** to grab that trailing newline and let **fread** deal with the other characters. After a lot of experimentation, I have found out that on my machine a buffer size of 1024 * 1024 (a million), works best in most cases. The rest of the code is quite straightforward and can be understood after a careful inspection. The vector of characters **vec** is the buffer we are maintaining. After every character is read, it is appended to **num** which is the number being created. The moment a newline is encountered, it denotes the end of a line, as well as a number. So the value of **count** is increased by 1 and since **num** is now complete, it is checked for divisibility by k and the value of **ans** is increased accordingly. Then the value of **num** is set to 0 again and reused. Let's now have a look at **fread** in action:
+
+```
+[rohan@archlinux BlogCodes]$ c++ fread.cpp -O3 -march=native -o fread
+[rohan@archlinux BlogCodes]$ time ./fread < test1.txt 
+333392
+
+real    0m0.018s
+user    0m0.007s
+sys     0m0.011s
+[rohan@archlinux BlogCodes]$ time ./fread < test2.txt 
+2500370
+
+real    0m0.120s
+user    0m0.090s
+sys     0m0.030s
+[rohan@archlinux BlogCodes]$ time ./fread < test3.txt 
+20002602
+
+real    0m1.033s
+user    0m0.952s
+sys     0m0.080s
+```
+
+That's **even faster** than **getchar_unlocked**!!! The effort of maintaining a manual buffer has actually paid off. We have now improved our timings to **0.018s**, **0.120s** and **1.033s**. Let's have a look at a **pure C++** way of managing buffered input with a manual buffer just like **fread**.
+
+### Attempt 6: cin.read
+
+```cpp
+
+```
