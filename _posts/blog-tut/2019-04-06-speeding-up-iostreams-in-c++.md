@@ -564,8 +564,94 @@ sys     0m0.080s
 
 That's **even faster** than **getchar_unlocked**!!! The effort of maintaining a manual buffer has actually paid off. We have now improved our timings to **0.018s**, **0.120s** and **1.033s**. Let's have a look at a **pure C++** way of managing buffered input with a manual buffer just like **fread**.
 
+**Note:** For getchar_unlocked and fread, never remove the synchronization between C and C++ streams as these are functions from the C standard library using C streams internally. We have used these functions in our C++ code.
+
 ### Attempt 6: cin.read
 
 ```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+
+int main()
+{
+    int n, k, count = 0, num = 0, ans = 0; std::cin>>n>>k;
+    const size_t buffer_size=1024*1024;
+    std::vector<char> buffer(buffer_size);
+    std::cin.get();
+    while(count < n)
+    {
+        std::cin.read(buffer.data(), buffer_size);
+        int len = std::cin.gcount();
+        if(len == 0)
+            break;
+        for(int i = 0; i < len; i++)
+        {
+            const char &ch = buffer[i];
+            if(ch >= '0' && ch <= '9')
+                num = num * 10 + ch - '0';
+            else
+            {
+                if(num % k == 0)
+                    ans++;
+                num = 0;
+                count++;
+            }
+        }
+    }
+    std::cout << ans <<"\n";
+}
+```
+
+The code is almost exactly like fread with the only exception that the number of parameters to **cin.read** are lesser and it does not return the number of characters read unlike **fread**. Instead we have to use another function **cin.gcount** for that purpose. Let's test this solution against our big guns:
 
 ```
+[rohan@archlinux BlogCodes]$ c++ cin_read.cpp -O3 -march=native -o cin_read
+[rohan@archlinux BlogCodes]$ time ./cin_read < test1.txt 
+333392
+
+real    0m0.034s
+user    0m0.027s
+sys     0m0.006s
+[rohan@archlinux BlogCodes]$ time ./cin_read < test2.txt 
+2500370
+
+real    0m0.111s
+user    0m0.097s
+sys     0m0.014s
+[rohan@archlinux BlogCodes]$ time ./cin_read < test3.txt 
+20002602
+
+real    0m1.024s
+user    0m0.909s
+sys     0m0.113s
+```
+
+That's slightly faster than fread, but on an average, **fread** is almost as fast as **cin.read** for practical purposes. Thus we have improved our timings to **0.034s**, **0.111s** and **1.024s**. That's a big improvement considering teh fact that we had started out with a timing of **27.761s** for our **943.1 MB** text file. But then, I won't be surprised if you are a bit disappointed with the last three solutions where the timings are almost equal. So to quench this thurst for differentiating between them let's go beyond the limits and increase the value of **n** to **3 * 10^8**, let alone the *Codechef* limit of **10^7** because even our big guns have fallen short of the potential of these methods. The limit of **10 * 7** is really dwarfed by our current limit of **3 * 10^8** which creates a gigantic text file of size **2.8 GB**. Let's generate the file and begin our testing:
+
+```
+[rohan@archlinux BlogCodes]$ ./generator > test4.txt 
+300000000 120
+[rohan@archlinux BlogCodes]$ time ./getchar < test4.txt 
+2500623
+
+real    0m4.864s
+user    0m4.369s
+sys     0m0.490s
+[rohan@archlinux BlogCodes]$ time ./fread < test4.txt 
+2500623
+
+real    0m3.069s
+user    0m2.789s
+sys     0m0.277s
+[rohan@archlinux BlogCodes]$ time ./cin_read < test4.txt 
+2500623
+
+real    0m2.961s
+user    0m2.622s
+sys     0m0.323s
+```
+
+From the above results, it is pretty evident that **cin.read** ends up to be the fastest among the three followed by **fread** and then **getchar_unlocked**. But there was a small peculiarity that I noticed with **cin.read**. You'll find that I have not removed the synchronization between C and C++ streams in the **cin.read** code despite using C++ streams only. In fact, removing the synchronization actually slowed it down a bit and puts it behind **fread**. This is mainly implementation dependant and might be different in your case.
+
+By now you should have got a fair idea about speeding up your input methods in C++. If **cin** appears to be slow, you know you have a lot of other good options to fall back upon. That's pretty much everything I had to say about the topic. For further reading have a look at [fgets](https://en.cppreference.com/w/cpp/io/c/fgets) and [sscanf](https://en.cppreference.com/w/cpp/io/c/fscanf) and try using these functions alongwith the methods described above to suit your purpose. Also have a look at file input-output in C++ and memory mapping techniques for getting big benefits in file IO.
