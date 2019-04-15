@@ -15,15 +15,13 @@ category: blog-tut
 thumbnail-img: ""
 ---
 
-### Introduction
+We often come across situations were we need to process large files. Clearly interactive input-output is not helpful in all situations. It is a common practice to use **cin** and **cout** for input-output in C++ because of it's flexibility and ease of use. But there is quite a big problem with iostream, which is by default, much slower than standard IO functions in other languages. In this tutorial, I will quantitatively demonstrate the slowness of iostreams in C++, explain some of the reasons for its slowness and share some tips to speed it up.
 
-It is a common experience that iostream in C++ is, by default, much slower than standard IO functions in other languages. In this tutorial, I will explain some of the reasons for its slowness and share some tips to speed it up. Let's take a small example to demonstrate the point.
+### Sample problem
 
-#### Sample problem
+Let's take a simple problem to demonstrate my point. I am given a text file and I want to calculate the number of lines in it. The contents of the text file will be directed as standard inpput to the code so that the filename cannot be hardcoded or taken as input. This clearly rules out file input-output methods because in this tutorial I will be focusing on **standard input** (*stdin*) methods.
 
-Let's say I am given a text file and I want to calculate the number of lines in that text file. And, the contents of the text file will be directed as standard output to the code so that the filename cannot be hardcoded or taken as input.
-
-I will be sharing codes in JAVA, Python and C++. I have used standard functions in all the 3 languages which will be quite obvious while coding the solutions to the question. I haven't tried to code the most optimized way of doing it as I am concerned mainly with the standard IO functions. The tests have been conducted on a text file **test.txt** of size **153.1 MB**. Special thanks to [Soumyojit Chatterjee](https://github.com/jit89) for providing a fast and concise Python code and it's explanation.
+I will be sharing codes in JAVA, Python and C++. I have used standard functions in all the 3 languages which will be quite obvious while coding the solutions to the question. I haven't tried to code the most optimized way of doing it as I am concerned mainly with the standard IO functions. The tests have been conducted on a text file **test.txt** of size **153.1 MB**. My special thanks to [Soumyojit Chatterjee](https://github.com/jit89) for providing a fast and concise Python code and it's explanation.
 
 #### JAVA Solution
 
@@ -48,7 +46,7 @@ class test
 }
 ```
 
-This is a simple solution to the line counting problem and BufferedReader is used widely and so I have used it. The code in itself is self explanatory where, I am reading the input line by line and if no characters are read then break out of the loop and print the value of lines else increment the value of lines by 1.
+This is a simple solution to the line counting problem and since [**BufferedReader**](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html) is used widely, I have used it here as well. The code in itself is self explanatory where, I am reading the input line by line and if no characters are read then break out of the loop and print the value of lines else increment the value of lines by 1.
 
 ##### Result:
 
@@ -151,7 +149,7 @@ A drastic 16x improvement just by adding two more lines!!! Let's try to understa
 
 ### The real reason for it's slowness
 
-Historically C++ was designed as an extension to C. So much so that, C++ was initially known as *C with Classes* before it was renamed to *C++* in 1983. Till today, backwards compatibility with C and the older standards of C++ is of **big importance** to the [ISO C++ Committee](https://isocpp.org/std/the-committee). Due to this reason, the C-streams for input-output and the C++ iostreams also need to be synchronized so that when both of them are used in the same code, no undefined behaviour occurs. By default C++ streams are synchronized with their C-stream counterparts, i.e., the moment any operation is applied to any C++ stream, the same operation is also applied to the corresponding C-stream. This allows the free mixing of C and C++ streams in the same code but that comes at a big performance penalty as seen in the above case. The IO operations are unbuffered and are thread-safe by default when they're synchronized. Thus the unbuffered nature of the iostreams and their synchronization with C-streams is the real reason why C++ iostreams are very slow. The line `std::ios_base::sync_with_stdio(false);` removes this very synchronization between C and C++ streams. Then the C++ streams and the C streams maintain their buffers independently. Thus the removal of this synchronization and the conversion from an unbuffered to buffered behaviour gives a big speedup. The next line `std::cin.tie(0);` is generally not required because in this case the removal of synchronization is generally enough to get the big speedup, but the next line removes the synchronization between the C++ input and output buffers which gives a slight more speedup in most cases.
+Historically C++ was designed as an extension to C. So much so that, C++ was initially known as *C with Classes* before being renamed to *C++* in 1983. Till today, backwards compatibility with C and the older standards of C++ is of **big importance** to the [ISO C++ Committee](https://isocpp.org/std/the-committee). Due to this reason, the C-streams for input-output and the C++ iostreams also need to be synchronized so that when both of them are used in the same code, no undefined behaviour occurs. By default C++ streams are synchronized with their C-stream counterparts, i.e., the moment any operation is applied to any C++ stream, the same operation is also applied to the corresponding C-stream. This allows the free mixing of C and C++ streams in the same code but that comes at a big performance penalty as seen in the above case. The IO operations are unbuffered and are thread-safe by default when they're synchronized. Thus the unbuffered nature of the iostreams and their synchronization with C-streams is the real reason why C++ iostreams are very slow. The line `std::ios_base::sync_with_stdio(false);` removes this very synchronization between C and C++ streams. Then the C++ streams and the C streams maintain their buffers independently. Thus the removal of this synchronization and the conversion from an unbuffered to buffered behaviour gives a big speedup. The next line `std::cin.tie(0);` is generally not required because in this case the removal of synchronization is generally enough to get the big speedup, but the next line removes the synchronization between the C++ input and output buffers which gives a slight more speedup in most cases.
 
 On reading the above paragraph, it might appear to us that if we get such a big speedup why not add these two lines everytime we use C++ iostreams to speed up our input and output operations. Sounds too good to be true??? Had it been so, the synchronization would have been turned off by default. Let's look at some big caveats on removing the synchronization to get a better understanding of the concept.
 
@@ -220,9 +218,11 @@ The video should be self explanatory. The pecularity occurs because with `std::c
 
 These two programs should be enough to demonstrate the strange behaviour when IO synchronization is turned off. So please be careful and think twice before using these functions. With all these knowledge gained, let's try to solve a problem which needs high speed input processing.
 
+**Pro tip:** Never turn off synchronization in a header file. Else it might be included unknowingly leading to strange behaviour and may God help us all.
+
 ### The Problem
 
-Let's have a look at the [Enormous Input Test](https://www.codechef.com/problems/INTEST) problem in [Codechef](https://www.codechef.com/). This is one of the earliest beginner problems in [Codechef](https://www.codechef.com/) and I feel that this is a great problem to start our discussion. The problem statement basically states that in the first line there will be two space separated integers **n** and **k**. The next **n** lines will have one integer (**t[i]**) each not exceeding 10^9. It's also given that both **n** and **k** are positive integers <= 10^7. Our job is to find the number of integers **t[i]** which are divisible by **k**. To make it a bit more interesting, we will design our own code to generate the test cases and increase the bounds of **n** and **k** to 10^8.
+Let's have a look at the [Enormous Input Test](https://www.codechef.com/problems/INTEST) problem in [Codechef](https://www.codechef.com/). This is one of the earliest beginner problems in [Codechef](https://www.codechef.com/) and I feel that this is a great problem to start our discussion. The problem statement basically states that in the first line there will be two space separated integers **n** and **k**. The next **n** lines will have one integer (**t[i]**) each not exceeding **10^9**. It's also given that both **n** and **k** are positive integers <= **10^7**. Our job is to find the number of integers **t[i]** which are divisible by **k**. To make it a bit more interesting, we will design our own code to generate the test cases and increase the bounds of **n** and **k** to **10^8**.
 
 ### Designing our test case generator
 
@@ -467,7 +467,7 @@ int main()
 }
 ```
 
-The **input** function takes in a positive integer using **getchar_unlocked** and returns it. If you have to use this function for taking input floating points, numbers or any other formats, modify the **input** function accordingly. I have deliberately not generalized the **input** function to keep it absolutely simple and specific for this problem. ASCII value of **space** is **32**. The digits **0 - 9** have ASCII values from **48** to **57**. In the **input** function, we input one character and as long as it is space or any character before that, we keep on taking input as it is redundant data. The moment we get a character with ASCII value greater than 32, we break out of the while loop. We initialize an integer variable *s* with 0 which will store the final integer which is being entered by the user. So we enter another loop where we keep on taking input character by character as long as the ASCII value is greater than 32. Since we are dealing with numbers **only**, I need not give any other long if condition. The input character is then changed to the appropriate digit and appended at the end of **s**. For example, let's say the user entered **956**.
+The **input** function takes in a positive integer using **getchar_unlocked** and returns it. If you have to use this function for taking input floating points, numbers or any other formats, modify the **input** function accordingly. I have deliberately not generalized the **input** function to keep it absolutely simple and specific for this problem. ASCII value of **space** is **32**. The digits **0 - 9** have ASCII values from **48** to **57**. In the **input** function, we input one character and as long as it is a space or any character before that, we keep on taking input as it is redundant data. The moment we get a character with ASCII value greater than 32, we break out of the while loop. We initialize an integer variable *s* with 0 which will store the final integer being entered by the user. So we enter another loop where we keep on taking input character by character as long as the ASCII value is greater than 32. Since we are dealing with numbers **only**, I need not give any other long if condition. The input character is then changed to the appropriate digit and appended at the end of **s**. For example, let's say the user entered **956**.
 Initially, s = 0, so `s = 0 * 10 + (57 - 48)` => `s = 0 * 10 + 9` => `s = 9`, as the ASCII value of **9** is **57** and that of **0** is **48**.
 Then when **5** is input, `s = 9 * 10 + (53 - 48)` => `s = 90 + 5` => `s = 95`. Continuing in this manner,
 `s = 95 * 10 + (54 - 48)` => `s = 95 * 10 + 6` => `s = 956`.
@@ -499,7 +499,7 @@ That's quite **FAST** and is a big improvement over the previous methods. We hav
 
 Let's pause for a moment and think about what we have done till now. We started out with **cin** which was synchronized with C-streams and unbuffered. We improved it by removing the synchronization, making it thread-unsafe and buffered. Then we tried **scanf** which gives nearly the same performance. In both these approaches, the Input Buffer is maintained internally. We have very less control over it. In our next approach with **getchar_unlocked** we completely removed the concept of buffers and are taking input character by character and processing it directly. This significantly reduced the input time.
 
-Let's take one more shot at buffered input with the subtle difference that, now we are going to manage the buffer **manually**. We will create and maintain our own buffer of a specific size. We will read a chunk of characters with every read operation and store that data in the buffer we are maintaining. And now we will iterate over that buffer and access the chunk of characters and process them. In this way, we are reducing the number of disk read operations, and are accessing the characters in the buffer which are stored in the **RAM** which is way faster.
+Let's take one more shot at buffered input with the subtle difference that, now we are going to manage the buffer **manually**. We will create and maintain our own buffer of a specific size. We will read a chunk of characters with every read operation and store that data in the buffer we are maintaining. And now we will iterate over that buffer and access the chunk of characters and process them. In this way, we are reducing the number of disk read operations, and are accessing the characters in the buffer which are stored in the **RAM** which is way faster. But then it might come to your mind that why not load the entire file into the **RAM** and then iterate over it? This is clearly a good possibility but is limited to small files only. For very large files, say a file of size **5 GB** or more, loading it into my **8 GB** RAM is clearly not a good idea. So the file is loaded into the RAM in chunks at each time which can fit into the memory easily. It's obvious that the choice of the buffer size which holds the chunk of data changes with the amount of RAM available.
 
 ### Attempt 5: fread
 
@@ -511,9 +511,9 @@ To implement the idea of the manual buffered input, we will use **fread**. Let's
 
 int main()
 {
-	int n, k, count=0, num=0, ans=0; std::cin >> n >> k;
+	int n, k, count = 0, num = 0, ans = 0; std::cin >> n >> k;
 	std::cin.get();
-	size_t size=1024 * 1024;
+	size_t size = 1024 * 1024;
 	std::vector<char> vec(size);
 	while(count < n)
 	{
@@ -522,16 +522,16 @@ int main()
 			break;
 		for(size_t i = 0; i < len; i++)
 		{
-            const char &ch=vec[i];
-            if(ch>='0' && ch<='9')
-                num=num*10+ch-'0';
-            else
-            {
-                if(num%k==0)
-                    ans++;
-                num=0;
-                count++;
-            }
+		    const char &ch = vec[i];
+		    if(ch >= '0' && ch <= '9')
+			num = num*10+ch-'0';
+		    else
+		    {
+			if(num % k == 0)
+			    ans++;
+			num = 0;
+			count++;
+		    }
 		}
 	}
 	std::cout << ans << '\n';
@@ -627,7 +627,7 @@ user    0m0.909s
 sys     0m0.113s
 ```
 
-That's slightly faster than fread, but on an average, **fread** is almost as fast as **cin.read** for practical purposes. Thus we have improved our timings to **0.034s**, **0.111s** and **1.024s**. That's a big improvement considering teh fact that we had started out with a timing of **27.761s** for our **943.1 MB** text file. But then, I won't be surprised if you are a bit disappointed with the last three solutions where the timings are almost equal. So to quench this thurst for differentiating between them let's go beyond the limits and increase the value of **n** to **3 * 10^8**, let alone the *Codechef* limit of **10^7** because even our big guns have fallen short of the potential of these methods. The limit of **10 * 7** is really dwarfed by our current limit of **3 * 10^8** which creates a gigantic text file of size **2.8 GB**. Let's generate the file and begin our testing:
+That's slightly faster than fread, but on an average, **fread** is almost as fast as **cin.read** for practical purposes. Thus we have improved our timings to **0.034s**, **0.111s** and **1.024s**. That's a big improvement considering the fact that we had started out with a timing of **27.761s** for our **943.1 MB** text file. But then, I won't be surprised if you are a bit disappointed with the last three solutions where the timings are almost equal. So to quench this thurst for differentiating between them let's go beyond the limits and increase the value of **n** to **3 * 10^8**, let alone the *Codechef* limit of **10^7** because even our big guns have fallen short of the potential of these methods. The limit of **10 * 7** is really dwarfed by our current limit of **3 * 10^8** which creates a gigantic text file of size **2.8 GB**. Let's generate the file and begin our testing:
 
 ```
 [rohan@archlinux BlogCodes]$ ./generator > test4.txt 
