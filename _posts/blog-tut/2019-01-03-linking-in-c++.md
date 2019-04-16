@@ -10,7 +10,7 @@ tags:
   - Dynamic
 layout: post
 post_number: "8"
-related_post_numbers: ""
+related_post_numbers: "10"
 comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/8/compilation_steps.png"
