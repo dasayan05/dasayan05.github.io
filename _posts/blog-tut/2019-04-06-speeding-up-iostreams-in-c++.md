@@ -9,7 +9,6 @@ tags:
   - iostream
 layout: post
 post_number: "10"
-related_post_numbers: "8"
 comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/10/iostream.gif"

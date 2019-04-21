@@ -14,17 +14,15 @@ layout: default
   <h2>Related Posts</h2>
   <ul class="related-posts">
     {% for post in site.posts %}
-    {% if page.related_post_numbers contains post.post_number %}
     {% if page.category == post.category %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endif %}
+      {% for tag in page.tags %}
+      {% if post.tags contains tag and post.title != page.title %}
+        <li>
+          <h3> <a href="{{ post.url }}">{{ post.title }}<small>{{ post.date | date_to_string }}</small></a> </h3>
+        </li>
+        {% break %}
+      {% endif %}
+      {% endfor %}
     {% endif %}
     {% endfor %}
   </ul>

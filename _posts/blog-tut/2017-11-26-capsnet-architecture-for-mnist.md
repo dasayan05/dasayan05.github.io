@@ -9,7 +9,6 @@ tags:
   - mnist
 layout: post
 post_number: "2"
-related_post_numbers: "1"
 comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/2/decoder.jpg"

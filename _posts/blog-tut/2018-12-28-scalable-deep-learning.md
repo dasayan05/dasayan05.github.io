@@ -9,7 +9,6 @@ tags:
   - Model Training
 layout: post
 post_number: "6"
-related_post_numbers: "9"
 comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/9/parallel-dl.png"
