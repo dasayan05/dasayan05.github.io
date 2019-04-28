@@ -14,11 +14,11 @@ category: blog-tut
 thumbnail-img: "public/posts_res/10/iostream.gif"
 ---
 
-We often come across situations were we need to process large files. Clearly interactive input-output is not helpful in all situations. It is a common practice to use **cin** and **cout** for input-output in C++ because of it's flexibility and ease of use. But there is quite a big problem with iostream, which is by default, much slower than standard IO functions in other languages. In this tutorial, I will quantitatively demonstrate the slowness of iostreams in C++, explain some of the reasons for its slowness and share some tips to speed it up.
+We often come across situations where we need to process large files. Clearly interactive input-output is not helpful in all situations. It is a common practice to use **cin** and **cout** for input-output in C++ because of it's flexibility and ease of use. But there is quite a big problem with iostream, which is by default, much slower than standard IO functions in other languages. In this tutorial, I will quantitatively demonstrate the slowness of iostreams in C++, explain some of the reasons for its slowness and share some tips to speed it up.
 
 ### Sample problem
 
-Let's take a simple problem to demonstrate my point. I am given a text file and I want to calculate the number of lines in it. The contents of the text file will be directed as standard inpput to the code so that the filename cannot be hardcoded or taken as input. This clearly rules out file input-output methods because in this tutorial I will be focusing on **standard input** (*stdin*) methods.
+Let's take a simple problem to demonstrate my point. I am given a text file and I want to calculate the number of lines in it. The contents of the text file will be directed as standard input to the code so that the filename cannot be hardcoded or taken as input. This clearly rules out file input-output methods because in this tutorial I will be focusing on **standard input** (*stdin*) methods.
 
 I will be sharing codes in JAVA, Python and C++. I have used standard functions in all the 3 languages which will be quite obvious while coding the solutions to the question. I haven't tried to code the most optimized way of doing it as I am concerned mainly with the standard IO functions. The tests have been conducted on a text file **test.txt** of size **153.1 MB**. My special thanks to [Soumyojit Chatterjee](https://github.com/jit89) for providing a fast and concise Python code and it's explanation.
 
@@ -626,7 +626,20 @@ user    0m0.909s
 sys     0m0.113s
 ```
 
-That's slightly faster than fread, but on an average, **fread** is almost as fast as **cin.read** for practical purposes. Thus we have improved our timings to **0.034s**, **0.111s** and **1.024s**. That's a big improvement considering the fact that we had started out with a timing of **27.761s** for our **943.1 MB** text file. But then, I won't be surprised if you are a bit disappointed with the last three solutions where the timings are almost equal. So to quench this thurst for differentiating between them let's go beyond the limits and increase the value of **n** to **3 * 10^8**, let alone the *Codechef* limit of **10^7** because even our big guns have fallen short of the potential of these methods. The limit of **10 * 7** is really dwarfed by our current limit of **3 * 10^8** which creates a gigantic text file of size **2.8 GB**. Let's generate the file and begin our testing:
+That's slightly faster than fread, but on an average, **fread** is almost as fast as **cin.read** for practical purposes. Thus we have improved our timings to **0.034s**, **0.111s** and **1.024s**. That's a big improvement considering the fact that we had started out with a timing of **27.761s** for our **943.1 MB** text file. 
+
+#### Summary of timings:
+
+IO Method | Size = 9.4 MB | Size = 94.3 MB | Size = 943.1 MB
+--------- | ------------- | -------------- | ---------------
+cin | 0.292s | 2.664s | 27.761s
+cin_nosync | 0.122s | 0.911s | 8.865s
+scanf | 0.088s | 0.802s | 8.244s
+getchar_unlocked | 0.023s | 0.173s | 1.648s
+fread | 0.018s | 0.120s | 1.033s
+cin.read | 0.034s | 0.111s | 1.024s
+
+But then, I won't be surprised if you are a bit disappointed with the last three solutions where the timings are almost equal. So to quench this thurst for differentiating between them let's go beyond the limits and increase the value of **n** to **3 * 10^8**, let alone the *Codechef* limit of **10^7** because even our big guns have fallen short of the potential of these methods. The limit of **10 * 7** is really dwarfed by our current limit of **3 * 10^8** which creates a gigantic text file of size **2.8 GB**. Let's generate the file and begin our testing:
 
 ```
 [rohan@archlinux BlogCodes]$ ./generator > test4.txt 
