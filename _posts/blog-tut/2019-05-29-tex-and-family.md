@@ -10,7 +10,7 @@ tags:
 layout: post
 comments: true
 category: blog-tut
-thumbnail-img: "public/posts_res/11/hyphenation.png"
+thumbnail-img: "public/posts_res/11/tex_thumb.jpg"
 ---
 
 Welcome to the very first and an introductory article on `typesetting`. If you happened to be from the scientific community, you must have gone through at least one document (maybe in the form of `.pdf` or a printed paper) which is the result of years of developments in typesetting. If you are from technical/research background, chances are that you have even *typeset* a document before using something called `LaTeX`. Let me assure you that `LaTeX` is neither the beginning nor the end of the entire typesetting ecosystem. In this article, I will provide a brief introduction to what typesetting is and what all modern tools are available for use. Specifically, the most popular members of the `TeX` family will be introduced, including `LaTeX`.
