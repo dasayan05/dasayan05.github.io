@@ -1,8 +1,10 @@
 <div class="sidebar">
 
+  {% if page.title == "Homepage" %}
   <div style="padding: 10%; margin-top: 0px; padding-bottom: 0px;">
     <img src="{{ site.url }}{{ site.baseurl }}/public/me.jpg" style="width:100%; border-radius: 130px; box-shadow: -4px -4px 8px #888888;" />
   </div>
+  {% endif %}
 
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
