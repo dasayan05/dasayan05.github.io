@@ -41,8 +41,9 @@ I am Ayan, a Research Scholar pursuing Master of Science (M.S.) in the departmen
 # Latest news and updates !!
 
 - **.. STAY TUNED ..**
+- New introductory <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2019/05/29/tex-and-family.html">article</a> on Typesetting and the tools available to us.
+- New <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2019/01/01/python-compilation-process-overview.html">blog</a> on the internals of Python and it's Bytecodes.
+- New <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2018/12/28/scalable-deep-learning-2.html">articles</a> on Distributed training of DL models using PyTorch. A shorter version <a href="https://medium.com/intel-student-ambassadors/distributed-training-of-deep-learning-models-with-pytorch-1123fa538848">got published</a> in Intel Student Ambassador's Medium channel.
 - Selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. in Asia Pacific & Japan.
 - Talked about Intel performance libraries and Inference tools for Deep learning in `up.AI summit` in IIT Kharagpur recently. [Link](https://www.facebook.com/upaisummit)
 - Tutored a 2-day workshop on "*Deep learning with High Performance Computing (DL-HPC)*" at [Institute of Technical Education and Research (ITER)](http://www.soa.ac.in/iter/), Siksha 'O' Anusandhan, Bhubaneswar on 23-24th August 2018 with my [supervisor](http://www.facweb.iitkgp.ac.in/~debdoot/) and colleagues.
-- Launched an *Open Source* project called `Tensor++`. [Check out and contribute](https://github.com/crystalcpp/tensorpp)
-- A tiny implementation of recently proposed `Capsule Network` [Link](https://github.com/dasayan05/capsule-net-TF) and a similar old idea called `Transforming AE` [Link](https://github.com/dasayan05/transAE-tf).
