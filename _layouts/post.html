@@ -7,6 +7,7 @@ layout: default
   <span class="post-date">Dated: {{ page.date | date_to_string }}</span>
   <span class="post-date">Author: {{ page.author }}</span>
   <br>
+  {% include donation_banner.html %}
   {{ content }}
 </div>
 

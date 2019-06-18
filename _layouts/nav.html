@@ -4,9 +4,9 @@ layout: page
 
 {{ page.content }}
 
-<!--
-    page.navigation-on determines which list to create a navigation for
--->
+{% if page.title == "Blogs" %}
+    {% include donation_banner.html %}
+{% endif %}
 
 {% if page.navigation-on == "posts" %}
     {% assign nav_list = site.categories.blog-tut %}
