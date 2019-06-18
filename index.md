@@ -32,6 +32,12 @@ if you in me.website( ):
 
 I am Ayan, a Research Scholar pursuing Master of Science (M.S.) in the department of *[Electrical Engineering](http://ee.iitkgp.ac.in/) at Indian Institute of Technology (IIT), Kharagpur*. Alongside my masters degree, I am also involved in project "MIRIAD" funded by [Intel India Pvt. Ltd](https://www.intel.in/content/www/in/en/homepage.html). My broad area of research is the domain of *Artifical Intelligence (A.I.)*; I am specifically interested in the emerging field of Deep Learning - the theoretical perspective as well as it's efficient practical implementation. I am a hardcore techie with a lot of passion for research. I love to share knowledge, and so, I decided to maintain a tech blog in this website. I am currently a part of [Kharagpur Learning, Imaging and Visualization Research Group](https://iitkliv.github.io/) led by [Prof. Debdoot Sheet](http://www.facweb.iitkgp.ac.in/~debdoot/). I have also been selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. to serve in Asia Pacific & Japan.
 
+<p style="font-size: 25px; text-align: center; background-color: #cecece; border: 3px solid black; padding-top: 20px; padding-bottom: 20px;">
+    <strong>
+    Looking for my blogs/tutorials ? They are <a href="{{ site.url }}{{ site.baseurl }}blogs.html">here</a>.
+    </strong>
+</p>
+
 # Latest news and updates !!
 
 - **.. STAY TUNED ..**
