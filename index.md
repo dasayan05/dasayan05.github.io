@@ -34,7 +34,7 @@ I am Ayan, a Research Scholar pursuing Master of Science (M.S.) in the departmen
 
 <p style="font-size: 25px; text-align: center; background-color: #cecece; border: 3px solid black; padding-top: 20px; padding-bottom: 20px;">
     <strong>
-    Looking for my blogs/tutorials ? They are <a href="{{ site.url }}{{ site.baseurl }}blogs.html">here</a>.
+    Looking for my blogs/tutorials ? They are <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">here</a>.
     </strong>
 </p>
 
