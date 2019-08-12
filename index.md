@@ -41,6 +41,7 @@ I am Ayan, a Research Scholar pursuing Master of Science (M.S.) in the departmen
 # Latest news and updates !!
 
 - **.. STAY TUNED ..**
+- Got PhD (with full scholarship) offer from [SketchX Lab, University of Surrey](http://sketchx.eecs.qmul.ac.uk/). Moving out of India in Oct. 2019.
 - New introductory <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2019/05/29/tex-and-family.html">article</a> on Typesetting and the tools available to us.
 - New <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2019/01/01/python-compilation-process-overview.html">blog</a> on the internals of Python and it's Bytecodes.
 - New <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2018/12/28/scalable-deep-learning-2.html">articles</a> on Distributed training of DL models using PyTorch. A shorter version <a href="https://medium.com/intel-student-ambassadors/distributed-training-of-deep-learning-models-with-pytorch-1123fa538848">got published</a> in Intel Student Ambassador's Medium channel.
