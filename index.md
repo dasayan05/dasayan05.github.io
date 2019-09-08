@@ -25,12 +25,13 @@ if you in me.website( ):
             read(page)
     except:
         # if any error/suggestion
-        send_mail('ayan.das@ee.iitkgp.ac.in')
+        send_mail('a.das@surrey.ac.uk' or
+                  'ayan05das@gmail.com')
     finally:
         appreciate( me.website )
 ~~~
 
-I am Ayan, a Research Scholar pursuing Master of Science (M.S.) in the department of *[Electrical Engineering](http://ee.iitkgp.ac.in/) at Indian Institute of Technology (IIT), Kharagpur*. Alongside my masters degree, I am also involved in project "MIRIAD" funded by [Intel India Pvt. Ltd](https://www.intel.in/content/www/in/en/homepage.html). My broad area of research is the domain of *Artifical Intelligence (A.I.)*; I am specifically interested in the emerging field of Deep Learning - the theoretical perspective as well as it's efficient practical implementation. I am a hardcore techie with a lot of passion for research. I love to share knowledge, and so, I decided to maintain a tech blog in this website. I am currently a part of [Kharagpur Learning, Imaging and Visualization Research Group](https://iitkliv.github.io/) led by [Prof. Debdoot Sheet](http://www.facweb.iitkgp.ac.in/~debdoot/). I have also been selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. to serve in Asia Pacific & Japan.
+I am Ayan, a research enthusiast pursuing **Doctor of Philosophy (Ph.D.)** with fully-funded university scholarship in the [Center for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing) at the [Faculty of Engineering and Physical Sciences](https://www.surrey.ac.uk/faculty-engineering-physical-sciences) @ [University of Surrey](https://www.surrey.ac.uk/), England, United Kingdom. Before starting my Ph.D., I used to be a Junior Project Officer @ [KLIV Research group](http://iitkliv.github.io/), [IIT Kharagpur, India](http://iitkgp.ac.in). My broad area of research is the domain of *Artifical Intelligence (A.I.)*; I am specifically interested in the emerging field of Deep Learning applied mainly in (but not restricted to) Computer Vision tasks. Having a tremendous love for programming, I am also focused on writing good quality codes/softwares related to my field of study. I love to share knowledge and so decided to maintain a technical blog in this website. I am currently a part of [SketchX Lab](http://sketchx.eecs.qmul.ac.uk/), an elite group of researchers pioneering in the field of sketch analysis, led by my Ph.D. supervisor [Dr Yi-Zhe Song](https://www.surrey.ac.uk/people/yi-zhe-song) and [others](http://sketchx.eecs.qmul.ac.uk/people/). I have also been selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. to serve in Europe.
 
 <p style="font-size: 25px; text-align: center; background-color: #cecece; border: 3px solid black; padding-top: 20px; padding-bottom: 20px;">
     <strong>
