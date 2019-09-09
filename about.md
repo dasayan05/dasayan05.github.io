@@ -11,19 +11,23 @@ termcmd: whoami
 -----
 
 ## > Research Interests:
-### Computer Vision & Machine Learning
-- Theoretical & computational aspects of [Machine learning](https://en.wikipedia.org/wiki/Machine_learning) (ML)/[Deep learning](https://en.wikipedia.org/wiki/Deep_learning) (DL)
-- Sketch analysis, retrieval, recognition and synthesis with Deep Learning
+### Computer Vision (CV) & Machine Learning (ML)
+- Sketch analysis, retrieval, recognition and synthesis with [Deep Learning (DL)](https://en.wikipedia.org/wiki/Deep_learning)
+- Theoretical & computational aspects of ML/DL algorithms
 - [High performance](https://insidehpc.com/hpc-basic-training/what-is-hpc/) parallel/distributed computing
+
+#### Hobby Interests: I have few domains of interest purely as hobbies. I do not intend to do research on them.
+- Design of Compilers and Interpreters
+- Parallel/Concurrent programming
 
 -----
 
 ## > Education:
-### University of Surrey, United Kingdom [2019-ongoing]
+### University of Surrey, United Kingdom [2019 - present]
 - Currently pursuing Ph.D. in the [Center for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing)
-- Research Topic: Cross-modal retrieval of fine-grained instance-level sketch-based video retrieval
+- Research Topic: Cross-modal fine-grained sketch-based video retrieval (FG-SBVR)
 
-### Institute of Engineering & Management (IEM), Kolkata [2013-2017]
+### Institute of Engineering & Management (IEM), Kolkata [2013 - 2017]
 - Department of Electronics & Communication Engineering
 
 -----
@@ -50,7 +54,7 @@ termcmd: whoami
 
 ## > Projects:
 
-- Worked in project “MIRIAD” funded by [Intel India Pvt. Ltd.](https://www.intel.in/content/www/in/en/homepage.html)
+- Worked in project "MIRIAD" funded by [Intel India Pvt. Ltd.](https://www.intel.in/content/www/in/en/homepage.html)
 - "[digiLib](https://github.com/dasayan05/digiLib)", a tiny Digital logic circuit designing & simulation library in C++
 - "Imagenary", a computer-vision based mouse and keyboard interface for PCs.
 - A personal [blogging site](https://dasayan05.github.io/) (this one) written in Jekyll
