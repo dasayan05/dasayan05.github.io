@@ -74,8 +74,8 @@ termcmd: whoami
 
 ## > Achievements:
 
-- An [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. in Asia Pacific & Japan.
-- Former member of "[Kharagpur Learning, Imaging and Visualization (KLIV) research group](https://iitkliv.github.io/)" at IIT Kharagpur
-- Former member of "Innovation and Entrepreneurship Development Center (IEDC Lab)" funded by "[Department of Science & Technology (DST), Govt. of India](http://www.dst.gov.in/)"
+- An [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. in Asia Pacific & Japan and later in Europe.
+- Former member of [Kharagpur Learning, Imaging and Visualization (KLIV) research group](https://iitkliv.github.io/) at IIT Kharagpur
+- Former member of [Innovation and Entrepreneurship Development Center (IEDC Lab)](http://iedc.iemecell.com/) funded by [Department of Science & Technology (DST), Govt. of India](http://www.dst.gov.in/)
 - Former vice-president of R&D Dept., [Entrepreneurship-Cell (E-Cell)](http://iemecell.com/), IEM Kolkata
 
