@@ -11,26 +11,34 @@ termcmd: whoami
 -----
 
 ## > Research Interests:
-### Machine Learning, Deep Learning & High performance computing
-- Theoretical & computational aspects of [Machine learning](https://en.wikipedia.org/wiki/Machine_learning) (ML)/[Deep learning](https://en.wikipedia.org/wiki/Deep_learning) (DL)
-- Efficient implementation of ML/DL algorithms on modern hardware
+### Computer Vision (CV) & Machine Learning (ML)
+- Sketch analysis, retrieval, recognition and synthesis with [Deep Learning (DL)](https://en.wikipedia.org/wiki/Deep_learning)
+- Theoretical & computational aspects of ML/DL algorithms
 - [High performance](https://insidehpc.com/hpc-basic-training/what-is-hpc/) parallel/distributed computing
+
+#### Hobby Interests: I have few domains of interest purely as hobbies. I do not intend to do research on them.
+- Design of Compilers and Interpreters
+- Parallel/Concurrent programming
 
 -----
 
 ## > Education:
-### Indian Institute of Technology (IIT) Kharagpur [2018]
-- Currently pursuing M.S. in the [Dept. of Electrical Engineering](http://www.ee.iitkgp.ac.in/) (EE)
-- Research Topic: Optimization for Tensor computation & Deep Learning (DL)
+### University of Surrey, United Kingdom [2019 - present]
+- Currently pursuing Ph.D. in the [Center for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing)
+- Research Topic: Cross-modal fine-grained sketch-based video retrieval (FG-SBVR)
 
-### Institute of Engineering & Management (IEM), Kolkata [2017]
+### Institute of Engineering & Management (IEM), Kolkata [2013 - 2017]
 - Department of Electronics & Communication Engineering
 
 -----
 
 ## > Research experience:
 
-#### (Present) Medical Imaging with Deep Learning
+#### (Present) Sketch analysis with Deep Learning
+- **Supervisor:** [Dr. Yi-Zhe Song](https://www.surrey.ac.uk/people/yi-zhe-song) & [Dr. Tao Xiang](https://www.surrey.ac.uk/people/tao-xiang)
+- Center for Vision, Speech and Signal Processing (CVSSP)
+
+#### Medical Imaging with Deep Learning
 - **Guide/P.I.:** [Dr. Debdoot Sheet](http://www.facweb.iitkgp.ac.in/~debdoot/), Ph.D.
 - Dept. of EE, IIT Kharagpur
 
@@ -46,7 +54,7 @@ termcmd: whoami
 
 ## > Projects:
 
-- Currently attached to project “MIRIAD” funded by [Intel India Pvt. Ltd.](https://www.intel.in/content/www/in/en/homepage.html)
+- Worked in project "MIRIAD" funded by [Intel India Pvt. Ltd.](https://www.intel.in/content/www/in/en/homepage.html)
 - "[digiLib](https://github.com/dasayan05/digiLib)", a tiny Digital logic circuit designing & simulation library in C++
 - "Imagenary", a computer-vision based mouse and keyboard interface for PCs.
 - A personal [blogging site](https://dasayan05.github.io/) (this one) written in Jekyll
@@ -67,7 +75,7 @@ termcmd: whoami
 ## > Achievements:
 
 - An [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. in Asia Pacific & Japan.
-- A member of "[Kharagpur Learning, Imaging and Visualization (KLIV) research group](https://iitkliv.github.io/)" at IIT Kharagpur
+- Former member of "[Kharagpur Learning, Imaging and Visualization (KLIV) research group](https://iitkliv.github.io/)" at IIT Kharagpur
 - Former member of "Innovation and Entrepreneurship Development Center (IEDC Lab)" funded by "[Department of Science & Technology (DST), Govt. of India](http://www.dst.gov.in/)"
 - Former vice-president of R&D Dept., [Entrepreneurship-Cell (E-Cell)](http://iemecell.com/), IEM Kolkata
 
