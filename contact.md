@@ -20,3 +20,4 @@ For any query/help/request, feel free to contact
     - But, better to meet me at my lab address: SketchX Lab, Center for Vision, Speech and Signal Processing (CVSSP) Building, University of Surrey
 - Email: **ayan05das@gmail.com** (personal), **a.das@surrey.ac.uk** (official)
 - Skype ID: **ayan.das70**
+- WeChat ID: **dasayan05**
