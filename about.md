@@ -25,7 +25,7 @@ termcmd: whoami
 ## > Education:
 ### University of Surrey, United Kingdom [2019 - present]
 - Currently pursuing Ph.D. in the [Center for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing)
-- Research Topic: Cross-modal fine-grained sketch-based video retrieval (FG-SBVR)
+- Research Topic: Deep generative models for sketch analysis
 
 ### Institute of Engineering & Management (IEM), Kolkata [2013 - 2017]
 - Department of Electronics & Communication Engineering
@@ -36,19 +36,19 @@ termcmd: whoami
 
 #### (Present) Sketch analysis with Deep Learning
 - **Supervisor:** [Dr. Yi-Zhe Song](https://www.surrey.ac.uk/people/yi-zhe-song) & [Dr. Tao Xiang](https://www.surrey.ac.uk/people/tao-xiang)
-- Center for Vision, Speech and Signal Processing (CVSSP)
+- Center for Vision, Speech and Signal Processing (CVSSP), University of Surrey, UK
 
 #### Medical Imaging with Deep Learning
 - **Guide/P.I.:** [Dr. Debdoot Sheet](http://www.facweb.iitkgp.ac.in/~debdoot/), Ph.D.
-- Dept. of EE, IIT Kharagpur
+- Dept. of EE, Indian Institute of Technology (IIT) Kharagpur
 
 #### Handwritten Text/Document Recognition
 - **Guide:** [Dr. Partha Pratim Roy](https://sites.google.com/site/2partharoy/), Ph.D.
-- Dept. of CSE, IIT Roorkee
+- Dept. of CSE, Indian Institute of Technology (IIT) Roorkee
 
 #### Evolutionary Computations & Machine Learning
 - **Guide:** [Dr. Swagatam Das](https://www.isical.ac.in/~swagatam.das/), Ph.D.
-- ECS Unit, ISI Kolkata
+- ECS Unit, Indian Statistical Institute, Kolkata
 
 -----
 
