@@ -16,15 +16,16 @@ layout: page
     {% assign nav_list = site.categories.pubs %}
 {% endif %}
 
+{% assign count = 1 %}
 {% for post in nav_list %} {% if post.publish == true %}
     <div class="custom-nav-whole">
-        <h2> > <a href="{{ post.url }}"> {{ post.title }} </a> </h2>
+        <h2> [{{ count }}] <a href="{{ post.url }}"> {{ post.title }} </a> </h2>
+        {% capture count %}{{ count | plus:1 }}{% endcapture %}
         <div class="custom-nav-desc">
-            <p> {{ post.excerpt }}
                 <strong>Author:</strong> {{ post.author }} <br>
                 <strong>Dated:</strong> {{ post.date | date_to_string }} <br>
-                <strong>Tags:</strong> | {% for a_tag in post.tags %} {{ a_tag }} | {% endfor %}
-            </p>
+                <strong>Tags:</strong> {% for a_tag in post.tags %} {{ a_tag }}, {% endfor %}
+            <p> {{ post.excerpt }} </p>
         </div>
     </div>
 {% endif %} {% endfor %}
