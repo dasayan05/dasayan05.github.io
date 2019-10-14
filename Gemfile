@@ -10,3 +10,6 @@ source "https://rubygems.org"
 # Happy Jekylling!
 
 gem "github-pages"
+
+# For RSS feeds
+gem "jekyll-feed"

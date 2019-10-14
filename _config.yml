@@ -21,3 +21,7 @@ kramdown:
   hard_wrap: false
 highlighter: rouge
 excerpt_separator : "\n\n"
+
+# Gems
+plugins:
+  - jekyll-feed
