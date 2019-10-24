@@ -2,7 +2,7 @@
 layout: page
 title: Contact
 navigation: include
-navorder: 5
+navorder: 6
 termcmd: contact --help
 ---
 
