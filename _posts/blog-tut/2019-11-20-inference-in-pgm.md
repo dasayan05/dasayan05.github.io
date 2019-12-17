@@ -11,7 +11,7 @@ tags:
 layout: post
 comments: true
 category: blog-tut
-thumbnail-img: "public/posts_res/12/prob_thumbnail.jpeg"
+thumbnail-img: "public/posts_res/12/elbo_px_gap.JPG"
 ---
 
 Welcome to the first part of a series of tutorials about Directed Probabilistic Graphical Models (PGMs) & Variational methods. Directed PGMs (OR, Bayesian Networks) are very powerful probabilistic modelling techniques in machine learning literature and have been studied rigorously by researchers over the years. Variational Methods are family of algorithms arise in the context of Directed PGMs when it involves solving an intractable integrals. Doing inference on a set of latent variables (given a set of observed variables) involves such an intractable integral. Variational Inference (VI) is a specialised form of variation method that handles this situation. This tutorial is NOT for absolute beginners as I assume the reader to have basic-to-moderate knowledge about Random Variables, probability theories and PGMs. The next tutorial in this series will cover one perticular VI method, namely "Variational Autoencoder (VAE)" built on top of VI.
