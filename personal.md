@@ -24,7 +24,7 @@ I am not a professional photographer or anything like that. Just love to click p
 I am a big cat lover. Raised a lot of cats since I was a child. Here are some of my sweetest furbabies.
 
 |<img src="/public/personal/cats/cat1.jpg" />|<img src="/public/personal/cats/cat2.jpg" />|
-|<img src="/public/personal/cats/cat3.jpg" height="25%" />|<img src="/public/personal/cats/cat4.jpg" />|
+|<img src="/public/personal/cats/cat4.jpg" height="30%" />|<img src="/public/personal/cats/cat3.jpg" />|
 
 ---
 
