@@ -138,7 +138,7 @@ Or, equivalently
 
 ## Latent variables: A model with "hidden factor"
 
-Equipped with the knowledge of general Directed PGMs, we are now ready to look at one particular model (or rather family of models) that is extremely important and used heavily everywhere in practice. The idea of **latent variable** is basically *out belief* of having a *hidden factor* behind generation of our data. But, the hidden factor is (of course) not available in our dataset. Fig.3 shows the structure of the model (i.e., our belief about the data generation process) which has the variable $$Z$$ which we believe to be a factor that is latent/hidden, but have contribution in generation of $$X$$ (i.e., the observed variable). So, my model is as follows:
+Equipped with the knowledge of general Directed PGMs, we are now ready to look at one particular model (or rather family of models) that is extremely important and used heavily everywhere in practice. The idea of **latent variable** is basically *our belief* of having a *hidden factor* behind generation of our data. But, the hidden factor is (of course) not available in our dataset. Fig.3 shows the structure of the model (i.e., our belief about the data generation process) which has the variable $$Z$$ which we believe to be a factor that is latent/hidden, but have contribution in generation of $$X$$ (i.e., the observed variable). So, my model is as follows:
 
 \\[z^{(i)} \sim \mathbb{P}(Z)\\]
 \\[x^{(i)} \sim \mathbb{P}(X|Z=z^{(i)})\\]
@@ -206,7 +206,7 @@ Taking up the same example of latent variable (i.e., $$Z \rightarrow X$$), we *i
 \mathbb{P}(Z|X) = \frac{\mathbb{P}(X,Z)}{\mathbb{P}(X)} = \frac{\mathbb{P}(X,Z)}{\sum_Z \mathbb{P}(X,Z)}
 \\]
 
-This quantity if also called the **posterior**.
+This quantity is also called the **posterior**.
 
 For continuos $$Z$$, we have integral instead of summation
 
