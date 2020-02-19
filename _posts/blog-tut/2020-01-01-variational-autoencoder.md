@@ -15,7 +15,7 @@ category: blog-tut
 thumbnail-img: "public/posts_res/13/reparam.JPG"
 ---
 
-In the [previous article]({{ site.url }}{{ site.baseurl }}blog-tut/2019/11/20/inference-in-pgm.html), I started with Directed Probabilitic Graphical Models (PGMs) and a family of algorithms to do efficient approximate inference on them. Inference problems in Directed PGMs with continuous latent variables are intractable in general and require special attention. The family of algorithms, namely **Variation Inference (VI)**, introduced in the last article is a general formulation of approximating the intractable posterior in such models. **Variational Autoencoder** or famously known as **VAE** is an algorithm based on the principles on VI and have gained a lots of attention in past few years for being extremely efficient. With few more approximations/assumptions, VAE eshtablished a clean mathematical formulation which have later been extended by researchers and used in numerous applications. In this article, I will explain the intuition as well as mathematical formulation of Variational Autoencoders.
+In the [previous article]({{ site.url }}{{ site.baseurl }}/blog-tut/2019/11/20/inference-in-pgm.html), I started with Directed Probabilitic Graphical Models (PGMs) and a family of algorithms to do efficient approximate inference on them. Inference problems in Directed PGMs with continuous latent variables are intractable in general and require special attention. The family of algorithms, namely **Variation Inference (VI)**, introduced in the last article is a general formulation of approximating the intractable posterior in such models. **Variational Autoencoder** or famously known as **VAE** is an algorithm based on the principles on VI and have gained a lots of attention in past few years for being extremely efficient. With few more approximations/assumptions, VAE eshtablished a clean mathematical formulation which have later been extended by researchers and used in numerous applications. In this article, I will explain the intuition as well as mathematical formulation of Variational Autoencoders.
 
 ## Variational Inference: A recap
 
@@ -57,7 +57,7 @@ For a detailed explanation, go through the previous article.
 Variational Autoencoder (VAE) is first proposed in the [paper](https://arxiv.org/pdf/1312.6114.pdf) titled "Auto-Encoding Variational Bayes" by D.P.Kingma & Max Welling. The paper proposes two things:
 
 1. A parameterized *inference model* instead of just $$\mathbb{Q}(Z;\phi)$$
-2. The reparameterization trick to achieve the efficient SGVB (Stochastic Gradient Variational Bayes) estimator, an unbiased estimator of $$ELBO(\mathbb{Q})$$
+2. The reparameterization trick to achieve efficient training
 
 As we go along, I will try to convey the fact that these are essentially developments on top of the general VI framework we learnt earlier. I will focus on how each of them is related to VI in the following (sub)sections.
 
