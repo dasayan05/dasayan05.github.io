@@ -28,6 +28,12 @@
   <link rel="shortcut icon" href="{{ "/" | relative_url }}public/favicon.ico">
   <!-- Mathjax import -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+  <!-- p5.js -->
+  <script type="text/javascript" src="{{ "/" | relative_url }}public/js/p5.min.js"></script>
+
+  {% if page.js %}
+    <script type="text/javascript" src="{{ "/" | relative_url }}public/js/{{ page.js }}"></script>
+  {% endif %}
 
   {% feed_meta %}
 </head>
