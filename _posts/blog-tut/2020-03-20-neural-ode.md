@@ -198,7 +198,7 @@ I hope you are seeing what I am seeing. This is equivalent to solving yet anothe
 <center>
     <figure>
     <img width="85%" style="padding-top: 20px; border: 0px solid black;" src ="/public/posts_res/14/full_diagram.png" />
-    <figcaption>Resemblence of ResNet and Forward Eular's method</figcaption>
+    <figcaption>Fig.6: A pictorial representation of the forward and backward pass with all its ODEs.</figcaption>
     </figure>
 </center>
 
