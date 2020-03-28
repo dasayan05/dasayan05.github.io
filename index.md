@@ -1,10 +1,16 @@
 ---
 layout: page
 title: Homepage
-termcmd: cd ${HOME}
+termcmd: cd ${introduction}
 ---
 
-# Welcome, visitor !!
+<br />
+
+<p style="font-size: 25px; text-align: center; background-color: #cecece; border: 3px solid black; padding-top: 20px; padding-bottom: 20px;">
+    <strong>
+    Looking for my blogs/tutorials ? They are <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">here</a>.
+    </strong>
+</p>
 
 ~~~python
 import me
@@ -30,13 +36,9 @@ if you in me.website( ):
         appreciate( me.website )
 ~~~
 
-A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded scholarship from [Center for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing) at the [Faculty of Engineering and Physical Sciences (FEPS)](https://www.surrey.ac.uk/faculty-engineering-physical-sciences) @ [University of Surrey](https://www.surrey.ac.uk/), England, United Kingdom (UK). I am currently a part of [SketchX Lab](http://sketchx.eecs.qmul.ac.uk/), an elite group of researchers pioneering in the field of sketch analysis, led by my Ph.D. supervisors [Dr Yi-Zhe Song](https://www.surrey.ac.uk/people/yi-zhe-song), [Dr Tao Xiang](https://www.surrey.ac.uk/people/tao-xiang) and [others](http://sketchx.eecs.qmul.ac.uk/people/). Before starting my Ph.D., I used to be a Junior Project Officer @ [KLIV Research group](http://iitkliv.github.io/), [IIT Kharagpur, India](http://iitkgp.ac.in). My broad area of research/interest is the domain of Artifical Intelligence (A.I.) - specifically, the emerging field of Deep Learning applied mainly in (but not restricted to) Computer Vision tasks. Due to my tremendous love for mathamtics, I like to explore the theoretical aspect of DL as well. Being fond of programming, I am also focused on writing good quality codes/softwares/implementation for my research. I love to share knowledge and so decided to maintain a <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">`technical blog`</a> in this website which happened to be the most attractive part of it. I try my best to push quality contents for learners as frequently as I can, which ranges from programming tutorials to explanation of cutting-edge research papers (like <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/03/20/neural-ode.html">Neural ODE</a>, <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2017/11/20/an-intuitive-understanding-of-capsules.html">Capsule Network</a>, etc.). If you have suggestions/requests for a topic/paper to write a detailed blog on, feel free to send me an email.
+# Introducing myself !
 
-<p style="font-size: 25px; text-align: center; background-color: #cecece; border: 3px solid black; padding-top: 20px; padding-bottom: 20px;">
-    <strong>
-    Looking for my blogs/tutorials ? They are <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">here</a>.
-    </strong>
-</p>
+A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded scholarship from [Center for Vision, Speech and Signal Processing (CVSSP)](https://www.surrey.ac.uk/centre-vision-speech-signal-processing) at the [Faculty of Engineering and Physical Sciences (FEPS)](https://www.surrey.ac.uk/faculty-engineering-physical-sciences) @ [University of Surrey](https://www.surrey.ac.uk/), England, United Kingdom (UK). I am currently a part of [SketchX Lab](http://sketchx.eecs.qmul.ac.uk/), an elite group of researchers pioneering in the field of sketch analysis, led by my Ph.D. supervisors [Dr Yi-Zhe Song](https://www.surrey.ac.uk/people/yi-zhe-song), [Dr Tao Xiang](https://www.surrey.ac.uk/people/tao-xiang) and [others](http://sketchx.eecs.qmul.ac.uk/people/). Before starting my Ph.D., I used to be a Junior Project Officer @ [KLIV Research group](http://iitkliv.github.io/), [IIT Kharagpur, India](http://iitkgp.ac.in). My broad area of research/interest is the domain of Artifical Intelligence (A.I.) - specifically, the emerging field of Deep Learning applied mainly in (but not restricted to) Computer Vision tasks. Due to my tremendous love for mathamtics, I like to explore the theoretical aspect of DL as well. Being fond of programming, I am also focused on writing good quality codes/softwares/implementation for my research. I love to share knowledge and so decided to maintain a <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">`technical blog`</a> in this website which happened to be the most attractive part of it. I try my best to push quality contents for learners as frequently as I can, which ranges from programming tutorials to explanation of cutting-edge research papers (like <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/03/20/neural-ode.html">Neural ODE</a>, <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2017/11/20/an-intuitive-understanding-of-capsules.html">Capsule Network</a>, etc.). If you have suggestions/requests for a topic/paper to write a detailed blog on, feel free to send me an email.
 
 # Latest news and updates !!
 
