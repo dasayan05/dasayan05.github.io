@@ -17,7 +17,7 @@ layout: page
 {% endif %}
 
 {% assign count = 1 %}
-{% for post in nav_list %} {% if post.publish == true %}
+{% for post in nav_list %} {% if post.publish == true %} {% if post.author == "Ayan Das" %}
     <div class="custom-nav-whole">
         <h2> [{{ count }}] <a href="{{ post.url }}"> {{ post.title }} </a> </h2>
         {% capture count %}{{ count | plus:1 }}{% endcapture %}
@@ -28,4 +28,4 @@ layout: page
             <p> {{ post.excerpt }} </p>
         </div>
     </div>
-{% endif %} {% endfor %}
+{% endif %} {% endif %} {% endfor %}
