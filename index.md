@@ -43,6 +43,7 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 # Latest news and updates !!
 
 - **.. STAY TUNED ..**
+- Read about how we can get artistic patterns from mathematics. <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/04/15/patterns-of-randomness.html">Patterns of Randomness</a>
 - Read about <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/03/20/neural-ode.html">Neural Ordinary Differential Equation</a>, a very new kind of model that started gaining traction in the community.
 - Read about <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2019/11/20/inference-in-pgm.html">Directed PGMs, Variational Inference</a> and <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/01/01/variational-autoencoder.html">Variational Autoencoder</a> in my latest blogs.
 - Got PhD (with full scholarship) offer from [SketchX Lab, University of Surrey](http://sketchx.eecs.qmul.ac.uk/). Moving out of India in Oct. 2019.
