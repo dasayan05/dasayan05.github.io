@@ -220,6 +220,14 @@ It might look all strange but if you treat the integer $$\mathbb{K}(C)$$ as gray
     </figure>
 </center>
 
+What is so fascinating about this pattern is the fact that it is self-repeating. If you zoom into a small portion of the image, you would see the same pattern again.
+
+<center>
+    <figure>
+    <img width="80%" style="padding-top: 20px;" src ="/public/posts_res/15/mandelbrot_zoom.png" />
+    </figure>
+</center>
+
 ### Julia Set
 
 Another very similar concept exists, called the "Julia Set" which exhibits similar visual $$\mathbb{K}$$ diagram. Unlike Mandelbrot set, we consider a $$z\in\mathbb{C}$$ to be in Julia set $$\mathbf{J}_C$$ if
