@@ -296,7 +296,7 @@ That's pretty much all we need. I plotted the (1) ELBO loss, (2) Assignments (us
     </figure>
 </center>
 
-The full code is available in this gist: [https://gist.github.com/dasayan05/aca3352cd00058511e8372912ff685d8](https://gist.github.com/dasayan05/aca3352cd00058511e8372912ff685d8)
+The full code is available [in this gist](https://gist.github.com/dasayan05/aca3352cd00058511e8372912ff685d8).
 
 ---
 
