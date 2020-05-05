@@ -268,7 +268,7 @@ def guide(data): # Guide doesn't require data; just need the value of N
 We generate some synthetic data from the following simualator to train our model on.
 
 ~~~python
-def getdata(N, mean1=3.5, mean2=-2.4, std1=0.5, std2=0.5):
+def getdata(N, mean1=2.0, mean2=-1.0, std1=0.5, std2=0.5):
     D1 = np.random.randn(N//2,) * std1 + mean1
     D2 = np.random.randn(N//2,) * std2 + mean2
     D = np.concatenate([D1, D2], 0)
@@ -296,7 +296,7 @@ That's pretty much all we need. I plotted the (1) ELBO loss, (2) Assignments (us
     </figure>
 </center>
 
-The full code is available [in this gist](https://gist.github.com/dasayan05/aca3352cd00058511e8372912ff685d8).
+The full code is available in this gist: [https://gist.github.com/dasayan05/aca3352cd00058511e8372912ff685d8](https://gist.github.com/dasayan05/aca3352cd00058511e8372912ff685d8).
 
 ---
 
