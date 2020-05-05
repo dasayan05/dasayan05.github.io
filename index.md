@@ -8,8 +8,7 @@ termcmd: cd ${introduction}
 
 <p style="font-size: 25px; text-align: center; background-color: #cecece; border: 3px solid black; padding-top: 20px; padding-bottom: 20px;">
     <strong>
-    Looking for my blogs/tutorials ? They are <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">here</a>.
-    </strong>
+    Looking for my blogs/tutorials ? <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">Read them here</a> OR subscribe by <a href="{{ site.url }}{{ site.baseurl }}/feed.xml"><span style="color: #FFFFFF; background-color: #EA9B39; border-radius: 5px 5px 5px 5px; padding: 2px 5px 2px 5px;">RSS</span></a> Feed.</strong>
 </p>
 
 ~~~python
@@ -43,6 +42,7 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 # Latest news and updates !!
 
 - **.. STAY TUNED ..**
+- Learn about writing probabilistic models programmatically in <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/05/05/probabilistic-programming.html">Introduction to Probabilistic Programming</a>.
 - Read about how we can get artistic patterns from mathematics. <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/04/15/patterns-of-randomness.html">Patterns of Randomness</a>
 - Read about <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/03/20/neural-ode.html">Neural Ordinary Differential Equation</a>, a very new kind of model that started gaining traction in the community.
 - Read about <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2019/11/20/inference-in-pgm.html">Directed PGMs, Variational Inference</a> and <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/01/01/variational-autoencoder.html">Variational Autoencoder</a> in my latest blogs.
