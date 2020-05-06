@@ -22,6 +22,9 @@ kramdown:
 highlighter: rouge
 excerpt_separator : "\n\n"
 
+# Google Analytics
+google_analytics: UA-165733444-1
+
 # Gems
 plugins:
   - jekyll-feed
