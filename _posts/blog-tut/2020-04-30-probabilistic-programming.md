@@ -14,7 +14,7 @@ category: blog-tut
 thumbnail-img: "public/posts_res/16/gm_cg.png"
 ---
 
-Welcome to another blog post regarding probabilistic models (after [this]({{ site.url }}{{ site.baseurl }}/blog-tut/2019/11/20/inference-in-pgm.html) and [this]({{ site.url }}{{ site.baseurl }}/blog-tut/2020/01/01/variational-autoencoder.html)). However, I am particularly excited to discuss a topic that doesn't get as much attention as traditional Deep Learning does. The idea of **Probabilistic Programming** has long been there in the ML literature and got enriched over time. Before it creates confusion, let's declutter it right now - it's not really writing traditional "programs", rather it's building [Probabilistic Graphical Models]({{ site.url }}{{ site.baseurl }}/blog-tut/2019/11/20/inference-in-pgm.html) (PGMs), but *equipped with imperative programming style* (i.e., iterations, branching, recursion etc). Just like Automatic Differentiation allowed us to compute derivative of arbitrary computation graphs (in PyTorch, TensorFlow), Black-box methods have been developed to "solve" probabilistic programs. In this post, I will provide a generic view on why such a language is indeed possible and how such black-box solvers are materialized. At the end, I will also introduce you to one such *Universal* Probabilistic Programming Language, [Pyro](http://pyro.ai/), that came out of [Uber's AI lab](https://www.uber.com/us/en/uberai/) and started gaining popularity.
+Welcome to another tutorial about probabilistic models, after [a primer on PGMs]({{ site.url }}{{ site.baseurl }}/blog-tut/2019/11/20/inference-in-pgm.html) and [VAE]({{ site.url }}{{ site.baseurl }}/blog-tut/2020/01/01/variational-autoencoder.html). However, I am particularly excited to discuss a topic that doesn't get as much attention as traditional Deep Learning does. The idea of **Probabilistic Programming** has long been there in the ML literature and got enriched over time. Before it creates confusion, let's declutter it right now - it's not really writing traditional "programs", rather it's building [Probabilistic Graphical Models]({{ site.url }}{{ site.baseurl }}/blog-tut/2019/11/20/inference-in-pgm.html) (PGMs), but *equipped with imperative programming style* (i.e., iterations, branching, recursion etc). Just like Automatic Differentiation allowed us to compute derivative of arbitrary computation graphs (in PyTorch, TensorFlow), Black-box methods have been developed to "solve" probabilistic programs. In this post, I will provide a generic view on why such a language is indeed possible and how such black-box solvers are materialized. At the end, I will also introduce you to one such *Universal* Probabilistic Programming Language, [Pyro](http://pyro.ai/), that came out of [Uber's AI lab](https://www.uber.com/us/en/uberai/) and started gaining popularity.
 
 # Overview
 
@@ -288,7 +288,7 @@ for t in range(10000):
     svi.step(data)
 ~~~
 
-That's pretty much all we need. I plotted the (1) ELBO loss, (2) Assignments (using learned variational parameters) for every data point and (3) The two gaussians in the model as the training progresses.
+That's pretty much all we need. I have plotted the (1) ELBO loss, (2) Variational parameter $$\lambda_i$$ for every data points, (3) The two gaussians in the model and (4) The coin bias as the training progresses.
 
 <center>
     <figure>
