@@ -42,6 +42,7 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 # Latest news and updates !!
 
 - **.. STAY TUNED ..**
+- <a href="{{ site.url }}{{ site.baseurl }}/pubs/2020/05/22/pub-8.html">A new kind of sketch generative model proposed. Under review @ ECCV 2020</a>
 - Learn about writing probabilistic models programmatically in <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/05/05/probabilistic-programming.html">Introduction to Probabilistic Programming</a>.
 - Read about how we can get artistic patterns from mathematics. <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/04/15/patterns-of-randomness.html">Patterns of Randomness</a>
 - Read about <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/03/20/neural-ode.html">Neural Ordinary Differential Equation</a>, a very new kind of model that started gaining traction in the community.
@@ -49,5 +50,3 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 - Got PhD (with full scholarship) offer from [SketchX Lab, University of Surrey](http://sketchx.eecs.qmul.ac.uk/). Moving out of India in Oct. 2019.
 - New <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2019/01/01/python-compilation-process-overview.html">blog</a> on the internals of Python and it's Bytecodes.
 - New <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2018/12/28/scalable-deep-learning-2.html">articles</a> on Distributed training of DL models using PyTorch. A shorter version <a href="https://medium.com/intel-student-ambassadors/distributed-training-of-deep-learning-models-with-pytorch-1123fa538848">got published</a> in Intel Student Ambassador's Medium channel.
-- Selected as an [Intel Student Ambassador](https://software.intel.com/en-us/ai-academy/ambassadors) for A.I. in Asia Pacific & Japan.
-- Talked about Intel performance libraries and Inference tools for Deep learning in `up.AI summit` in IIT Kharagpur recently. [Link](https://www.facebook.com/upaisummit)
