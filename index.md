@@ -42,7 +42,7 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 # Latest news and updates !!
 
 - **.. STAY TUNED ..**
-- <a href="{{ site.url }}{{ site.baseurl }}/pubs/2020/05/22/pub-8.html">A new kind of sketch generative model proposed. Under review @ ECCV 2020</a>
+- <a href="{{ site.url }}{{ site.baseurl }}/pubs/2020/05/22/pub-8.html">[Under review @ ECCV 2020] A new kind of generative model for sketches.</a>
 - Learn about writing probabilistic models programmatically in <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/05/05/probabilistic-programming.html">Introduction to Probabilistic Programming</a>.
 - Read about how we can get artistic patterns from mathematics. <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/04/15/patterns-of-randomness.html">Patterns of Randomness</a>
 - Read about <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/03/20/neural-ode.html">Neural Ordinary Differential Equation</a>, a very new kind of model that started gaining traction in the community.
