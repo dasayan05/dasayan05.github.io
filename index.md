@@ -6,9 +6,9 @@ termcmd: cd ${introduction}
 
 <br />
 
-<p style="font-size: 25px; text-align: center; background-color: #cecece; border: 3px solid black; padding-top: 20px; padding-bottom: 20px;">
+<p class="banner">
     <strong>
-    Looking for my blogs/tutorials ? <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">Read them here</a> OR subscribe to <a href="{{ site.url }}{{ site.baseurl }}/feed.xml"><span style="color: #FFFFFF; background-color: #EA9B39; border-radius: 5px 5px 5px 5px; padding: 2px 5px 2px 5px;">RSS</span></a> Feed.</strong>
+    Looking for my blogs/tutorials ? <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">Read them here</a> OR subscribe to the <a href="{{ site.url }}{{ site.baseurl }}/feed.xml"><span style="color: #FFFFFF; background-color: #EA9B39; border-radius: 5px 5px 5px 5px; padding: 2px 5px 2px 5px;">RSS</span></a> Feed.</strong>
 </p>
 
 ~~~python

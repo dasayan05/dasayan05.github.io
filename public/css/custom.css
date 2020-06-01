@@ -34,3 +34,12 @@
 
 .custom-desc-box-text {
 }
+
+.banner {
+    font-size: 25px;
+    text-align: center;
+    background-color: #dddddd;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
