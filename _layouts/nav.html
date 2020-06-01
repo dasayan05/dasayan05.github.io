@@ -29,7 +29,14 @@ layout: page
             {% endif %}
                 <strong>Dated:</strong> {{ post.date | date_to_string }} <br>
                 <strong>Tags:</strong> {% for a_tag in post.tags %} {{ a_tag }}, {% endfor %}
-            <p> {{ post.excerpt }} </p>
+            <div class="custom-desc-box">
+                <div class="custom-desc-box-thumb">
+                    <img src="{{ post.thumbnail-img }}">
+                </div>
+                <div class="custom-desc-box-text">
+                    {{ post.excerpt }}
+                </div>
+            </div>
         </div>
     </div>
 {% endif %} {% endif %} {% endfor %}

@@ -14,10 +14,23 @@
     font-size: 18px;
     line-height: 130%;
     font-family: "Bookman Old Style";
-    text-align: justify;
-    /*padding-left: 20px;*/
-    /*padding-right: 20px;*/
-/*    border-left-style: solid;
-    border-right-style: solid;
-    border-color: #aaaaaa;*/
+}
+
+.custom-desc-box {
+    margin-top: 10px;
+    padding: 5px;
+    display: table;
+}
+
+.custom-desc-box-thumb {
+    float: left;
+    margin-right: 10px;
+    width: 40%;
+    height: auto;
+}
+.custom-desc-box-thumb img {
+    margin: 0px;
+}
+
+.custom-desc-box-text {
 }
