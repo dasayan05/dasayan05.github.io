@@ -13,3 +13,6 @@ gem "github-pages"
 
 # For RSS feeds
 gem "jekyll-feed"
+
+# For jupyter notebooks
+gem "jekyll-jupyter-notebook"

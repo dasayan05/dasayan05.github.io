@@ -28,3 +28,4 @@ google_analytics: UA-165733444-1
 # Gems
 plugins:
   - jekyll-feed
+  - jekyll-jupyter-notebook
