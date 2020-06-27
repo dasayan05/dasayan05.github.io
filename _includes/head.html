@@ -13,6 +13,11 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
+  <!-- Redirection Link -->
+  {% if page.redirect %}
+  <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
+  {% endif %}
+
   <!-- Better sharability on social media pages (as described here https://wiseodd.github.io/techblog/2016/08/15/jekyll-fb-share/) -->
   {% if page.thumbnail-img %}
     <meta property="og:image" content="{{ "/" | relative_url }}{{ page.thumbnail-img }}" />
