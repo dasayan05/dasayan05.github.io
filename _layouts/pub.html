@@ -4,8 +4,11 @@ layout: default
 
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">Dated: {{ page.date | date_to_string }}</span>
-  <span class="post-date">Author: {{ page.author }}</span>
+  <span class="post-date">Author: {{ page.authors }}</span>
+  <span class="post-date">Venue: {{ page.venue }}</span>
+  {% if page.link %}
+  <span class="post-date"><a href="{{ page.link }}" target="_blank">[ Click here to read the paper ]</a></span>
+  {% endif %}
   <br>
   {{ content }}
 </div>

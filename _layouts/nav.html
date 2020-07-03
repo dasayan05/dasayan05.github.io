@@ -24,10 +24,14 @@ layout: page
         <div class="custom-nav-desc">
             {% if page.navigation-on == "pubs" %}
                 <strong>Authors:</strong> {{ post.authors }} <br>
+                <strong>Venue:</strong> {{ post.venue }} <br>
+                {% if post.link %}
+                <strong>Link:</strong> <a href="{{ post.link }}" target="_blank">click here to read the paper</a> <br>
+                {% endif %}
             {% else %}
                 <strong>Author:</strong> {{ post.author }} <br>
-            {% endif %}
                 <strong>Dated:</strong> {{ post.date | date_to_string }} <br>
+            {% endif %}
                 <strong>Tags:</strong> {% for a_tag in post.tags %} {{ a_tag }}, {% endfor %}
             <div class="custom-desc-box">
                 <div class="custom-desc-box-thumb">
