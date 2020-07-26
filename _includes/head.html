@@ -36,6 +36,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+  {% if page.title == "Homepage" %}
+    <!-- Termynal, a HTML/CSS/JS based terminal (Thanks to @ines, github/ines) -->
+    <link rel="stylesheet" type="text/css" href="{{ "/" | relative_url }}public/termynal/termynal.css">
+  {% endif %}
+
   <!-- Icons -->
   <link rel="shortcut icon" href="{{ "/" | relative_url }}public/favicon.ico">
   <!-- Mathjax import -->

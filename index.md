@@ -11,29 +11,24 @@ termcmd: cd ${introduction}
     Looking for my blogs/tutorials ? <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">Read them here</a> OR subscribe to the <a href="{{ site.url }}{{ site.baseurl }}/feed.xml"><span style="color: #FFFFFF; background-color: #EA9B39; border-radius: 5px 5px 5px 5px; padding: 2px 5px 2px 5px;">RSS</span></a> Feed.</strong>
 </p>
 
-~~~python
-import me
-from emotions import love, warm
-from greetings import appreciate
+<div style="margin-left: auto; margin-right: auto; width: 750px;">
+    <!-- Termynal, a HTML/CSS/JS based terminal (Thanks to @ines, github/ines) -->
+    <div id="termynal" 
+            data-termynal data-ty-startDelay="500" data-ty-typeDelay="80" data-ty-lineDelay="300">
+        <span data-ty="input" data-ty-prompt="(ai) ayan at ~/homepage $ ">python -i app.py</span>
+        <span data-ty="input" data-ty-prompt=">> ">from ayan import Website</span>
+        <span data-ty="input" data-ty-prompt=">> ">site = Website()</span>
+        <span data-ty="input" data-ty-prompt=">> ">[p for p in site.pages]</span>
+        <span data-ty>['Introduction', Blogs', 'Project', 'Publications', ...]</span>
+        <span data-ty="input" data-ty-prompt=">> ">open(site.pages['Introduction'])</span>
+        <span data-ty="progress"></span>
+    </div>
+    <div>
+        <p style="font-size: 13px; text-align: right;">Credit to Ines Montani (<a href="https://github.com/ines/">@ines</a>) for this cool <a href="https://github.com/ines/termynal"><i>Termynal</i></a> app.</p>
+    </div>
+</div>
 
-if you in me.website( ):
-
-    @warm
-    def welcome( name ):
-        print('I welcome you', name)
-
-    with love( ):
-        welcome( __you__ )
-
-    try:
-        for blog in me.website( 'blogs' ):
-            read(blog)
-    except:
-        # if any error/suggestion
-        send_mail('ayan05das@gmail.com')
-    finally:
-        appreciate( me.website )
-~~~
+<script type="text/javascript" src="{{ "/" | relative_url }}public/termynal/termynal.js" data-termynal-container="#termynal"></script>
 
 # Introducing myself !
 
