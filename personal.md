@@ -12,7 +12,7 @@ Although this is a professional website, I would love to share a few glimse of m
 
 # 1. love to click pictures
 
-I am not a professional photographer or anything like that. Just love to click pictures. Below are few shots from my phone. You may want to look at my instagram account (you have to make a follow request, sorry).
+I am not a professional photographer or anything like that. Just love to click pictures. Below are few shots from my phone. You may want to look at my [instagram account](https://www.instagram.com/ayan.das.05/) (you have to make a follow request, sorry).
 
 |<img src="/public/personal/clicks/pic1.jpg" />|<img src="/public/personal/clicks/pic2.jpg" />|
 |<img src="/public/personal/clicks/pic3.jpg" />|<img src="/public/personal/clicks/pic4.jpg" />|

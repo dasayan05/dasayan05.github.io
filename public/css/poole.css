@@ -339,22 +339,22 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title,
 .post-title a {
-  color: #202020;
+  color: #eee;
 }
 .page-title,
 .post-title {
-  /*background-color: #202020;*/
+  background-color: #252a33; /* #404859; */
   border-style: solid;
   border-left: 0px;
   border-right: 0px;
-  font-size: 35px;
-  font-family: "Ubuntu", sans-serif;
+  font-size: 30px;
+  font-family: Monaco, 'Courier New', Courier, monospace;
   font-weight: bolder;
-  padding-left: 10px;
+  padding-left: 20px;
   padding-right: 10px;
-  padding-bottom: 8px;
-  padding-top: 6px;
-  /*border-radius: 10px;*/
+  padding-bottom: 13px;
+  padding-top: 13px;
+  border-radius: 10px;
   margin-top: 0;
 }
 
