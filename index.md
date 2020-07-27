@@ -11,7 +11,7 @@ termcmd: cd ${introduction}
     Looking for my blogs/tutorials ? <a href="{{ site.url }}{{ site.baseurl }}/blogs.html">Read them here</a> OR subscribe to the <a href="{{ site.url }}{{ site.baseurl }}/feed.xml"><span style="color: #FFFFFF; background-color: #EA9B39; border-radius: 5px 5px 5px 5px; padding: 2px 5px 2px 5px;">RSS</span></a> Feed.</strong>
 </p>
 
-<div style="margin-left: auto; margin-right: auto; width: 750px;">
+<div style="margin-left: auto; margin-right: auto; width: 80%;">
     <!-- Termynal, a HTML/CSS/JS based terminal (Thanks to @ines, github/ines) -->
     <div id="termynal" 
             data-termynal data-ty-startDelay="500" data-ty-typeDelay="80" data-ty-lineDelay="300">
@@ -23,8 +23,8 @@ termcmd: cd ${introduction}
         <span data-ty="input" data-ty-prompt=">> ">open(site.pages['Introduction'])</span>
         <span data-ty="progress"></span>
     </div>
-    <div>
-        <p style="font-size: 13px; text-align: right;">Credit to Ines Montani (<a href="https://github.com/ines/">@ines</a>) for this cool <a href="https://github.com/ines/termynal"><i>Termynal</i></a> app.</p>
+    <div style="width: 100%;">
+        <p style="font-size: 13px; text-align: left;">Credit to Ines Montani (<a href="https://github.com/ines/">@ines</a>) for this cool <a href="https://github.com/ines/termynal"><i>Termynal</i></a> app.</p>
     </div>
 </div>
 
