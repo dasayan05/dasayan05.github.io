@@ -37,6 +37,7 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 # Latest news and updates !!
 
 - **.. STAY TUNED ..**
+- Paper accepted @ SIGGRAPH 2020, <a href="{{ site.url }}{{ site.baseurl }}pubs/2020/07/30/pub-8.html">Pixelor: A Competitive Sketching AI Agent. So you think you can beat me?</a>
 - Paper accepted @ ECCV 2020, <a href="{{ site.url }}{{ site.baseurl }}/pubs/2020/07/03/pub-7.html">BézierSketch: A generative model for scalable vector sketches</a>
 - Learn about writing probabilistic models programmatically in <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/05/05/probabilistic-programming.html">Introduction to Probabilistic Programming</a>.
 - Read about how we can get artistic patterns from mathematics. <a href="{{ site.url }}{{ site.baseurl }}/blog-tut/2020/04/15/patterns-of-randomness.html">Patterns of Randomness</a>
