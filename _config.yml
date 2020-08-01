@@ -29,3 +29,4 @@ google_analytics: UA-165733444-1
 plugins:
   - jekyll-feed
   - jekyll-jupyter-notebook
+  - jekyll-seo-tag

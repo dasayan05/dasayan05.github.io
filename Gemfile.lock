@@ -248,6 +248,7 @@ DEPENDENCIES
   github-pages
   jekyll-feed
   jekyll-jupyter-notebook
+  jekyll-seo-tag
 
 BUNDLED WITH
    1.16.6
