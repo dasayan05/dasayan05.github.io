@@ -53,4 +53,13 @@
 
     <!-- For SEO stuff; The following macro is expanded by the 'jekyll-seo-tag' gem -->
     {% seo %}
+
+    <!-- Twitter card meta tags, for better tweeting -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="{{ site.title }}" />
+    <meta name="twitter:title" content="{{ site.title }}" />
+    <meta name="twitter:site" content="@dasayan05" />
+    <meta name="twitter:image" content="{{ '/' | absolute_url }}{{ page.thumbnail-img }}" />
+    <meta name="twitter:creator" content="@dasayan05" />
+
 </head>
