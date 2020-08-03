@@ -4,11 +4,20 @@ layout: default
 
 <div class="post">
     <div class="post-title">{{ page.title }}</div>
-    <span class="post-date">Dated: {{ page.date | date_to_string }}</span>
-    <span class="post-date">Author: {{ page.author }}</span>
+    {% if page.authors %}
+        <span class="post-date">Author(s): {{ page.authors }}</span>
+    {% else %}
+        <span class="post-date">Author: {{ page.author }}</span>
+    {% endif %}
+    {% if page.venue %}<span class="post-date">Venue: {{ page.venue }}</span>{% endif %}
+    {% if page.link %}
+        <span class="post-date">Link: <a href="{{ page.link }}" target="_blank">{{ page.link }}</a></span>
+    {% endif %}
+    {% if page.date %}<span class="post-date">Dated: {{ page.date | date_to_string }}</span>{% endif %}
     <br>
     
-    {% include banner.html type="donation" %}
+    {% if page.category == "blog-tut" %}{% include banner.html type="donation" %}{% endif %}
+    {% if page.category == "pubs" %}{% include banner.html type="publication" %}{% endif %}
     
     {{ content }}
 </div>
