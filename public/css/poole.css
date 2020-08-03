@@ -355,7 +355,7 @@ tbody tr:nth-child(odd) th {
   padding-right: 10px;
   padding-bottom: 13px;
   padding-top: 13px;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   margin-top: 0;
 }
 

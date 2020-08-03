@@ -58,3 +58,11 @@
 .profile_pic_holder > img {
     width:100%; border-radius: 130px; box-shadow: -4px -4px 8px #888888;
 }
+
+.announce {
+    font-size: 17px;
+    background-color: #eeeeee;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
