@@ -1,34 +1,27 @@
 <div class="sidebar">
 
-  {% if page.title == "Homepage" %}
-  <div style="padding: 10%; margin-top: 0px; padding-bottom: 0px;">
-    <img src="{{ site.url }}{{ site.baseurl }}/public/me.jpg" style="width:100%; border-radius: 130px; box-shadow: -4px -4px 8px #888888;" />
-  </div>
-  {% endif %}
+    {% if page.title == "Homepage" %}
+        <div class="profile_pic_holder">
+            <img src="{% link public/me.jpg %}" />
+        </div>
+    {% endif %}
 
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <a href="{{ "/" | relative_url }}">
-          {{ site.title }}
-        </a>
-      </h1>
-      <p class="lead">{{ site.description }}</p>
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about">
+            <h1><a href="{% link index.md %}">{{ site.title }}</a></h1>
+            <p class="lead">{{ site.description }}</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a class="sidebar-nav-item{% if page.title == 'Homepage' %} active{% endif %}" href="{% link index.md %}">Homepage</a>
+            <a class="sidebar-nav-item{% if page.title == 'CV/Bio' %} active{% endif %}" href="{% link about.md %}">CV/Bio</a>
+            <a class="sidebar-nav-item{% if page.title == 'Blogs' %} active{% endif %}" href="{% link blogs.html %}">Blogs</a>
+            <a class="sidebar-nav-item{% if page.title == 'Projects' %} active{% endif %}" href="{% link projects.html %}">Projects</a>
+            <a class="sidebar-nav-item{% if page.title == 'Personal' %} active{% endif %}" href="{% link personal.md %}">Personal</a>
+            <a class="sidebar-nav-item{% if page.title == 'Publications' %} active{% endif %}" href="{% link pubs.html %}">Publications</a>
+            <a class="sidebar-nav-item{% if page.title == 'Contact' %} active{% endif %}" href="{% link contact.md %}">Contact</a>
+        </nav>
+
+        <p style="margin: 0px;"> © 2020. All rights reserved. </p>
     </div>
-
-    <nav class="sidebar-nav">
-      <!-- This name 'Homepage' is reserved only for the index page -->
-      <a class="sidebar-nav-item{% if page.title == "Homepage" %} active{% endif %}" href="{{ "/" | relative_url }}">{% if page.title == "Homepage" %} > {% endif %}Homepage{% if page.title == "Homepage" %} < {% endif %}</a>
-
-      {% assign pages_list = site.pages | sort: "navorder" %}
-      {% for node in pages_list %}
-        {% if node.navigation == "include" %}
-          <a class="sidebar-nav-item{% if page.title == node.title %} active{% endif %}" href="{{ node.url }}">{% if page.title == node.title %} > {% endif %}{{ node.title }}{% if page.title == node.title %} < {% endif %}</a>
-        {% endif %}
-      {% endfor %}
-
-    </nav>
-
-    <p style="margin: 0px;"> © 2020. All rights reserved. </p>
-  </div>
 </div>

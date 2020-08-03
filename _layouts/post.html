@@ -3,36 +3,36 @@ layout: default
 ---
 
 <div class="post">
-  <div class="post-title">{{ page.title }}</div>
-  <span class="post-date">Dated: {{ page.date | date_to_string }}</span>
-  <span class="post-date">Author: {{ page.author }}</span>
-  <br>
-  {% include donation_banner.html %}
-  {{ content }}
+    <div class="post-title">{{ page.title }}</div>
+    <span class="post-date">Dated: {{ page.date | date_to_string }}</span>
+    <span class="post-date">Author: {{ page.author }}</span>
+    <br>
+    
+    {% include banner.html type="donation" %}
+    
+    {{ content }}
 </div>
 
 <div class="related">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    {% for post in site.posts %}
-    {% if page.category == post.category %}
-      {% for tag in page.tags %}
-      {% if post.tags contains tag and post.title != page.title %}
-        <li>
-          <h3> <a href="{{ post.url }}">{{ post.title }}<small>{{ post.date | date_to_string }}</small></a> </h3>
-        </li>
-        {% break %}
-      {% endif %}
-      {% endfor %}
-    {% endif %}
-    {% endfor %}
-  </ul>
+    <h2>Related Posts</h2>
+    <ul class="related-posts">
+        {% for post in site.posts %}
+        {% unless post.navigation == "excluded" %}
+            {% if page.category == post.category %}
+                {% for tag in page.tags %}
+                {% if post.tags contains tag and post.title != page.title %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a>, <small>{{ post.date | date_to_string }}</small></li>
+                    {% break %}
+                {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endunless %}
+        {% endfor %}
+    </ul>
 </div>
 
-{% if page.comments %}
 <div id="disqus_thread"></div>
 <script>
-
 /**
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
@@ -48,4 +48,3 @@ s.setAttribute('data-timestamp', +new Date());
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}

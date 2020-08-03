@@ -1,8 +1,6 @@
 ---
 layout: page
 title: CV/Bio
-navigation: include
-navorder: 1
 termcmd: whoami
 ---
 

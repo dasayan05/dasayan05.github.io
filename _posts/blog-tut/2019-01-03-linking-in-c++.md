@@ -13,6 +13,7 @@ post_number: "8"
 comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/8/compilation_steps.png"
+navigation: excluded
 ---
 
 C++ is a general-purpose, multi-paradigm programming language designed/developed by [Bjarne Stroustrup](http://www.stroustrup.com/) which alongwith C, forms the backbone of majority of the programming industry today. A very important concept to be grasped by beginner programmers is the idea of "linking". Linking basically refers to the process of bundling library code into an archive and use it later when necessary. It turns out to be an idea that is used extensively in production. The following article aims at presenting a broad view of "linking".

@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Personal
-navigation: include
-navorder: 4
 termcmd: gunzip personal.zip
 ---
 

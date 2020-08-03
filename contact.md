@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Contact
-navigation: include
-navorder: 6
 termcmd: contact --help
 ---
 

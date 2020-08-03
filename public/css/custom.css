@@ -43,3 +43,18 @@
     padding-bottom: 20px;
     border-radius: 10px;
 }
+
+.rss_button {
+    color: #FFFFFF;
+    background-color: #EA9B39;
+    border-radius: 5px 5px 5px 5px;
+    padding: 2px 5px 2px 5px;
+}
+
+.profile_pic_holder {
+    padding: 10%; margin-top: 0px; padding-bottom: 0px;
+}
+
+.profile_pic_holder > img {
+    width:100%; border-radius: 130px; box-shadow: -4px -4px 8px #888888;
+}

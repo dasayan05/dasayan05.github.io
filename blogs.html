@@ -1,15 +1,18 @@
 ---
-layout: nav
-
+layout: page
 title: Blogs
-navigation: include
-navorder: 2
-
-navigation-on: posts
 termcmd: ./blogs --all
 ---
 <br>
-<p style="font-size: 17px; background-color: #eeeeee; padding: 15px">
+<p style="font-size: 17px; background-color: #fff; padding: 15px">
     Below are the articles/tutorials that I could write when I got time. Click the one that interests you.
     If you want me to write something specific that you need OR have suggestion/correction on an existing blog, just mail me @ <u>ayan05das@gmail.com</u>. Thank you.
 </p>
+
+{% assign c = 1 %}
+{% for blog in site.categories.blog-tut %}
+    {% unless blog.navigation == "excluded" %}
+        {% include navitem.html post=blog count=c %}
+        {% capture c %}{{ c | plus:1 }}{% endcapture %}
+    {% endunless %}
+{% endfor %}

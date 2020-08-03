@@ -3,16 +3,15 @@ layout: default
 ---
 
 <div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">Author: {{ page.authors }}</span>
-  <span class="post-date">Venue: {{ page.venue }}</span>
-  {% if page.link %}
-  <span class="post-date"><a href="{{ page.link }}" target="_blank">[ Click here to read the paper ]</a></span>
-  {% endif %}
-  <br>
-  <p class="banner">
-    <strong>
-    Want updates on this, or, <a href="{{ site.url }}{{ site.baseurl }}/pubs.html">other publications</a> ? Subscribe to the <a href="{{ site.url }}{{ site.baseurl }}/feed.xml"><span style="color: #FFFFFF; background-color: #EA9B39; border-radius: 5px 5px 5px 5px; padding: 2px 5px 2px 5px;">RSS</span></a> Feed.</strong>
-  </p>
-  {{ content }}
+    <h1 class="post-title">{{ page.title }}</h1>
+    <span class="post-date">Author(s): {{ page.authors }}</span>
+    <span class="post-date">Venue: {{ page.venue }}</span>
+    {% if page.link %}
+        <span class="post-date">Link: <a href="{{ page.link }}" target="_blank">{{ page.link }}</a></span>
+    {% endif %}
+    <br>
+    
+    {% include banner.html type="publication" %}
+    
+    {{ content }}
 </div>

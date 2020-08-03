@@ -1,59 +1,56 @@
 <head>
-  {% if site.google_analytics %}
-  {% if jekyll.environment == "production" %}
-  <!-- Set up Google analytics only in production, i,e, on GitHub -->
-      {% include analytics.html %}
-  {% endif %}
-  {% endif %}
+    {% if site.google_analytics %}
+    {% if jekyll.environment == "production" %}
+        <!-- Set up Google analytics only in production, i,e, on GitHub -->
+        {% include analytics.html %}
+    {% endif %}
+    {% endif %}
 
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <!-- Redirection Link -->
-  {% if page.redirect %}
-  <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
-  {% endif %}
+    <!-- Redirection Link -->
+    {% if page.redirect %}
+        <meta http-equiv="refresh" content="0; url={{ page.redirect }}" />
+    {% endif %}
 
-  <!-- Better sharability on social media pages (as described here https://wiseodd.github.io/techblog/2016/08/15/jekyll-fb-share/) -->
-  {% if page.thumbnail-img %}
-    <meta property="og:image" content="{{ "/" | relative_url }}{{ page.thumbnail-img }}" />
-  {% endif %}
-  <meta property="og:description" content="{{ page.title }}" />
+    <!-- Better sharability on social media pages (as described here https://wiseodd.github.io/techblog/2016/08/15/jekyll-fb-share/) -->
+    {% if page.thumbnail-img %}
+        <meta property="og:image" content="{{ '/' | relative_url }}{{ page.thumbnail-img }}" />
+    {% endif %}
 
-  <title>
-    {{ site.title }} &middot; {{ page.title }}
-  </title>
+    <title>{{ site.title }} &middot; {{ page.title }}</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="{{ "/" | relative_url }}public/css/poole.css">
-  <link rel="stylesheet" href="{{ "/" | relative_url }}public/css/syntax.css">
-  <link rel="stylesheet" href="{{ "/" | relative_url }}public/css/hyde.css">
-  <link rel="stylesheet" href="{{ "/" | relative_url }}public/css/custom.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- CSS imports -->
+    <link rel="stylesheet" href="{% link public/css/poole.css %}">
+    <link rel="stylesheet" href="{% link public/css/syntax.css %}">
+    <link rel="stylesheet" href="{% link public/css/hyde.css %}">
+    <link rel="stylesheet" href="{% link public/css/custom.css %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-  {% if page.title == "Homepage" %}
-    <!-- Termynal, a HTML/CSS/JS based terminal (Thanks to @ines, github/ines) -->
-    <link rel="stylesheet" type="text/css" href="{{ "/" | relative_url }}public/termynal/termynal.css">
-  {% endif %}
+    {% unless page.no-mathjax %}
+        <!-- Mathjax import (As of now, its a bit outdated, fix it later) -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+    {% endunless %}
 
-  <!-- Icons -->
-  <!-- <link rel="shortcut icon" href="{{ "/" | relative_url }}public/favicon.ico"> -->
-  <!-- Mathjax import -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
-  <!-- p5.js -->
-  <script type="text/javascript" src="{{ "/" | relative_url }}public/js/p5.min.js"></script>
+    {% if page.sources %}
+    {% for source in page.sources %}
+        {% if source contains '.js' %}
+            <script type="text/javascript" src="{{ source }}"></script>
+        {% else %}
+            <link rel="stylesheet" type="text/css" href="{{ source }}">
+        {% endif %}
+    {% endfor %}
+    {% endif %}
 
-  {% if page.js %}
-    <script type="text/javascript" src="{{ "/" | relative_url }}public/js/{{ page.js }}"></script>
-  {% endif %}
+    <!-- For Atom feed; The following macro is expanded by the 'jekyll-feed' gem -->
+    {% feed_meta %}
 
-  {% feed_meta %}
-
-  <!-- For SEO -->
-  {% seo %}
+    <!-- For SEO stuff; The following macro is expanded by the 'jekyll-seo-tag' gem -->
+    {% seo %}
 </head>

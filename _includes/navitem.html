@@ -1,0 +1,30 @@
+<div class="custom-nav-whole">
+    <h2 style="text-align: left;"> [{{ include.count }}] <a href="{{ include.post.url }}"> {{ include.post.title }} </a> </h2>
+    <div class="custom-nav-desc">
+        {% if include.post.authors %}
+            <strong>Author(s):</strong> {{ include.post.authors }} <br>
+        {% else %}
+            <strong>Author:</strong> {{ include.post.author }} <br>
+        {% endif %}
+
+        {% if include.post.venue %}
+            <strong>Venue:</strong> {{ include.post.venue }} <br>
+        {% endif %}
+
+        {% if include.post.link %}
+            <strong>Link:</strong> <a href="{{ include.post.link }}" target="_blank">{{ include.post.link }}</a> <br>
+        {% endif %}
+
+        <strong>Dated:</strong> {{ include.post.date | date_to_string }} <br>
+        <strong>Tags:</strong> {% for a_tag in include.post.tags %} {{ a_tag }}, {% endfor %}
+
+        <div class="custom-desc-box">
+            <div class="custom-desc-box-thumb">
+                <img src="{{ include.post.thumbnail-img }}">
+            </div>
+            <div class="custom-desc-box-text">
+                {{ include.post.excerpt }}
+            </div>
+        </div>
+    </div>
+</div>

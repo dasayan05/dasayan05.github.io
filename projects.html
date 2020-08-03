@@ -1,11 +1,13 @@
 ---
-layout: nav
-
+layout: page
 title: Projects
-navigation: include
-navorder: 3
-
-navigation-on: projs
 termcmd: ./project --list
 ---
 
+{% assign c = 1 %}
+{% for proj in site.categories.projs %}
+    {% unless proj.navigation == "excluded" %}
+        {% include navitem.html post=proj count=c %}
+        {% capture c %}{{ c | plus:1 }}{% endcapture %}
+    {% endunless %}
+{% endfor %}

@@ -3,6 +3,9 @@ layout: default
 ---
 
 <div class="page">
-  <div class="page-title">ayan@website $ {{ page.termcmd }} _</div>
-  {{ content }}
+    {% unless page.no-title %}
+        <div class="page-title">ayan@website $ {{ page.termcmd }} _</div>
+    {% endunless %}
+    
+    {{ content }}
 </div>

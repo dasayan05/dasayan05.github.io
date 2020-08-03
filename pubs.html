@@ -1,11 +1,6 @@
 ---
-layout: nav
-
+layout: page
 title: Publications
-navigation: include
-navorder: 5
-
-navigation-on: pubs
 termcmd: me.pubs(journs, confs)
 ---
 <br>
@@ -13,3 +8,11 @@ termcmd: me.pubs(journs, confs)
     Below is a complete list of my publications. I will try to maintain an updated list here but in case I miss anything, you can visit my profiles on academic social media websites (<a href="https://scholar.google.com/citations?user=x-WI_EgAAAAJ&hl">Google Scholar</a> / <a href="https://www.researchgate.net/profile/Ayan_Das15">ResearchGate</a>). <br /> <br />
 <strong> Click on the title to get a `BibTeX` entry for citation. </strong>
 </p>
+
+{% assign c = 1 %}
+{% for pub in site.categories.pubs %}
+    {% unless pub.navigation == "excluded" %}
+        {% include navitem.html post=pub count=c %}
+        {% capture c %}{{ c | plus:1 }}{% endcapture %}
+    {% endunless %}
+{% endfor %}

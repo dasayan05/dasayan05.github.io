@@ -1,0 +1,11 @@
+<p class="banner">
+	<strong>
+    {% if include.type == "index" %}
+        Looking for my blogs/tutorials ? <a href="{% link blogs.html %}">Read them here</a> OR subscribe to the <a href="{{ '/' | relative_url }}feed.xml"><span class="rss_button">RSS</span></a> Feed.
+    {% elsif include.type == "donation" %}
+        Found my blogs helpful ? I would appreciate any <a href="https://paypal.me/ayan05das?locale.x=en_GB"> donation </a>. Subscribe to the <a href="{{ '/' | relative_url }}feed.xml"><span class="rss_button">RSS</span></a> feed.
+    {% elsif include.type == "publication" %}
+        Want updates on this, or, <a href="{% link pubs.html %}">other publications</a> ? Subscribe to the <a href="{{ '/' | relative_url }}feed.xml"><span class="rss_button">RSS</span></a> Feed.
+    {% endif %}
+	</strong>
+</p>
