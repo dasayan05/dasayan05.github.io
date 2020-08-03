@@ -2,6 +2,7 @@
 layout: page
 title: CV/Bio
 termcmd: whoami
+no-mathjax: ""
 ---
 
 ## My Curriculum Vitae (CV):

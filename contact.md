@@ -2,6 +2,7 @@
 layout: page
 title: Contact
 termcmd: contact --help
+no-mathjax: ""
 sources:
     - https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
 ---

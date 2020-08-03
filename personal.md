@@ -2,6 +2,7 @@
 layout: page
 title: Personal
 termcmd: gunzip personal.zip
+no-mathjax: ""
 ---
 
 <br />
