@@ -347,13 +347,13 @@ tbody tr:nth-child(odd) th {
   border-style: solid;
   border-left: 0px;
   border-right: 0px;
-  font-size: 30px;
-  font-family: Monaco, 'Courier New', Courier, monospace;
+  font-size: 32px;
+  font-family: 'Proza Libre', Monaco, 'Courier New', Courier, monospace;
   font-weight: bolder;
   text-align: left;
   padding-left: 20px;
   padding-right: 10px;
-  padding-bottom: 13px;
+  padding-bottom: 10px;
   padding-top: 13px;
   /*border-radius: 10px;*/
   margin-top: 0;
