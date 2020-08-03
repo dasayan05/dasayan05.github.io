@@ -9,8 +9,6 @@ tags:
   - Deep Learning
 layout: post
 post_number: "1"
-related_post_numbers: ""
-comments: true
 category: projs
 ---
 

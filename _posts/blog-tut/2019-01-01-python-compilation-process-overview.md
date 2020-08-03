@@ -10,7 +10,6 @@ tags:
   - Virtual Machine
 layout: post
 post_number: "7"
-comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/7/process.jpg"
 ---

@@ -9,7 +9,6 @@ tags:
   - ODE
   - Deep Learning
 layout: post
-comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/14/full_diagram.png"
 ---

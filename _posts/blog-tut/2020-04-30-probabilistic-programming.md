@@ -9,7 +9,6 @@ tags:
   - Deep Learning
   - Variational Inference
 layout: post
-comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/16/gm_cg.png"
 ---

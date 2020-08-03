@@ -8,7 +8,6 @@ tags:
   - LaTeX
   - typesetting
 layout: post
-comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/11/tex_thumb.jpg"
 ---

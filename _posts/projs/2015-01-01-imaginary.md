@@ -10,8 +10,6 @@ tags:
   - PC Interface
 layout: post
 post_number: "2"
-related_post_numbers: ""
-comments: true
 category: projs
 ---
 

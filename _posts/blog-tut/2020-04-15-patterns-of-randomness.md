@@ -7,7 +7,6 @@ tags:
   - Random
   - Visualizations
 layout: post
-comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/15/mandelbrot_thumbnail.png"
 ---

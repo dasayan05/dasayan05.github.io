@@ -10,8 +10,6 @@ tags:
   - Research
 layout: post
 post_number: "4"
-related_post_numbers: ""
-comments: true
 category: projs
 redirect: "https://github.com/dasayan05/rlx"
 thumbnail-img: "public/proj_res/4/code-snip.png"

@@ -9,7 +9,6 @@ tags:
   - convnets
 layout: post
 post_number: "1"
-comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/1/hinton-pic.jpg"
 ---

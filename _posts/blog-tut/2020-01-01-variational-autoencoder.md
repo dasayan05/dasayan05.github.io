@@ -10,7 +10,6 @@ tags:
   - Variational Autoencoder
   - Variational Inference
 layout: post
-comments: true
 category: blog-tut
 thumbnail-img: "public/posts_res/13/reparam.JPG"
 ---
