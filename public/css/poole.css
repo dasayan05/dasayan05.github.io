@@ -364,6 +364,15 @@ tbody tr:nth-child(odd) th {
   color: #888888;
 }
 
+.footer {
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    /*padding: 0.2rem;*/
+    font-size: 12pt;
+}
+
 /* Meta data line below post title */
 .post-date {
   display: block;
