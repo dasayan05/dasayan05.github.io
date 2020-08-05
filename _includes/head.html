@@ -40,6 +40,8 @@
     {% assign page_sources = page.sources %}
     {% if layout.sources %}
         {% assign sources = page_sources | concat: layout.sources %}
+    {% else %}
+        {% assign sources = page_sources %}
     {% endif %}
     {% if sources %}
     {% for source in sources %}
