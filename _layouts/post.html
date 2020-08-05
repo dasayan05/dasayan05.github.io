@@ -1,32 +1,12 @@
 ---
 layout: default
+sources:
+    - https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+    - /public/js/fb.js
+    - /public/js/love.js
 ---
 
 <div id="fb-root"></div>
-<script>
-    function statusChangeCallback(response) {
-        if (response.status === "connected") {
-            FB.api('/me?fields=id,name', function(response) {
-                // ...
-            })
-        } else {
-            console.log(response);
-        }
-    }
-
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId      : '3268236546577201',
-            cookie     : true,
-            xfbml      : true,
-            version    : 'v7.0'
-        });
-
-        FB.getLoginStatus(function(response) {
-            statusChangeCallback(response);
-        });
-    };
-</script>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v8.0&appId=3268236546577201" nonce="rYpgU3w9"></script>
 
 <div class="post">
@@ -42,10 +22,8 @@ layout: default
     {% endif %}
     {% if page.date %}<span class="post-date">Dated: {{ page.date | date_to_string }}</span>{% endif %}
     <br>
-    
-    <div class="fb-login-button" style="padding-bottom: 10px;" data-size="large" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true" data-width=""></div>
-    <iframe src="https://www.facebook.com/plugins/share_button.php?href={{ page.url | absolute_url }}&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Have a look .." data-via="dasayan05" data-lang="en" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    {% include social.html love_callback="loveClicked" %}
 
     {% if page.category == "blog-tut" %}{% include banner.html type="donation" %}{% endif %}
     {% if page.category == "pubs" %}{% include banner.html type="publication" %}{% endif %}

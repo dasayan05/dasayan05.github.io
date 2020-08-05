@@ -1,0 +1,35 @@
+<!-- The whole social media bar, its a bit messy code -->
+<div>
+    <!-- The FB Login button -->
+    <div class="fb-login-button"
+        style="padding-bottom: 10px;"
+        data-size="large" data-button-type="continue_with"
+        data-layout="rounded" data-auto-logout-link="false"
+        data-use-continue-as="true" data-width=""></div>
+
+    <!-- The love button & Message -->
+    <a href="#" style="text-decoration: none;" onclick="return {{ include.love_callback }}()">
+        <i id="love_button" class="fa fa-heart fa-2x"></i>
+    </a>
+    <script type="text/javascript">
+        // some manipulation on the above love button style.
+        // TODO: make this a bit clean if possible
+        var love = document.getElementById('love_button');
+        love.style.padding = '3px';
+        love.style.width = '60px';
+    </script>
+    <span style="font-weight: bolder;" id="love_msg"></span>
+
+    <div style="float: right;">
+    <!-- The Facebook share button -->
+    <iframe
+        src="https://www.facebook.com/plugins/share_button.php?href={{ page.url | absolute_url }}&layout=button&size=large&width=77&height=28&appId=3268236546577201"
+        width="77" height="28" style="border:none;overflow:hidden"
+        scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <!-- The tweet button -->
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+        class="twitter-share-button" data-size="large" data-text="Have a look .."
+        data-via="dasayan05" data-lang="en" data-show-count="false">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+</div>
