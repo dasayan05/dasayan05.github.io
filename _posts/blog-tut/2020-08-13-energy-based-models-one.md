@@ -13,7 +13,7 @@ category: blog-tut
 thumbnail-img: "public/posts_res/17/undir_models.png"
 ---
 
-We talked extensively about [Directed PGMs]({% post_url blog-tut/2019-11-20-inference-in-pgm %}) in my earlier article and also described [one particular model]({% post_url blog-tut/2020-01-01-variational-autoencoder %}) following the principles of Variational Inference (VI). There exists another class of models conveniently represented by *Undirected* Graphical Models which are practiced relative less than modern methods of Deep Learning (DL) in the research communiy. They are also characterized as **Energy Based Models (EBM)**, as we shall see, they rely on something called *Energy Functions*. In the early days of this Deep Learning *renaissance*, we discovered few extremely powerful models which helped DL to gain momentum. The class of models we are going to discuss has far more theoretical support than modern day Deep Learning, which as we know, largely relied on intuition and trial-and-error. In this article, I will introduce you to the general concept of Energy Based Models (EBMs), their difficulties and how we can get over them. Also, we will look at a specific family of EBM known as **Boltmann Machines (BM)** which are very well known in the literature.
+We talked extensively about [Directed PGMs]({% post_url blog-tut/2019-11-20-inference-in-pgm %}) in my earlier article and also described [one particular model]({% post_url blog-tut/2020-01-01-variational-autoencoder %}) following the principles of Variational Inference (VI). There exists another class of models conveniently represented by *Undirected* Graphical Models which are practiced relative less than modern methods of Deep Learning (DL) in the research community. They are also characterized as **Energy Based Models (EBM)**, as we shall see, they rely on something called *Energy Functions*. In the early days of this Deep Learning *renaissance*, we discovered few extremely powerful models which helped DL to gain momentum. The class of models we are going to discuss has far more theoretical support than modern day Deep Learning, which as we know, largely relied on intuition and trial-and-error. In this article, I will introduce you to the general concept of Energy Based Models (EBMs), their difficulties and how we can get over them. Also, we will look at a specific family of EBM known as **Boltmann Machines (BM)** which are very well known in the literature.
 
 ## Undirected Graphical Models
 
@@ -251,7 +251,7 @@ p(x_j\vert \mathbf{h}, \mathbf{x}_{-j}) = \sigma( W\cdot\mathbf{h} + V_{-j}\cdot
 \end{align}
 $$
 
-Hopefully the notations are clear. If they are not, try comparing with the ones we used before. Maybe the diagram in Fig.6(b) makes things clear. It shows a similar computation graph for the conditionals we saw before in Fig.5.
+Hopefully the notations are clear. If they are not, try comparing with the ones we used before. I recommend the reader to try proving it as an exercise. The diagram in Fig.6(b) hopefully adds a bit more clarity. It shows a similar computation graph for the conditionals we saw before in Fig.5.
 
 Coming to the gradients, they also takes similar forms as original BM .. only difference is that now we have more parameters
 

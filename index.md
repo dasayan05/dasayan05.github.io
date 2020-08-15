@@ -34,6 +34,7 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 # Latest news and updates !!
 
 - < .. STAY TUNED (by subscribing to the [RSS Feed](/feed.xml) ) .. >
+- Learn about Energy Based Models (EBMs) in my article <a href="{% post_url blog-tut/2020-08-13-energy-based-models-one %}">Energy Based Models (EBMs): A comprehensive introduction</a>
 - Paper accepted @ SIGGRAPH Asia 2020, <a href="{% post_url pubs/2020-07-30-pub-8 %}">Pixelor: A Competitive Sketching AI Agent. So you think you can beat me?</a>
 - Paper accepted @ ECCV 2020, <a href="{% post_url pubs/2020-05-22-pub-7 %}">BézierSketch: A generative model for scalable vector sketches</a>
 - Learn about writing probabilistic models programmatically in <a href="{% post_url blog-tut/2020-04-30-probabilistic-programming %}">Introduction to Probabilistic Programming</a>.
