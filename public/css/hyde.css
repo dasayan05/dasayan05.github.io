@@ -90,7 +90,7 @@ html {
 .sidebar-nav-item {
   display: block;
   font-size: 1rem;
-  line-height: 160%;
+  line-height: 150%;
 }
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
