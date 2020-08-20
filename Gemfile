@@ -19,3 +19,6 @@ gem "jekyll-jupyter-notebook"
 
 # For SEO stuff
 gem "jekyll-seo-tag"
+
+# FOr windows only
+gem 'wdm', '~> 0.1.1', :install_if => Gem.win_platform?
