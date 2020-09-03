@@ -67,6 +67,11 @@
     margin-bottom: 15px;
 }
 
+.pubicon:hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+
 /* Font-awesome social media icons, for the contact page  */
 .fa {
     padding: 20px;
