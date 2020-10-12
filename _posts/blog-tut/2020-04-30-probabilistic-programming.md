@@ -226,24 +226,7 @@ $$
 
 where $$i = 1 \cdots N$$ is data index, $$\theta \triangleq \{ \rho, \mu_1, \sigma_1, \mu_2, \sigma_2 \}$$ is the set of model parameters we need to learn. This is how you write that in Pyro:
 
-~~~python
-def model(data): # Take the observation
-    # Define coin bias as parameter. That's what 'pyro.param' does
-    rho = pyro.param("rho", # Give it a name for Pyro to track properly
-        torch.tensor([0.5]), # Initial value
-        constraint=dist.constraints.unit_interval) # Has to be in [0, 1]
-    # Define both means and std with random initial values
-    means = pyro.param("M", torch.tensor([1.5, 3.]))
-    stds = pyro.param("S", torch.tensor([0.5, 0.5]),
-        constraint=dist.constraints.positive) # std deviation cannot be negative
-
-    with pyro.plate("data", len(data)): # Mark conditional independence
-        # construct a Bernoulli and sample from it. 
-        c = pyro.sample("c", dist.Bernoulli(rho)) # c \in {0, 1}
-        c = c.type(torch.LongTensor)
-        X = dist.Normal(means[c], stds[c]) # pick a mean as per 'c'
-        pyro.sample("x", X, obs=data) # sample data (also mark it as observed)
-~~~
+{% jupyter_notebook "/public/posts_res/16/model_desc.ipynb" %}
 
 Due to the discrete and low dimensional nature of the latent variable $$C$$, this problem is in general tracktable in terms of computing posterior. But let's assume it is not. The true posterior $$\mathbb{P}(C_i\vert X_i)$$ is the quantity known as "assignment" that reveals the latent factor, i.e., what was the coin toss result when a given $$X_i$$ was sampled. We define a guide on $$C$$, parameterized by variational parameters $$\phi \triangleq \{ \lambda_i \}_{i=1}^N$$
 
@@ -251,7 +234,7 @@ $$
 C_i \sim Bernoulli(\lambda_i)
 $$
 
-In Pyro, we define a guide that encodes this
+<!-- In Pyro, we define a guide that encodes this
 
 ~~~python
 def guide(data): # Guide doesn't require data; just need the value of N
@@ -285,7 +268,9 @@ svi = pyro.infer.SVI(model, guide, optim, infer.Trace_ELBO())
 
 for t in range(10000):
     svi.step(data)
-~~~
+~~~ -->
+
+{% jupyter_notebook "/public/posts_res/16/rest.ipynb" %}
 
 That's pretty much all we need. I have plotted the (1) ELBO loss, (2) Variational parameter $$\lambda_i$$ for every data points, (3) The two gaussians in the model and (4) The coin bias as the training progresses.
 
