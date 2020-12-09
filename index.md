@@ -10,7 +10,7 @@ sources:
 
 <div style="margin-left: auto; margin-right: auto; width: 70%;">
     <!-- Termynal, a HTML/CSS/JS based terminal (Thanks to @ines, github/ines) -->
-    <div id="termynal" 
+    <div id="termynal"
             data-termynal data-ty-startDelay="500" data-ty-typeDelay="80" data-ty-lineDelay="300">
         <span data-ty="input" data-ty-prompt="(AI) ayan @ ~/homepage $ ">python -i app.py</span>
         <span data-ty="input" data-ty-prompt=">> ">from ayan import website</span>
@@ -34,6 +34,7 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 # Latest news and updates !!
 
 - < .. STAY TUNED (by subscribing to the [RSS Feed](/feed.xml) ) .. >
+- Learn about Differentiable Programming in my article <a href="{% post_url blog-tut/2020-09-08-differentiable-programming %}">Differentiable Programming: Computing source-code derivatives</a>
 - Learn about Energy Based Models (EBMs) in my article <a href="{% post_url blog-tut/2020-08-13-energy-based-models-one %}">Energy Based Models (EBMs): A comprehensive introduction</a>
 - Paper accepted @ SIGGRAPH Asia 2020, <a href="{% post_url pubs/2020-07-30-pub-8 %}">Pixelor: A Competitive Sketching AI Agent. So you think you can beat me?</a>
 - Paper accepted @ ECCV 2020, <a href="{% post_url pubs/2020-05-22-pub-7 %}">BézierSketch: A generative model for scalable vector sketches</a>
