@@ -362,7 +362,7 @@ where $$p=[-1/3, 1]^T, p_1=[2,3]^T$$ and $$p_2=[-2,0]^T$$. By choosing these spe
 
 If you look at the program at a glance, you would notice that the whole program is almost entirely written in native Julia using structure (`struct Point`), built-in function (`norm()`, `convert()`), memory access constructs (`δp.x`, `δp.y`) etc. The only usage of Zygote is that `Zygote.gradient()` call in the heart of the loop. BTW, I omitted the operator overloading functions for space restrictions.
 
-I am not showing the IR codes for this one; you are free to execute `@code_llvm` and `@code_adjoint` on the function implicitly defined using the `do .. end`. One thing I would like to show is the execution speed and my earlier argument about "precompilation". The time measuring macro (`@time`) shows this
+I am not showing the IR codes for this one; you are free to execute `@code_ir` and `@code_adjoint` on the function implicitly defined using the `do .. end`. One thing I would like to show is the execution speed and my earlier argument about "precompilation". The time measuring macro (`@time`) shows this
 
 ```
  11.764279 seconds (26.50 M allocations: 1.342 GiB, 4.58% gc time)
