@@ -13,7 +13,7 @@ sources:
     <div id="termynal"
             data-termynal data-ty-startDelay="500" data-ty-typeDelay="80" data-ty-lineDelay="300">
         <span data-ty="input" data-ty-prompt="(AI) ayan @ ~/homepage $ ">python -i app.py</span>
-        <span data-ty="input" data-ty-prompt=">> ">from ayan import website</span>
+        <span data-ty="input" data-ty-prompt=">> ">import website</span>
         <span data-ty="input" data-ty-prompt=">> ">[p.title for p in website.pages]</span>
         <span data-ty>['Introduction', 'Blogs', 'Projects', 'Publications', ...]</span>
         <span data-ty="input" data-ty-prompt=">> ">open(website.pages['Introduction'])</span>
