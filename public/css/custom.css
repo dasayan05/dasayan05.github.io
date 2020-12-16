@@ -8,6 +8,10 @@
 .custom-nav-whole {
     margin-top: 2em;
     margin-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid gray;
+    border-radius: 15px;
 }
 
 .custom-nav-desc {
