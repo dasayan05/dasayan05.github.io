@@ -30,3 +30,4 @@ plugins:
   - jekyll-feed
   - jekyll-jupyter-notebook
   - jekyll-seo-tag
+  - jekyll-sitemap
