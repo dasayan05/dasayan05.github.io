@@ -14,9 +14,6 @@ gem "github-pages"
 # For RSS feeds
 gem "jekyll-feed"
 
-# For jupyter notebooks
-gem "jekyll-jupyter-notebook"
-
 # For SEO stuff
 gem "jekyll-seo-tag"
 gem "jekyll-sitemap"
