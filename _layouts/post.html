@@ -65,12 +65,12 @@ sources:
     {% if page.category == "blog-tut" %}
     {% unless page.no-license %}
     <p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text">
-        Contents of the article 
+        Contents of the article
         <a rel="cc:attributionURL" property="dct:title" href="{{ page.url | absolute_url }}">
             "{{ page.title }}"
         </a>
-            by 
-        <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="http://dasayan05.github.io/">Ayan Das</a>
+            by
+        <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://ayandas.me/">Ayan Das</a>
             is licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>
     </p>
     {% endunless %}
@@ -116,4 +116,3 @@ s.setAttribute('data-timestamp', +new Date());
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 {% endunless %}
 {% endif %}
-

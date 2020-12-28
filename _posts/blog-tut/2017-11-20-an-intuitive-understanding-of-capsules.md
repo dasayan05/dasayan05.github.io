@@ -74,7 +74,7 @@ I will try to explain what he means by that. In a typical computer graphics rend
 
 ## The new idea of **Capsules**
 
-As I stated earlier, a neuron-model that spits out a scalar value is certainly not enough to represent explicit pose of an entity. This is where Hinton and team came up with the idea of `capsules` which is nothing but an _extension to the familiar neuron-model_. 
+As I stated earlier, a neuron-model that spits out a scalar value is certainly not enough to represent explicit pose of an entity. This is where Hinton and team came up with the idea of `capsules` which is nothing but an _extension to the familiar neuron-model_.
 > A `capsule` is basically a "**vector-neuron**" which takes in a bunch of vectors and produces a single vector. They are simply "**vector-in-vector-out**" computation units.
 
 ![capsule-model](/public/posts_res/1/capsule_model.jpg)
@@ -149,4 +149,4 @@ So, that brings us to the end of the general discussion on capsules. In the [nex
 [capsule-paper]: https://arxiv.org/abs/1710.09829
 [transAE-paper]: http://www.cs.toronto.edu/~fritz/absps/transauto6.pdf
 [convnet-article]: http://cs231n.github.io/convolutional-networks/
-[next-article]: https://dasayan05.github.io/2017/11/26/capsnet-architecture-for-mnist.html
+[next-article]: https://ayandas.me/2017/11/26/capsnet-architecture-for-mnist.html

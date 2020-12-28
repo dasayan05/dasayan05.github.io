@@ -70,7 +70,7 @@ conv1_act = tf.layers.conv2d(x, filters=256, kernel_size=9, strides=1, padding='
     use_bias=True, bias_initializer=tf.initializers.zeros) # shape: (B x 20 x 20 x 256)
 
 primecaps_act = tf.layers.conv2d(conv1_act, filters=8*32, kernel_size=9, strides=2, padding='VALID',
-            kernel_initializer=tf.contrib.layers.xavier_initializer(), 
+            kernel_initializer=tf.contrib.layers.xavier_initializer(),
             activation=tf.nn.relu,
             use_bias=True, bias_initializer=tf.initializers.zeros) # shape: (B x 6 x 6 x 256)
 {% endhighlight %}
@@ -167,7 +167,7 @@ I am not showing the reconstruction loss here in this article but my [actual imp
 So that brings us to the end of the `CapsNet` architecture. Please feel free to comment in the `Disqus` section below or mail me.
 ### Thank you.
 
-[my-cap-article]: https://dasayan05.github.io/2017/11/20/an-intuitive-understanding-of-capsules.html
+[my-cap-article]: https://ayandas.me/2017/11/20/an-intuitive-understanding-of-capsules.html
 [capsule-paper]: https://arxiv.org/abs/1710.09829
 [cs231n-site]: http://cs231n.github.io/linear-classify/
 [tensorflow-site]: https://www.tensorflow.org/
