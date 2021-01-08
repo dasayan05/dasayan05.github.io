@@ -12,12 +12,13 @@
     padding-right: 20px;
     border: 1px solid gray;
     border-radius: 15px;
+    box-shadow: -0px -0px 10px gray;
 }
 
 .custom-nav-desc {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 130%;
-    font-family: "Bookman Old Style";
+    font-family: "Serif";
 }
 
 .custom-desc-box {
@@ -29,11 +30,51 @@
 .custom-desc-box-thumb {
     float: left;
     margin-right: 10px;
-    width: 40%;
+    width: 30%;
     height: auto;
 }
 .custom-desc-box-thumb img {
     margin: 0px;
+}
+
+.custom-desc-read-button {
+  border-radius: 5px;
+  background-color: #eeeeee;
+  border: 1px solid #ddd;
+  color: #000;
+  text-align: center;
+  font-size: 18px;
+  font-family: Serif;
+  width: 100px;
+  height: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  float: right;
+}
+
+.custom-desc-read-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+.custom-desc-read-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: -3px;
+  right: -10px;
+  transition: 0.3s;
+}
+
+.custom-desc-read-button:hover span {
+  padding-right: 25px;
+}
+
+.custom-desc-read-button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .custom-desc-box-text {
