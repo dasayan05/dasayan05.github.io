@@ -6,12 +6,11 @@ date: 2020-09-08
 tags:
   - Automatic Differentiation
   - Backpropagation
-  - Source Code Transformation
   - Compilers
   - Deep Learning
 layout: post
 category: blog-tut
-thumbnail-img: "public/posts_res/18/banner.png"
+thumbnail-img: "public/posts_res/18/tape_based.png"
 ---
 
 If you are follwoing the recent developments in the field of Deep Learning, you might recognize this new buzz-word, "Differentiable Programming", doing rounds on social media (including prominent researchers like [Yann LeCun](https://www.facebook.com/yann.lecun/posts/10155003011462143), [Andrej Karpathy](https://medium.com/@karpathy/software-2-0-a64152b37c35)) for an year or two. Differentiable Programming (let's shorten it as "DiffProg" for the rest of this article) is essentially a system proposed as an alternative to tape-based Backpropagation which is running a *recorder* (often called "Tape") that builds a computation graph *at runtime* and propagates error signal from end towards the leaf-nodes (typically weights and biases). DiffProg is very different from an *implementation perspective* - it doesn't really "propagate" anything. It consumes a "program" in the form of *source code* and produces the "Derivative program" (also source code) w.r.t its inputs without *ever actually running* either of them. Additionally, DiffProg allows users the flexibility to write *arbitrary programs* without constraining it to any "guidelines".

@@ -5,7 +5,6 @@ author: Ayan Das
 date: 2020-01-01
 tags:
   - Variational Methods
-  - Directed Graphical Models
   - Deep Learning
   - Variational Autoencoder
   - Variational Inference
@@ -170,4 +169,4 @@ That's pretty much it. To wrap up, here is the full forward-backward algorithm f
 
 ---
 
-That's all for this article. Wait for more probabilistic models .. umm, maybe the next one is **Normalizing Flow**. See you. 
+That's all for this article. Wait for more probabilistic models .. umm, maybe the next one is **Normalizing Flow**. See you.
