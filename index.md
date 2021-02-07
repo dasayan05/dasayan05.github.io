@@ -9,7 +9,6 @@ sources:
 ---
 
 <div style="margin-left: auto; margin-right: auto; width: 70%;">
-    <!-- Termynal, a HTML/CSS/JS based terminal (Thanks to @ines, github/ines) -->
     <div id="termynal"
             data-termynal data-ty-startDelay="500" data-ty-typeDelay="80" data-ty-lineDelay="300">
         <span data-ty="input" data-ty-prompt="(AI) ayan @ ~/homepage $ ">python -i app.py</span>
@@ -33,13 +32,18 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 
 # Latest news and updates !!
 
-- < .. STAY TUNED (by subscribing to the [RSS Feed](/feed.xml) ) .. >
-- Learn about Differentiable Programming in my article <a href="{% post_url blog-tut/2020-09-08-differentiable-programming %}">Differentiable Programming: Computing source-code derivatives</a>
-- Learn about Energy Based Models (EBMs) in my article <a href="{% post_url blog-tut/2020-08-13-energy-based-models-one %}">Energy Based Models (EBMs): A comprehensive introduction</a>
-- Paper accepted @ SIGGRAPH Asia 2020, <a href="{% post_url pubs/2020-07-30-pub-8 %}">Pixelor: A Competitive Sketching AI Agent. So you think you can beat me?</a>
-- Paper accepted @ ECCV 2020, <a href="{% post_url pubs/2020-05-22-pub-7 %}">BézierSketch: A generative model for scalable vector sketches</a>
-- Learn about writing probabilistic models programmatically in <a href="{% post_url blog-tut/2020-04-30-probabilistic-programming %}">Introduction to Probabilistic Programming</a>.
-- Read about how we can get artistic patterns from mathematics. <a href="{% post_url blog-tut/2020-04-15-patterns-of-randomness %}">Patterns of Randomness</a>
-- Read about <a href="{% post_url blog-tut/2020-03-20-neural-ode %}">Neural Ordinary Differential Equation</a>, a very new kind of model that started gaining traction in the community.
-- Read about <a href="{% post_url blog-tut/2019-11-20-inference-in-pgm %}">Directed PGMs, Variational Inference</a> and <a href="{% post_url blog-tut/2020-01-01-variational-autoencoder %}">Variational Autoencoder</a> in my latest blogs.
-- Got PhD (with full scholarship) offer from [SketchX Lab, University of Surrey](http://sketchx.eecs.qmul.ac.uk/). Moving out of India in Oct. 2019.
+- [ Stay updated by subscribing to the [RSS Feed](/feed.xml) ]
+- **News and Updates**
+    - Serving as a reviewer for [ACM SIGGRAPH '21](https://s2021.siggraph.org/) & [International Conference for Computer Vision (ICCV) 2021](http://iccv2021.thecvf.com/)
+    - Completed probationary period (first 1 year) and passed Confirmation Viva for my PhD
+    - Got PhD (with full scholarship) offer from [SketchX Lab, University of Surrey](http://sketchx.eecs.qmul.ac.uk/). Moving out of India in Oct. 2019.
+- **Latest blogs and articles**
+    - Learn about Differentiable Programming in my article <a href="{% post_url blog-tut/2020-09-08-differentiable-programming %}">Differentiable Programming: Computing source-code derivatives</a>
+    - Learn about Energy Based Models (EBMs) in my article <a href="{% post_url blog-tut/2020-08-13-energy-based-models-one %}">Energy Based Models (EBMs): A comprehensive introduction</a>
+    - Learn about writing probabilistic models programmatically in <a href="{% post_url blog-tut/2020-04-30-probabilistic-programming %}">Introduction to Probabilistic Programming</a>.
+    - Read about how we can get artistic patterns from mathematics. <a href="{% post_url blog-tut/2020-04-15-patterns-of-randomness %}">Patterns of Randomness</a>
+    - Read about <a href="{% post_url blog-tut/2020-03-20-neural-ode %}">Neural Ordinary Differential Equation</a>, a very new kind of model that started gaining traction in the community.
+    - Read about <a href="{% post_url blog-tut/2019-11-20-inference-in-pgm %}">Directed PGMs, Variational Inference</a> and <a href="{% post_url blog-tut/2020-01-01-variational-autoencoder %}">Variational Autoencoder</a> in my latest blogs.
+- **Latest publications**
+    - Paper accepted @ SIGGRAPH Asia 2020, <a href="{% post_url pubs/2020-07-30-pub-8 %}">Pixelor: A Competitive Sketching AI Agent. So you think you can beat me?</a>
+    - Paper accepted @ ECCV 2020, <a href="{% post_url pubs/2020-05-22-pub-7 %}">BézierSketch: A generative model for scalable vector sketches</a>
