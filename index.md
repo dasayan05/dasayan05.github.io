@@ -43,5 +43,6 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
     4. Read about how we can get artistic patterns from mathematics. <a href="{% post_url blog-tut/2020-04-15-patterns-of-randomness %}">Patterns of Randomness</a>
     5. Read about <a href="{% post_url blog-tut/2020-03-20-neural-ode %}">Neural Ordinary Differential Equation</a>, a new type of model that is gaining popularity.
 - **Latest publications**
-    1. Paper accepted @ SIGGRAPH Asia 2020, <a href="{% post_url pubs/2020-07-30-pub-8 %}">Pixelor: A Competitive Sketching AI Agent. So you think you can beat me?</a>
+    1. Paper accepted @ CVPR 2021, <a href="{% post_url pubs/2021-03-01-pub-9 %}">Cloud2Curve: Generation and Vectorization of Parametric Sketches</a>
+    2. Paper accepted @ SIGGRAPH Asia 2020, <a href="{% post_url pubs/2020-07-30-pub-8 %}">Pixelor: A Competitive Sketching AI Agent. So you think you can beat me?</a>
     2. Paper accepted @ ECCV 2020, <a href="{% post_url pubs/2020-05-22-pub-7 %}">BézierSketch: A generative model for scalable vector sketches</a>
