@@ -33,7 +33,7 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 - [ Stay updated by subscribing to the [RSS Feed](/feed.xml) ]
 
 - **News and Updates**
-    - Serving as a reviewer for [ACM SIGGRAPH '21](https://s2021.siggraph.org/) & [International Conference for Computer Vision (ICCV) 2021](http://iccv2021.thecvf.com/)
+    - Serving as reviewer for top conferences ([ACM SIGGRAPH](https://s2021.siggraph.org/), [ICCV](http://iccv2021.thecvf.com/)) and journals ([Elsevier Neural Networks](https://www.journals.elsevier.com/neural-networks)).
     - Completed probationary period (first 1 year) and passed Confirmation Viva for my PhD
     - Got PhD (with full scholarship) offer from [SketchX Lab, University of Surrey](http://sketchx.eecs.qmul.ac.uk/). Moving out of India in Oct. 2019.
 - **Latest blogs and articles**
