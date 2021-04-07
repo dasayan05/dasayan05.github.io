@@ -15,14 +15,23 @@
     box-shadow: -0px -0px 10px gray;
 }
 
+.custom-nav-title {
+    text-align: left;
+    font-size: 22pt;
+    font-family: 'Bree Serif';
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 110%;
+}
+
 .custom-nav-desc {
-    font-size: 17px;
-    line-height: 130%;
-    font-family: "Serif";
+    font-size: 18px;
+    line-height: 140%;
+    font-family: serif;
 }
 
 .custom-desc-box {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     padding: 5px;
     display: table;
 }
@@ -35,6 +44,7 @@
 }
 .custom-desc-box-thumb img {
     margin: 0px;
+    margin-top: 15px;
 }
 
 .custom-desc-read-button {
@@ -78,12 +88,15 @@
 }
 
 .custom-desc-box-text {
+    font-family: 'Open Sans';
+    color: black;
+    font-size: 13pt;
 }
 
 .banner {
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
-    background-color: #dddddd;
+    background-color: #eeeeee;
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 10px;

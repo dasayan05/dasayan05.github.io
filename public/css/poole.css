@@ -67,8 +67,9 @@ body {
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #268bd2;
+  color: #2727da;
   text-decoration: none;
+  /* font-weight: bold; */
 }
 a strong {
   color: inherit;
@@ -333,6 +334,8 @@ tbody tr:nth-child(odd) th {
 .post {
   margin-bottom: 4em;
   text-align: justify;
+  font-family: 'Open Sans';
+  color: black;
 }
 
 /* Blog post or page title */
@@ -341,21 +344,34 @@ tbody tr:nth-child(odd) th {
 .post-title a {
   color: #eee;
 }
-.page-title,
-.post-title {
+.page-title {
   background-color: #252a33; /* #404859; */
   border-style: solid;
   border-left: 0px;
   border-right: 0px;
-  font-size: 32px;
-  font-family: 'Proza Libre', Monaco, 'Courier New', Courier, monospace;
-  font-weight: bolder;
+  font-size: 30pt;
+  font-family: 'Bree Serif', Monaco, 'Courier New', Courier, monospace;
+  /* font-weight: bolder; */
   text-align: left;
   padding-left: 20px;
   padding-right: 10px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  /*border-radius: 10px;*/
+  margin-top: 0;
+}
+
+.post-title {
+  border-left: 0px;
+  border-right: 0px;
+  font-size: 32pt;
+  font-family: 'Bree Serif', Monaco, 'Courier New', Courier, monospace;
+  color: black;
+  line-height: 100%;
+  text-align: left;
+  padding-right: 10px;
   padding-bottom: 10px;
   padding-top: 13px;
-  /*border-radius: 10px;*/
   margin-top: 0;
 }
 
