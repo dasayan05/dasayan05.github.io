@@ -4,8 +4,6 @@ title: Homepage
 termcmd: cd ${introduction}
 no-mathjax: ""
 no-title: ""
-sources:
-    - public/termynal/termynal.css
 ---
 
 <div style="margin-left: auto; margin-right: auto; width: 70%;">
