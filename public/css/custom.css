@@ -6,14 +6,16 @@
  */
 
 .custom-nav-whole {
-    margin-top: 2em;
+    margin-left: 5px;
+    margin-top: 1.5em;
     margin-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
+    /* padding-bottom: 20px; */
     border: 1px solid gray;
-    border-radius: 15px;
-    box-shadow: -0px -0px 10px gray;
+    border-radius: 5px;
+    box-shadow: -3px -3px 10px gray;
 }
 
 .custom-nav-title {
@@ -26,9 +28,9 @@
 }
 
 .custom-nav-desc {
-    font-size: 18px;
+    font-size: 13pt;
     line-height: 140%;
-    font-family: serif;
+    font-family: 'Open Sans';
 }
 
 .custom-desc-box {
@@ -40,11 +42,11 @@
 .custom-desc-box-thumb {
     float: left;
     margin-right: 10px;
-    width: 35%;
+    width: 30%;
     height: auto;
 }
 .custom-desc-box-thumb img {
-    margin: 0px;
+    /* margin: 0px; */
     margin-top: 15px;
 }
 
@@ -53,6 +55,7 @@
   background-color: #eeeeee;
   border: 1px solid #ddd;
   color: #000;
+  margin-left: 10px;
   text-align: center;
   font-size: 18px;
   font-family: Serif;

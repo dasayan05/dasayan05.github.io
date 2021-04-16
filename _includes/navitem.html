@@ -1,34 +1,33 @@
 <div class="custom-nav-whole">
     <p class="custom-nav-title"> [{{ include.count }}] <a href="{{ include.post.url }}"> {{ include.post.title }} </a> </p>
+    <button class="custom-desc-read-button" onclick="window.open('{{ include.post.url }}', '_blank')"><span>Read</span></button>
     <div class="custom-nav-desc">
-        <div>
-            {% if include.post.authors %}
-                <strong>Author(s):</strong> {{ include.post.authors }} <br>
-            {% else %}
-                <strong>Author:</strong> {{ include.post.author }} <br>
-            {% endif %}
+        {% if include.post.authors %}
+            <strong>Author(s): {{ include.post.authors }} </strong><br>
+        {% else %}
+            <strong>Author: {{ include.post.author }} </strong><br>
+        {% endif %}
 
-            {% if include.post.venue %}
-                <strong>Venue:</strong> {{ include.post.venue }} <br>
-            {% endif %}
+        
+        {% if include.post.venue %}
+            <strong>Venue: {{ include.post.venue }} </strong><br>
+        {% endif %}
 
-            {% if include.post.link %}
-                <strong>Link:</strong> <a href="{{ include.post.link }}" target="_blank">{{ include.post.link }}</a> <br>
-            {% endif %}
+        {% if include.post.link %}
+            <strong>Link: <a href="{{ include.post.link }}" target="_blank">{{ include.post.link }}</a> </strong><br>
+        {% endif %}
             
-            <button class="custom-desc-read-button" onclick="window.open('{{ include.post.url }}', '_blank')"><span>Read</span></button>
+
+        <strong>Dated: {{ include.post.date | date_to_string }} </strong><br>
+        <strong>Tags: {% for a_tag in include.post.tags %} {{ a_tag }}, {% endfor %}</strong>
+    </div>
+
+    <div class="custom-desc-box">
+        <div class="custom-desc-box-thumb">
+            <img src="{{ include.post.thumbnail-img }}">
         </div>
-
-        <strong>Dated:</strong> {{ include.post.date | date_to_string }} <br>
-        <strong>Tags:</strong> {% for a_tag in include.post.tags %} {{ a_tag }}, {% endfor %}
-
-        <div class="custom-desc-box">
-            <div class="custom-desc-box-thumb">
-                <img src="{{ include.post.thumbnail-img }}">
-            </div>
-            <div class="custom-desc-box-text">
-                <p> {{ include.post.excerpt }} </p>
-            </div>
+        <div class="custom-desc-box-text">
+            <p> {{ include.post.excerpt | truncatewords: 90, "..." }} </p>
         </div>
     </div>
 </div>

@@ -334,7 +334,7 @@ tbody tr:nth-child(odd) th {
 .post {
   margin-bottom: 4em;
   text-align: justify;
-  font-family: 'Open Sans';
+  /* font-family: serif; */
   color: black;
 }
 
