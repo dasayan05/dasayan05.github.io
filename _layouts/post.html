@@ -4,6 +4,7 @@ sources:
     - https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css
     - https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap
     - https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap
+    - https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap
     - /public/js/love.js
 ---
 
@@ -58,6 +59,7 @@ sources:
     
     {% if page.category == "blog-tut" %}{% include banner.html type="donation" %}{% endif %}
     {% if page.category == "pubs" %}{% include banner.html type="publication" %}{% endif %}
+    {% if page.category == "projs" %}{% include banner.html type="donation" %}{% endif %}
     
     {{ content }}
 </div>

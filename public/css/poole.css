@@ -330,12 +330,19 @@ tbody tr:nth-child(odd) th {
  * page is wrapped in `.page` and is only used on the page layout.
  */
 
-.page,
+.page {
+    margin-bottom: 4em;
+  text-align: justify;
+  font-family: 'Open Sans';
+  color: #000;
+  font-size: 13pt;
+  /*font-weight: bold;*/
+}
 .post {
   margin-bottom: 4em;
   text-align: justify;
-  /* font-family: serif; */
-  color: black;
+  font-family: 'Lato';
+  color: #444;
 }
 
 /* Blog post or page title */
@@ -350,7 +357,7 @@ tbody tr:nth-child(odd) th {
   border-left: 0px;
   border-right: 0px;
   font-size: 30pt;
-  font-family: 'Bree Serif', Monaco, 'Courier New', Courier, monospace;
+  font-family: 'Bree Serif', 'Courier New', Courier, monospace;
   /* font-weight: bolder; */
   text-align: left;
   padding-left: 20px;

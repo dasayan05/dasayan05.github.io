@@ -3,23 +3,23 @@
     <button class="custom-desc-read-button" onclick="window.open('{{ include.post.url }}', '_blank')"><span>Read</span></button>
     <div class="custom-nav-desc">
         {% if include.post.authors %}
-            <strong>Author(s): {{ include.post.authors }} </strong><br>
+            <strong>Author(s):</strong> {{ include.post.authors }} <br>
         {% else %}
-            <strong>Author: {{ include.post.author }} </strong><br>
+           <strong>Author:</strong> {{ include.post.author }} <br>
         {% endif %}
 
         
         {% if include.post.venue %}
-            <strong>Venue: {{ include.post.venue }} </strong><br>
+           <strong>Venue:</strong> {{ include.post.venue }} <br>
         {% endif %}
 
         {% if include.post.link %}
-            <strong>Link: <a href="{{ include.post.link }}" target="_blank">{{ include.post.link }}</a> </strong><br>
+           <strong>Link:</strong> <a href="{{ include.post.link }}" target="_blank">{{ include.post.link }}</a> <br>
         {% endif %}
             
 
-        <strong>Dated: {{ include.post.date | date_to_string }} </strong><br>
-        <strong>Tags: {% for a_tag in include.post.tags %} {{ a_tag }}, {% endfor %}</strong>
+       <strong>Dated:</strong> {{ include.post.date | date_to_string }} <br>
+       Tags: {% for a_tag in include.post.tags %} {{ a_tag }}, {% endfor %}
     </div>
 
     <div class="custom-desc-box">
@@ -27,7 +27,7 @@
             <img src="{{ include.post.thumbnail-img }}">
         </div>
         <div class="custom-desc-box-text">
-            <p> {{ include.post.excerpt | truncatewords: 90, "..." }} </p>
+            <p> {{ include.post.excerpt | truncatewords: 120, "..." }} </p>
         </div>
     </div>
 </div>
