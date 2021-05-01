@@ -26,9 +26,7 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 
 {% include banner.html type="index" %}
 
-# Latest news and updates !!
-
-- [ Stay updated by subscribing to the [RSS Feed](/feed.xml) ]
+# Latest news and updates !! [<span style="font-size: 22pt;" class="rss_button">Stay Updated</span>](feed.xml)
 
 - **News and Updates**
     - Serving as reviewer for top conferences ([ACM SIGGRAPH](https://s2021.siggraph.org/), [ICCV](http://iccv2021.thecvf.com/)) and journals ([Elsevier Neural Networks](https://www.journals.elsevier.com/neural-networks)).
