@@ -1,7 +1,8 @@
 ---
 title: "Energy Based Models (EBMs): A comprehensive introduction"
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2020-08-13
 tags:
   - Undirected Graphical Models

@@ -1,7 +1,8 @@
 ---
 title: Foundation of Variational Autoencoder (VAE)
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2020-01-01
 tags:
   - Variational Methods

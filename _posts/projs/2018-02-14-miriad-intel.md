@@ -1,14 +1,16 @@
 ---
 title: 'Project MIRIAD: Intel India Pvt. Ltd.'
 publish: true
-author: Ayan Das
+authors:
+  - Ayan Das
+  - Debdoot Sheet
+  - Rachana Sathish
 date: 2018-02-14
 tags:
   - Intel
   - Healthcare
   - Deep Learning
 layout: post
-post_number: "1"
 category: projs
 ---
 

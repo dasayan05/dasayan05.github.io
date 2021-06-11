@@ -1,7 +1,8 @@
 ---
 title: 'rlx: A modular Deep RL library for research'
 publish: true
-author: Ayan Das
+authors:
+  - Ayan Das
 date: 2020-06-27
 tags:
   - Deep Learning
@@ -9,7 +10,6 @@ tags:
   - Open Source
   - Research
 layout: post
-post_number: "4"
 category: projs
 thumbnail-img: "public/proj_res/4/code-snip.png"
 ---

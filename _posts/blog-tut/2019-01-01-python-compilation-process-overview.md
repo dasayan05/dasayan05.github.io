@@ -1,7 +1,8 @@
 ---
 title: "Advanced Python: Bytecodes and the Python Virutal Machine (VM) - Part I"
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2019-01-01
 tags:
   - Python
@@ -9,7 +10,6 @@ tags:
   - Bytecode
   - Virtual Machine
 layout: post
-post_number: "7"
 category: blog-tut
 thumbnail-img: "public/posts_res/7/process.jpg"
 ---

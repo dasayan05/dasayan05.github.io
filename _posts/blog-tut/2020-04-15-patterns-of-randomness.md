@@ -1,7 +1,8 @@
 ---
 title: Patterns of Randomness
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2020-04-15
 tags:
   - Random

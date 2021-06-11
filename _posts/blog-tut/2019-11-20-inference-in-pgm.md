@@ -1,7 +1,8 @@
 ---
 title: Directed Graphical Models & Variational Inference
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2019-11-20
 tags:
   - Variational Methods

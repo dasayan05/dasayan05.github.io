@@ -1,7 +1,8 @@
 ---
 title: Introduction to Probabilistic Programming
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2020-05-05
 tags:
   - Directed Graphical Models

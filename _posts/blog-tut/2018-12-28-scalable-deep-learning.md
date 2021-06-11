@@ -1,14 +1,14 @@
 ---
 title: 'Deep Learning at scale: Setting up distributed cluster'
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2018-12-28
 tags:
   - Distributed Computing
   - Deep Learning
   - Model Training
 layout: post
-post_number: "6"
 category: blog-tut
 thumbnail-img: "public/posts_res/9/parallel-dl.png"
 ---

@@ -1,0 +1,27 @@
+{% if include.option == "begin" %}
+<div>
+<center>
+  <section class="accordion">
+
+    <section class="accordion-tabs">
+
+{% for header in include.headers %}
+      {% assign id = forloop.index | minus: 1 %}
+      <button class="accordion-tab {% if id == 0 %}accordion-active{% endif %}" data-actab-group="0" data-actab-id="{{ id }}">{{ header }}</button>
+{% endfor %}
+    </section>
+    
+    <section class="accordion-content">
+{% endif %}
+
+
+{% if include.option == "end" %}
+    </section>
+  </section>
+
+</center>
+</div>
+<br />
+
+<script type="text/javascript" src="/public/js/tabing.js"></script>
+{% endif %}

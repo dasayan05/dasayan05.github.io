@@ -13,9 +13,11 @@
     padding-right: 20px;
     padding-top: 10px;
     /* padding-bottom: 20px; */
-    border: 1px solid gray;
-    border-radius: 5px;
-    box-shadow: -3px -3px 10px gray;
+    /*border: 1px solid gray;*/
+    border: none;
+    border-radius: 15px;
+    /*box-shadow: -3px -3px 10px gray;*/
+    box-shadow: -0.1em -0.1em 1.5em -0.5em rgba(0, 0, 0, 0.7);
 }
 
 .custom-nav-title {
@@ -28,26 +30,25 @@
 }
 
 .custom-nav-desc {
-    font-size: 13pt;
+    font-size: 12pt;
     line-height: 140%;
     font-family: 'Open Sans';
 }
 
 .custom-desc-box {
-    margin-top: 2px;
+    /*margin-top: 2px;*/
     padding: 5px;
     display: table;
 }
 
-.custom-desc-box-thumb {
-    float: left;
-    margin-right: 10px;
-    width: 30%;
-    height: auto;
-}
 .custom-desc-box-thumb img {
-    /* margin: 0px; */
-    margin-top: 15px;
+    float: left;
+    margin-right: 20px;
+    width: 40%;
+    /*border: 1px black solid;*/
+    /*border-radius: 10px;*/
+    margin-top: 20px;
+    /*line-height: 0;*/
 }
 
 .custom-desc-read-button {
@@ -100,7 +101,7 @@
 .banner {
     font-size: 22px;
     text-align: center;
-    background-color: #eeeeee;
+    background-color: rgba(68, 127, 255, 0.2);
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 10px;
@@ -134,6 +135,24 @@
     text-decoration: none;
 }
 
+.latest_card {
+    float: left;
+    padding: 10px;
+}
+
+.latest_card a {
+    color: blue;
+    text-decoration: none;
+}
+
+.latest_card:hover p {
+    font-weight: bold;
+}
+
+.latest_card img {
+    margin: 0;
+}
+
 /* Font-awesome social media icons, for the contact page  */
 .fa {
     padding: 20px;
@@ -164,3 +183,4 @@
 
 /* Font awesome love button */
 .fa-heart { color: #1877f2; }
+.fa-file { color: #666; }

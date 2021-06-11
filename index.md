@@ -4,12 +4,14 @@ title: Homepage
 termcmd: cd ${introduction}
 no-mathjax: ""
 no-title: ""
+sources:
+    - /public/css/tabing.css
 ---
 
 <div style="margin-left: auto; margin-right: auto; width: 70%;">
 <center>
     <img src="/public/volley.gif" style="margin: 0px;" />
-    <p style="font-size: 14px; text-align: right;">Reinforcement Learning <a href="https://github.com/dasayan05/rlx/blob/master/examples/slime.py" target="_blank">agents</a> learn to play <a href="https://github.com/hardmaru/slimevolleygym" target="_blank">slime volleyball</a> using self-play training (trained using <a href="https://github.com/dasayan05/rlx" target="_blank">rlx</a>)</p>
+    <p style="font-size: 14px; text-align: center;">Reinforcement Learning <a href="https://github.com/dasayan05/rlx/blob/master/examples/slime.py" target="_blank">agents</a> learn to play <a href="https://github.com/hardmaru/slimevolleygym" target="_blank">slime volleyball</a> using self-play training (trained using <a href="https://github.com/dasayan05/rlx" target="_blank">rlx</a>)</p>
 </center>
 </div>
 
@@ -27,18 +29,47 @@ A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded s
 {% include banner.html type="index" %}
 
 # Latest news and updates !! [<span style="font-size: 22pt;" class="rss_button">Stay Updated</span>](feed.xml)
+<br>
 
-- **News and Updates**
-    - Serving as reviewer for top conferences ([ACM SIGGRAPH](https://s2021.siggraph.org/), [ICCV](http://iccv2021.thecvf.com/)) and journals ([Elsevier Neural Networks](https://www.journals.elsevier.com/neural-networks)).
-    - Completed probationary period (first 1 year) and passed Confirmation Viva for my PhD
-    - Got PhD (with full scholarship) offer from [SketchX Lab, University of Surrey](http://sketchx.eecs.qmul.ac.uk/). Moving out of India in Oct. 2019.
-- **Latest blogs and articles**
-    1. Learn about Differentiable Programming in <a href="{% post_url blog-tut/2020-09-08-differentiable-programming %}">Differentiable Programming: Computing source-code derivatives</a>
-    2. Learn about Energy Based Models (EBMs) in my article <a href="{% post_url blog-tut/2020-08-13-energy-based-models-one %}">Energy Based Models (EBMs): A comprehensive introduction</a>
-    3. Learn about writing probabilistic models programmatically in <a href="{% post_url blog-tut/2020-04-30-probabilistic-programming %}">Introduction to Probabilistic Programming</a>.
-    4. Read about how we can get artistic patterns from mathematics. <a href="{% post_url blog-tut/2020-04-15-patterns-of-randomness %}">Patterns of Randomness</a>
-    5. Read about <a href="{% post_url blog-tut/2020-03-20-neural-ode %}">Neural Ordinary Differential Equation</a>, a new type of model that is gaining popularity.
-- **Latest publications**
-    1. Paper accepted @ CVPR 2021, <a href="{% post_url pubs/2021-03-01-pub-9 %}">Cloud2Curve: Generation and Vectorization of Parametric Sketches</a>
-    2. Paper accepted @ SIGGRAPH Asia 2020, <a href="{% post_url pubs/2020-07-30-pub-8 %}">Pixelor: A Competitive Sketching AI Agent. So you think you can beat me?</a>
-    2. Paper accepted @ ECCV 2020, <a href="{% post_url pubs/2020-05-22-pub-7 %}">BézierSketch: A generative model for scalable vector sketches</a>
+{% assign headers = "Latest Publications,Latest Blogs,Other news" | split: ',' %}
+{% include tabing.html option="begin" headers=headers %}
+    {% include tab_content.html option="begin" id=0 %}
+    {% assign each_width = 100 | divided_by: site.data.latest.pubs.size %}
+        {% for i in site.data.latest.pubs %}
+            {% assign post = site.categories.pubs[i] %}
+            <div class="latest_card" style="width: {{ each_width }}%;">
+                <a target="_blank" href="{{ post.url }}">
+                <img src="{{ post.thumbnail-img }}" alt="paper img"><br>
+                <small>
+                    <p>"{{ post.title }}"</p>
+                </small>
+                </a><small><p>Venue: {{ post.venue }}</p></small>
+            </div>
+        {% endfor %}
+    {% include tab_content.html option="end"%}
+
+    {% include tab_content.html option="begin" id=1 %}
+        <center>
+        {% assign each_width = 100 | divided_by: site.data.latest.blogs.size %}
+        {% for j in site.data.latest.blogs %}
+            {% assign post = site.categories.blog-tut[j] %}
+            <div class="latest_card" style="width: {{ each_width }}%;">
+                <a target="_blank" href="{{ post.url }}">
+                <img src="{{ post.thumbnail-img }}" alt="blog img"><br>
+                <small><p>{{ post.title }}</p></small>
+                </a>
+            </div>
+        {% endfor %}
+        </center>
+    {% include tab_content.html option="end"%}
+
+    {% include tab_content.html option="begin" id=2 %}
+        {% assign each_width = 100 | divided_by: site.data.latest.news.size %}
+        {% for nw in site.data.latest.news %}
+        <div style="width: {{ each_width }}%;" class="latest_card">
+            <img src="{{ nw.image }}"><br>
+            <small><p>{{ nw.title }}</p></small>
+        </div>
+        {% endfor %}
+    {% include tab_content.html option="end"%}
+{% include tabing.html option="end" %}

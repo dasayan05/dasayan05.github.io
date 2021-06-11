@@ -1,6 +1,6 @@
 ---
 title: 'Imagenary: A computer-vision based mouse and keyboard interface for PCs'
-publish: true
+publish: false
 author: Ayan Das
 date: 2017-11-26
 tags:
@@ -9,7 +9,6 @@ tags:
   - Mouse
   - PC Interface
 layout: post
-post_number: "2"
 category: projs
 navigation: excluded
 ---

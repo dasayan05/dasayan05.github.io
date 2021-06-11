@@ -5,26 +5,18 @@ sources:
     - https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap
     - https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap
     - https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap
+    - /public/css/tabing.css
 ---
 
 <div class="post">
-    <div class="post-title">{{ page.title }}</div>
-    {% if page.authors %}
-        <span class="post-date">Author(s): {{ page.authors }}</span>
-    {% else %}
-        <span class="post-date">Author: {{ page.author }}</span>
-    {% endif %}
-    {% if page.venue %}<span class="post-date">Venue: {{ page.venue }}</span>{% endif %}
-    {% if page.link %}
-        <span class="post-date">Link: <a href="{{ page.link }}" target="_blank">{{ page.link }}</a></span>
-    {% endif %}
+    <div class="post-title"> {{ page.title }} </div>
+    <span class="post-date">Author(s):{% include authorlist.html authors=page.authors eqcontrib=page.authors_eqcontrib %}</span>
     {% if page.date %}<span class="post-date">Dated: {{ page.date | date_to_string }}</span>{% endif %}
     <br>
 
     {% include social.html %}
     
     {% if page.category == "blog-tut" %}{% include banner.html type="donation" %}{% endif %}
-    {% if page.category == "pubs" %}{% include banner.html type="publication" %}{% endif %}
     {% if page.category == "projs" %}{% include banner.html type="donation" %}{% endif %}
     
     {{ content }}
@@ -50,39 +42,17 @@ sources:
 <div class="related">
     <h2>Related Posts</h2>
     <ul class="related-posts">
-        {% for post in site.posts %}
-        {% unless post.navigation == "excluded" %}
-            {% if page.category == post.category %}
-                {% for tag in page.tags %}
-                {% if post.tags contains tag and post.title != page.title %}
+        {% for post in site.posts %}{% unless post.navigation == "excluded" %}{% if page.category == post.category %}
+                {% for tag in page.tags %}{% if post.tags contains tag and post.title != page.title %}
                     <li><a href="{{ post.url }}">{{ post.title }}</a>, <small>{{ post.date | date_to_string }}</small></li>
                     {% break %}
-                {% endif %}
-                {% endfor %}
-            {% endif %}
-        {% endunless %}
-        {% endfor %}
+                {% endif %}{% endfor %}
+        {% endif %}{% endunless %}{% endfor %}
     </ul>
 </div>
 
 {% if jekyll.environment == "production" %}
 {% unless page.no-disqus %}
-<div id="disqus_thread"></div>
-<script>
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-var disqus_config = function () {
-this.page.url = '{{ page.url | absolute_url }}';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '{{ page.url | absolute_url }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://http-dasayan05-github-io.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    {% include disqus.html url=page.url %}
 {% endunless %}
 {% endif %}

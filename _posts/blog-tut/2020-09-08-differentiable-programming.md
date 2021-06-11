@@ -1,7 +1,8 @@
 ---
 title: "Differentiable Programming: Computing source-code derivatives"
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2020-09-08
 tags:
   - Automatic Differentiation

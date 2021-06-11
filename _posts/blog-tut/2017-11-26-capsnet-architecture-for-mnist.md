@@ -1,14 +1,14 @@
 ---
 title: 'CapsNet architecture for MNIST'
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2017-11-26
 tags:
   - capsules
   - capsnet
   - mnist
 layout: post
-post_number: "2"
 category: blog-tut
 thumbnail-img: "public/posts_res/2/decoder.jpg"
 ---

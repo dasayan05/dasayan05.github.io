@@ -9,7 +9,7 @@ sources:
 
 # Want to reach out to me ?
 
-For any query/help/request, feel free to use any of the following way - there are plenty. Good thing is, I am very active in social media.
+For any query/help/request, feel free to use any of the following way - there are plenty. Good thing is, I am quite active in social media.
 
 <center>
 <a href="https://www.facebook.com/ayan.das.05" target="_blank" class="fa fa-facebook fa-3x"></a>
@@ -31,11 +31,11 @@ For any query/help/request, feel free to use any of the following way - there ar
     - <a href="mailto:ayan05das@gmail.com">ayan05das@gmail.com</a> (Personal)
 
 - Postal address:
-    - I am currently staying in one of the University of Surrey's residential areas: "Stag Hill Court, University of Surrey, Guildford, GU2 7XH".
-    - But, better to meet me at my lab: "Room 03-BB-00, CVSSP, Alan Turing Building, University of Surrey, Guildford, GU2 7XH".
+    - I am currently staying in one of the University of Surrey's residential areas
+    - But, better to meet me OR send posts at my lab: "Room 03-BB-00, CVSSP, Alan Turing Building, University of Surrey, Guildford, GU2 7XH"
 
 <center>
 <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2497.782869209485!2d-0.5885819484463943!3d51.24149363783062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4875d0c03b636367%3A0x1e6349f465afa67c!2sStag%20Hill%20Court%20Student%20Accomodation!5e0!3m2!1sen!2suk!4v1596477099793!5m2!1sen!2suk"
-    width="75%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    width="75%" height="450" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </center>

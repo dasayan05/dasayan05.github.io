@@ -1,13 +1,7 @@
 <div class="custom-nav-whole">
     <p class="custom-nav-title"> [{{ include.count }}] <a href="{{ include.post.url }}"> {{ include.post.title }} </a> </p>
-    <button class="custom-desc-read-button" onclick="window.open('{{ include.post.url }}', '_blank')"><span>Read</span></button>
     <div class="custom-nav-desc">
-        {% if include.post.authors %}
-            <strong>Author(s):</strong> {{ include.post.authors }} <br>
-        {% else %}
-           <strong>Author:</strong> {{ include.post.author }} <br>
-        {% endif %}
-
+        <strong>Author(s):</strong> {% include authorlist.html authors=include.post.authors eqcontrib=include.post.authors_eqcontrib %} <br>
         
         {% if include.post.venue %}
            <strong>Venue:</strong> {{ include.post.venue }} <br>
@@ -16,18 +10,23 @@
         {% if include.post.link %}
            <strong>Link:</strong> <a href="{{ include.post.link }}" target="_blank">{{ include.post.link }}</a> <br>
         {% endif %}
-            
-
        <strong>Dated:</strong> {{ include.post.date | date_to_string }} <br>
-       Tags: {% for a_tag in include.post.tags %} {{ a_tag }}, {% endfor %}
     </div>
 
     <div class="custom-desc-box">
+        {% if include.post.thumbnail-img %}
         <div class="custom-desc-box-thumb">
             <img src="{{ include.post.thumbnail-img }}">
         </div>
+        {% endif %}
         <div class="custom-desc-box-text">
-            <p> {{ include.post.excerpt | truncatewords: 120, "..." }} </p>
+            <p>
+                {% if include.post.abstract %}
+                <strong><big>Abstract:</big></strong> {{ include.post.abstract | truncatewords: 120, "..." }}
+                {% else %}
+                {{ include.post.excerpt | truncatewords: 120, "..." }}
+                {% endif %}
+            </p>
         </div>
     </div>
 </div>

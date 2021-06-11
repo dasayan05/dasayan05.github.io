@@ -1,14 +1,14 @@
 ---
 title: 'An intuitive understanding of Capsules'
 publish: true
-author: Ayan Das
+authors:
+  - Ayan Das
 date: 2017-11-20
 tags:
   - capsules
   - equivariance
   - convnets
 layout: post
-post_number: "1"
 category: blog-tut
 thumbnail-img: "public/posts_res/1/capsule_model.jpg"
 ---

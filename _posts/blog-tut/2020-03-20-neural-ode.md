@@ -1,7 +1,8 @@
 ---
 title: Neural Ordinary Differential Equation (Neural ODE)
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2020-03-20
 tags:
   - Ordinary Differential Equation

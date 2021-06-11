@@ -1,7 +1,8 @@
 ---
 title: "TeX & family : The Typesetting ecosystem"
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2019-05-29
 tags:
   - TeX

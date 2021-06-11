@@ -1,0 +1,9 @@
+{% if include.option == "begin" %}
+<article class="accordion-item {% if include.id == 0 %}accordion-active{% endif %}" data-actab-group="0" data-actab-id="{{ include.id }}">
+  <div class="accordion-item__container">
+{% endif %}
+
+{% if include.option == "end" %}
+  </div>
+</article>
+{% endif %}

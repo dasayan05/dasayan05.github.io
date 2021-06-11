@@ -1,7 +1,9 @@
 ---
 title: "Intermediate C++ : Speeding up iostreams in C++"
 publish: true
-author: <a href="https://in.linkedin.com/in/rohan-mark-gomes"> Rohan Mark Gomes </a>
+authors:
+    - Rohan Mark Gomes
+    - Ayan Das
 date: 2019-04-06
 tags:
   - C++
@@ -11,7 +13,6 @@ layout: post
 post_number: "10"
 category: blog-tut
 thumbnail-img: "public/posts_res/10/iostream.gif"
-navigation: excluded
 ---
 
 We often come across situations where we need to process large files. Clearly interactive input-output is not helpful in all situations. It is a common practice to use **cin** and **cout** for input-output in C++ because of it's flexibility and ease of use. But there is quite a big problem with iostream, which is by default, much slower than standard IO functions in other languages. In this tutorial, I will quantitatively demonstrate the slowness of iostreams in C++, explain some of the reasons for its slowness and share some tips to speed it up.

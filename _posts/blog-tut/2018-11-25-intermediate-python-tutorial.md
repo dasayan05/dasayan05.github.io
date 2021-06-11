@@ -1,13 +1,13 @@
 ---
 title: 'Intermediate Python: Generators, Decorators and Context managers - Part I'
 publish: true
-author: Ayan Das
+authors:
+    - Ayan Das
 date: 2018-11-25
 tags:
   - Python
   - Intermediate
 layout: post
-post_number: "4"
 category: blog-tut
 thumbnail-img: "public/posts_res/4/python-banner.jpg"
 ---
