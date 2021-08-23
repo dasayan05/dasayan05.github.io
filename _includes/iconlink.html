@@ -1,1 +1,7 @@
-<a target="_blank" class="pubicon" href="{{ include.link }}"><i class="fa {{ include.faicon }} fa-3x"></i>{{ include.text }}</a>
+{% if include.link %}
+<a target="_blank" class="pubicon" href="{{ include.link }}">
+{% endif %}
+    <i class="fa {{ include.faicon }} fa-3x"></i>{{ include.text }}
+{% if include.link %}
+</a>
+{% endif %}
