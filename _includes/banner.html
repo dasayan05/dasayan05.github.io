@@ -2,6 +2,8 @@
 	<strong>
     {% if include.type == "index" %}
         Looking for my blogs/tutorials ? <a href="{% link blogs.html %}">Read them here</a> OR subscribe to the <a href="{{ '/' | relative_url }}feed.xml"><span class="rss_button">RSS</span></a> Feed.
+        <br />
+        Read my publications <a href="{% link pubs.html %}">here</a> or visit my <a href="https://scholar.google.com/citations?user=x-WI_EgAAAAJ&hl" target="_blank"><span class="gscholar_button">Google Scholar</span></a> profile.
     {% elsif include.type == "donation" %}
         Found my blogs helpful ? I would appreciate any <a href="https://paypal.me/ayan05das?locale.x=en_GB"> donation </a>. Subscribe to the <a href="{{ '/' | relative_url }}feed.xml"><span class="rss_button">RSS</span></a> feed.
     {% elsif include.type == "publication" %}
