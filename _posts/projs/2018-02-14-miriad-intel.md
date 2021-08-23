@@ -1,6 +1,7 @@
 ---
 title: 'Project MIRIAD: Intel India Pvt. Ltd.'
-publish: true
+publish: false
+navigation: excluded
 authors:
   - Ayan Das
   - Debdoot Sheet
