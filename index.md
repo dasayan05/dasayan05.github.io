@@ -29,9 +29,6 @@ sources:
 
 {% include banner.html type="index" %}
 
-# Latest news and updates !! [<span style="font-size: 22pt;" class="rss_button">Subscribe</span>](feed.xml)
-<br>
-
 {% assign headers = "Latest Publications,Latest Blogs,Other news" | split: ',' %}
 {% include tabing.html option="begin" headers=headers %}
     {% include tab_content.html option="begin" id=0 %}
