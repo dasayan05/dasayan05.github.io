@@ -11,7 +11,7 @@ sources:
 <div class="post">
     <center>
         <div class="post-title"><center>{{ page.title }}</center></div>
-        <span class="post-date">{% include authorlist.html authors=page.authors eqcontrib=page.authors_eqcontrib %}</span>
+        <span class="post-date">{% include authorlist.html nolink=false authors=page.authors eqcontrib=page.authors_eqcontrib %}</span>
         <span class="post-date">Published in {{ page.venue }}</span>
         {% if page.link %}
             <span class="post-date">Link: <a href="{{ page.link }}" target="_blank">{{ page.link }}</a></span>

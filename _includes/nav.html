@@ -1,0 +1,25 @@
+<div style="height: auto; overflow: auto;">
+<div class="nav-column">
+    {% assign c = 1 %}
+    {% for item in include.itemlist %}
+    {% unless item.navigation == "excluded" %}
+    {% assign d = c | modulo: 2 %}{% if d == 1 %}
+    {% include navitem.html post=item count=c %}
+    {% endif %}
+    {% capture c %}{{ c | plus:1 }}{% endcapture %}
+    {% endunless %}
+    {% endfor %}
+</div>
+
+<div class="nav-column">
+    {% assign c = 1 %}
+    {% for item in include.itemlist %}
+    {% unless item.navigation == "excluded" %}
+    {% assign d = c | modulo: 2 %}{% if d == 0 %}
+    {% include navitem.html post=item count=c %}
+    {% endif %}
+    {% capture c %}{{ c | plus:1 }}{% endcapture %}
+    {% endunless %}
+    {% endfor %}
+</div>
+</div>

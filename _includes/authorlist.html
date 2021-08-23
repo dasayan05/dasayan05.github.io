@@ -1,4 +1,4 @@
 {% assign no_of_authors = include.authors.size %}
 {% for auth in include.authors %}
-    {% if site.data.people[auth] %}<a href="{{ site.data.people[auth] }}" target="_blank">{% endif %}{{ auth }}{% if site.data.people[auth] %}</a>{% endif %}{% unless forloop.index == no_of_authors %}{% if include.eqcontrib contains forloop.index %}*{% endif %},{% endunless %}
+    {% if site.data.people[auth] and include.nolink == false %}<a href="{{ site.data.people[auth] }}" target="_blank">{% endif %}{{ auth }}{% if site.data.people[auth] %}</a>{% endif %}{% unless forloop.index == no_of_authors %}{% if include.eqcontrib contains forloop.index %}*{% endif %},{% endunless %}
 {% endfor %}{% if include.eqcontrib %} (* Equal Contribution){% endif %}

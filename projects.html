@@ -5,10 +5,4 @@ termcmd: ./project --list
 no-mathjax: ""
 ---
 
-{% assign c = 1 %}
-{% for proj in site.categories.projs %}
-    {% unless proj.navigation == "excluded" %}
-        {% include navitem.html post=proj count=c %}
-        {% capture c %}{{ c | plus:1 }}{% endcapture %}
-    {% endunless %}
-{% endfor %}
+{% include nav.html itemlist=site.categories.projs %}

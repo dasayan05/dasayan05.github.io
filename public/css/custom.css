@@ -5,24 +5,27 @@
  * Author: Ayan Das
  */
 
+ .nav-column {
+     width: 50%;
+     float: left;
+     display: block;
+ }
+
 .custom-nav-whole {
-    margin-left: 5px;
-    margin-top: 1.5em;
-    margin-bottom: 5px;
+    margin: 2.5%;
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 10px;
-    /* padding-bottom: 20px; */
-    /*border: 1px solid gray;*/
-    border: none;
+    height: auto;
+    float: left;
+    border: 1px solid rgb(221, 221, 221);
     border-radius: 15px;
-    /*box-shadow: -3px -3px 10px gray;*/
-    box-shadow: -0.1em -0.1em 1.5em -0.5em rgba(0, 0, 0, 0.7);
+    box-shadow: -0.1em -0.1em 1.2em -0.5em rgba(0, 0, 0, 0.5);
 }
 
 .custom-nav-title {
     text-align: left;
-    font-size: 22pt;
+    font-size: 18pt;
     font-family: 'Bree Serif';
     margin-top: 10px;
     margin-bottom: 10px;
@@ -44,7 +47,7 @@
 .custom-desc-box-thumb img {
     float: left;
     margin-right: 20px;
-    width: 40%;
+    /* width: 40%; */
     /*border: 1px black solid;*/
     /*border-radius: 10px;*/
     margin-top: 20px;

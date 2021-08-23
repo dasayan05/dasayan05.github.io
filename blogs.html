@@ -13,12 +13,6 @@ sources:
 <a style="float: right; margin-left: 20px;"
         href="https://www.linkedin.com/in/ayan-das-a49928a7/" target="_blank" class="fa fa-linkedin fa-3x"></a>
 Following is an exhaustive list (latest first) of the blogs/articles I write in spare time. I write and publish blogs on topics related to my area of research or any general topic of interest. If you have suggestions, corrections or comments on any of them, feel free to ping me on social media OR just email me at <strong>dasayan05@hotmail.com</strong>.
-<br />
+<br /> <br />
 
-{% assign c = 1 %}
-{% for blog in site.categories.blog-tut %}
-    {% unless blog.navigation == "excluded" %}
-        {% include navitem.html post=blog count=c %}
-        {% capture c %}{{ c | plus:1 }}{% endcapture %}
-    {% endunless %}
-{% endfor %}
+{% include nav.html itemlist=site.categories.blog-tut %}

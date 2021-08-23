@@ -1,7 +1,7 @@
 <div class="custom-nav-whole">
     <p class="custom-nav-title"> [{{ include.count }}] <a href="{{ include.post.url }}"> {{ include.post.title }} </a> </p>
     <div class="custom-nav-desc">
-        <strong>Author(s):</strong> {% include authorlist.html authors=include.post.authors eqcontrib=include.post.authors_eqcontrib %} <br>
+        <strong>Author(s):</strong> {% include authorlist.html nolink=true authors=include.post.authors eqcontrib=include.post.authors_eqcontrib %} <br>
         
         {% if include.post.venue %}
            <strong>Venue:</strong> {{ include.post.venue }} <br>
@@ -19,7 +19,7 @@
             <img src="{{ include.post.thumbnail-img }}">
         </div>
         {% endif %}
-        <div class="custom-desc-box-text">
+        <!-- <div class="custom-desc-box-text">
             <p>
                 {% if include.post.abstract %}
                 <strong><big>Abstract:</big></strong> {{ include.post.abstract | truncatewords: 120, "..." }}
@@ -27,6 +27,6 @@
                 {{ include.post.excerpt | truncatewords: 120, "..." }}
                 {% endif %}
             </p>
-        </div>
+        </div> -->
     </div>
 </div>

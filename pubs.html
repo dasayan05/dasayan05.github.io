@@ -12,12 +12,6 @@ sources:
         href="https://scholar.google.com/citations?user=x-WI_EgAAAAJ&hl" target="_blank" class="fa fa-google fa-3x"></a>
 
 As an academic, I publish my research work in top ranked conference and journals (CVPR, ECCV, SIGGRAPH, Elsevier PR) in Computer Vision and Deep Learning. The below list is a selection of my publications which I will try to keep up-to-date. In case I miss anything, you can visit the exhaustive list in my <a href="https://scholar.google.com/citations?user=x-WI_EgAAAAJ&hl">Google Scholar</a> profile. Click on the title or READ button to access further details including bibtex entry. I also serve as reviewer for many of them (e.g. ICCV, SIGGRAPH etc).
-<br />
+<br /> <br />
 
-{% assign c = 1 %}
-{% for pub in site.categories.pubs %}
-    {% unless pub.navigation == "excluded" %}
-        {% include navitem.html post=pub count=c %}
-        {% capture c %}{{ c | plus:1 }}{% endcapture %}
-    {% endunless %}
-{% endfor %}
+{% include nav.html itemlist=site.categories.pubs %}
