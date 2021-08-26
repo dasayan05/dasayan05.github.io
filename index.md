@@ -4,6 +4,7 @@ title: Homepage
 termcmd: cd ${introduction}
 no-mathjax: ""
 no-title: ""
+thumbnail-img: "public/pub_res/8.png"
 sources:
     - /public/css/tabing.css
     - https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
