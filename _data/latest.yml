@@ -1,5 +1,8 @@
 news:
   -
+    title: <a href="https://speakerdeck.com/dasayan05/continuous-depth-models-and-a-brief-overview-of-neural-ode">Gave a talk</a> in SketchX group meeting about continuous depth models and <a href="https://arxiv.org/abs/1806.07366">Neural ODE</a> (Image taken from here)
+    image: https://miro.medium.com/max/522/1*gRSMxVqVXB27jXWqOR8TbA.png
+  -
     title: Serving as a reviewer in <a href="http://www.bmvc2021.com/">British Machine Vision Conference (BMVC)</a>
     image: http://www.bmvc2021.com/assets/images/layout/bmvc-logo.png
 
@@ -10,10 +13,6 @@ news:
   -
     title: Serving as a reviewer in <a href="http://iccv2021.thecvf.com/">International Conference on Computer Vision</a>
     image: https://iccv2019.thecvf.com/images/cvf_.jpg
-
-  -
-    title: Serving as a reviewer in <a href="https://s2021.siggraph.org/">Elsevier Neural Networks</a>
-    image: https://anpei.org.br/site-novo/wp-content/uploads/2019/05/imgpsh_fullsize.png
 
 pubs:
   - 0
