@@ -106,13 +106,13 @@ The above equation basically tells us to create a perturbed/corrupted version of
 J_{\mathrm{D}}(\theta) = \mathbb{E}\_{p\_{\mathrm{data}}^{\sigma}(\mathbf{\tilde{x}})} \bigg[ \left|\left| \mathbf{s}\_{\theta}(\mathbf{\tilde{x}}) - \nabla_{\mathbf{\tilde{x}}} \log p_{\mathrm{data}}^{\sigma}(\mathbf{\tilde{x}}) \right|\right|_2^2 \bigg]
 \\]
 
-With a crucial proof shown in the appendix of the [original paper](https://www.iro.umontreal.ca/~vincentp/Publications/DenoisingScoreMatching_NeuralComp2011.pdf), we can have an equivalent (changes shown in blue) version of $$J_{\mathrm{D}}(\theta)$$ as
+With a crucial proof shown in the appendix of the [original paper](https://www.iro.umontreal.ca/~vincentp/Publications/DenoisingScoreMatching_NeuralComp2011.pdf), we can have an equivalent (changes shown in magenta) version of $$J_{\mathrm{D}}(\theta)$$ as
 
 \\[\tag{5}
 J_{\mathrm{D}}(\theta) = \mathbb{E}\_{p\_{\mathrm{data}}^{\sigma}(\color{magenta}{\mathbf{\tilde{x}}, \mathbf{x}})} \bigg[ \left|\left| \mathbf{s}\_{\theta}(\mathbf{\tilde{x}}) - \nabla_{\mathbf{\tilde{x}}} \log \color{magenta}{p_{\mathcal{N}}^{\sigma}(\mathbf{\tilde{x}} \| \mathbf{x})} \right|\right|_2^2 \bigg]
 \\]
 
-Note that we now need original-corrupt data pairs $$(\mathbf{\tilde{x}}, \mathbf{x})$$ in order to compute the expectation, which is quite trivial to do. Also realize that the term $$\nabla_{\mathbf{\tilde{x}}} \log p_{\mathcal{N}}^{\sigma}(\mathbf{\tilde{x}} \vert \mathbf{x})$$ is not the data score but related only to the pre-specified noise model with a quite an easy analytic form
+Note that we now need original-corrupt data pairs $$(\mathbf{\tilde{x}}, \mathbf{x})$$ in order to compute the expectation, which is quite trivial to do. Also realize that the term $$\nabla_{\mathbf{\tilde{x}}} \log p_{\mathcal{N}}^{\sigma}(\mathbf{\tilde{x}} \vert \mathbf{x})$$ is not the data score but related only to the pre-specified noise model with quite an easy analytic form
 
 \\[
 \nabla_{\mathbf{\tilde{x}}} \log p_{\mathcal{N}}^{\sigma}(\mathbf{\tilde{x}} \vert \mathbf{x}) = - \frac{1}{\sigma^2} (\mathbf{\tilde{x}} - \mathbf{x})
@@ -159,7 +159,8 @@ To find a connection now, it is only a matter of comparing Eq. 6 with Eq. 4. The
 $$
 \Delta t = 1 \\
 f(\mathbf{x}_t, t) = \alpha_t \cdot \mathbf{s}_{\theta^*}(\mathbf{x}_t) \\
-g(\mathbf{x}_t, t) = \sqrt{2 \alpha_t}
+g(\mathbf{x}_t, t) = \sqrt{2 \alpha_t} \\
+\Delta \omega \equiv \mathbf{z}
 $$
 
 ---
