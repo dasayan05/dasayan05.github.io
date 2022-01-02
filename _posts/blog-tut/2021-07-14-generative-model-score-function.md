@@ -16,6 +16,8 @@ thumbnail-img: "public/posts_res/19/score.png"
 
 Generative Models are of immense interest in fundamental research due to their ability to model the "all important" data distribution. A large class of generative models fall into the category of [Probabilistic Graphical Models]({% post_url blog-tut/2019-11-20-inference-in-pgm %}) or PGMs. PGMs (e.g. [VAE]({% post_url blog-tut/2020-01-01-variational-autoencoder %})) usually train a parametric distribution (encoded in the form of graph structure) by minimizing log-likelihood, and samples from it by virtue of ancestral sampling. GANs, another class of popular generative model, take a different approach for training as well as sampling. Both class of models however, suffer from several drawbacks, e.g. difficult log-likelihood computation, unstable training etc. Recently, efforts have been made to craft generative models that inherit all good qualities from the existing ones. One of the rising classes of generative models is called "*Score based Models*". Rather than explicitly maximizing the log-likelihood of a parametric density, it creates *a map to navigate the data space*. Once learned, sampling is done by [Langevin Dynamics](https://en.wikipedia.org/wiki/Stochastic_gradient_Langevin_dynamics), an MCMC based method that actually navigates the data space using the map and lands on regions with high probability under empirical data distribution (i.e. real data regions). In this articles, we will describe the fundamentals of Score based models along with few of its variants.
 
+> The next part of this two-part blog is [Diffusion Probabilistic Models]({% post_url blog-tut/2021-12-04-diffusion-prob-models %})
+
 ## Traditional maximum-likelihood (MLE)
 
 Traditional log-likelihood based approaches define a parametric generative process in terms of [graphical model]({% post_url blog-tut/2019-11-20-inference-in-pgm %}) and maximize the joint density $$p_{\theta}(\mathbf{x})$$ w.r.t its parameters $$\theta$$
@@ -167,4 +169,4 @@ $$
 
 ---
 
-In another future article, we will explore Diffusion Models along with their connection to SDEs and how we can utilize it to create better generative models.
+In another future article named [An introduction to Diffusion Probabilistic Models]({% post_url blog-tut/2021-12-04-diffusion-prob-models %}), we explored Diffusion Models along with their connection to SDEs.
