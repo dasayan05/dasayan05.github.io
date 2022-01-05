@@ -1,5 +1,5 @@
 <div class="custom-nav-whole">
-    <p class="custom-nav-title"> [{{ include.count }}] <a href="{{ include.post.url }}"> {{ include.post.title }} </a> </p>
+    <p class="custom-nav-title"> [{{ include.count }}] <a href="{{ include.post.url }}" target="_blank"> {{ include.post.title }} </a> </p>
     <div class="custom-nav-desc">
         <strong>Author(s):</strong> {% include authorlist.html nolink=true authors=include.post.authors eqcontrib=include.post.authors_eqcontrib %} <br>
         
