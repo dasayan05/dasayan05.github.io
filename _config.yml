@@ -23,7 +23,7 @@ highlighter: rouge
 excerpt_separator : "\n\n"
 
 # Google Analytics
-google_analytics: UA-165733444-1
+google_analytics: G-YWYJSCZNVM
 
 # Gems
 plugins:
