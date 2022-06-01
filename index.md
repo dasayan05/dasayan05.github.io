@@ -26,6 +26,8 @@ sources:
 </center>
 </div>
 
+> **(Dated: June 1, 2022) Just joined the Deep Learning team at <a target="_blank" href="https://www.mtkresearch.com/en">MediaTek Research, Cambridge</a> as an intern for summer 2022.**
+
 > A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded scholarship at [CVSSP, University of Surrey, UK](https://www.surrey.ac.uk/centre-vision-speech-signal-processing). I am currently a member of [SketchX Lab](http://sketchx.ai/), an elite group of researchers pioneering in sketch analysis, led by my Ph.D. supervisors [Dr Yi-Zhe Song](https://www.surrey.ac.uk/people/yi-zhe-song). My broad area of research/interest is the domain of Artifical Intelligence (A.I.) - specifically, the emerging field of Deep Learning applied mainly in (but not restricted to) Computer Vision tasks. Due to my tremendous love for mathamtics, I like to explore the theoretical aspect of DL as well. I love to share knowledge and so decided to maintain a <a href="{% link blogs.html %}">technical blog</a> in this website. I try my best to push quality contents for learners as frequently as I can, which ranges from programming tutorials to explanation of cutting-edge research papers. As professional service, I serve as reviewer in top graphics and vision conferences (ACM SIGGRAPH, ICCV, BMVC) and journals (Elsevier Neural Networks). To know more about me, please read my [LinkedIn Bio](https://www.linkedin.com/in/ayan-das-a49928a7/) or <a href="{% link about.md %}">Curriculum Vitae</a>.
 
 {% include banner.html type="index" %}
