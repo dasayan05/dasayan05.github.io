@@ -1,19 +1,17 @@
 news:
   -
+    title: Serving as a reviewer in <a target="_blank" href="https://mc.manuscriptcentral.com/tpami-cs">Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)</a>.
+    image: https://ieeecs-media.computer.org/wp-media/2020/07/29223504/tpami-impact-2019-600x450.jpg
+  -
+    title: Gave an invited talk on "Diffusion Models" at <a target="_blank" href="https://github.com/PRIS-CV">PRIS-Lab, BUPT</a>.
+    image: https://lilianweng.github.io/posts/2021-07-11-diffusion-models/diffusion-example.png
+  -
     title: Joined the Deep Learning team at <a target="_blank" href="https://www.mtkresearch.com/en">MediaTek Research, Cambridge</a> as an intern for summer 2022. 
     image: https://download.logo.wine/logo/MediaTek/MediaTek-Logo.wine.png
 
   -
     title: <a href="https://speakerdeck.com/dasayan05/continuous-depth-models-and-a-brief-overview-of-neural-ode">Gave a talk</a> in SketchX group meeting about continuous depth models and <a href="https://arxiv.org/abs/1806.07366">Neural ODE</a> (Image taken from here)
     image: https://miro.medium.com/max/522/1*gRSMxVqVXB27jXWqOR8TbA.png
-
-  -
-    title: Serving as a reviewer in <a href="https://s2021.siggraph.org/">ACM SIGGRAPH</a>
-    image: https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/ACM_SIGGRAPH_logo.svg/200px-ACM_SIGGRAPH_logo.svg.png
-
-  -
-    title: Serving as a reviewer in <a href="http://iccv2021.thecvf.com/">International Conference on Computer Vision</a>
-    image: https://iccv2019.thecvf.com/images/cvf_.jpg
 
 pubs:
   - 0
