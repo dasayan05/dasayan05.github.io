@@ -1,5 +1,8 @@
 news:
   -
+    title: Joined the Deep Learning team at <a target="_blank" href="https://www.mtkresearch.com/en">MediaTek Research, Cambridge</a> as a full-time Senior DL researcher. 
+    image: https://download.logo.wine/logo/MediaTek/MediaTek-Logo.wine.png
+  -
     title: Serving as a reviewer in <a target="_blank" href="https://mc.manuscriptcentral.com/tpami-cs">Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)</a>.
     image: https://ieeecs-media.computer.org/wp-media/2020/07/29223504/tpami-impact-2019-600x450.jpg
   -
@@ -8,10 +11,6 @@ news:
   -
     title: Joined the Deep Learning team at <a target="_blank" href="https://www.mtkresearch.com/en">MediaTek Research, Cambridge</a> as an intern for summer 2022. 
     image: https://download.logo.wine/logo/MediaTek/MediaTek-Logo.wine.png
-
-  -
-    title: <a href="https://speakerdeck.com/dasayan05/continuous-depth-models-and-a-brief-overview-of-neural-ode">Gave a talk</a> in SketchX group meeting about continuous depth models and <a href="https://arxiv.org/abs/1806.07366">Neural ODE</a> (Image taken from here)
-    image: https://miro.medium.com/max/522/1*gRSMxVqVXB27jXWqOR8TbA.png
 
 pubs:
   - 0
