@@ -27,6 +27,7 @@ For any query/help/request, feel free to use any of the following way - there ar
 # Emails:
 
 <center>
+    {% include iconlink.html faicon="fa-envelope-square" text="<strong>ayan.das@mtkresearch.com</strong>" %}
     {% include iconlink.html faicon="fa-envelope" text="<strong>a.das@surrey.ac.uk</strong>" %}
     {% include iconlink.html faicon="fa-envelope-o" text="<strong>ayan05das@gmail.com</strong>" %}
 </center>
