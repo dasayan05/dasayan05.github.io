@@ -1,5 +1,8 @@
 news:
   -
+    title: <a href="https://community.analyticsvidhya.com/c/datahour/datahour-diffusion-model-fundamentals" target="_blank">Invited talk</a> at DataHour series by Analytics Vidhya on Diffusion Model fundamentals.
+    image: https://pbs.twimg.com/profile_images/1418119697862594561/53YV5N0w_400x400.png
+  -
     title: Joined the Deep Learning team at <a target="_blank" href="https://www.mtkresearch.com/en">MediaTek Research, Cambridge</a> as a full-time Senior DL researcher. 
     image: https://download.logo.wine/logo/MediaTek/MediaTek-Logo.wine.png
   -
@@ -8,9 +11,6 @@ news:
   -
     title: Gave an invited talk on "Diffusion Models" at <a target="_blank" href="https://github.com/PRIS-CV">PRIS-Lab, BUPT</a>.
     image: https://lilianweng.github.io/posts/2021-07-11-diffusion-models/diffusion-example.png
-  -
-    title: Joined the Deep Learning team at <a target="_blank" href="https://www.mtkresearch.com/en">MediaTek Research, Cambridge</a> as an intern for summer 2022. 
-    image: https://download.logo.wine/logo/MediaTek/MediaTek-Logo.wine.png
 
 pubs:
   - 0
