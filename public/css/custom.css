@@ -155,10 +155,6 @@
     text-decoration: none;
 }
 
-.latest_card:hover p {
-    font-weight: bold;
-}
-
 .latest_card img {
     margin: 0;
 }
