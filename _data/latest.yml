@@ -1,5 +1,8 @@
 news:
   -
+    title: <a href="https://neurips.cc/Conferences/2023/ProgramCommittee#top-reivewers">Selected</a> as a "Top reviewer" at NeurIPS 2023
+    image: https://nips.cc/media/Press/NeurIPS_logo_stacked.png
+  -
     title: <a href="https://community.analyticsvidhya.com/c/datahour/datahour-diffusion-model-fundamentals" target="_blank">Invited talk</a> at DataHour series by Analytics Vidhya on Diffusion Model fundamentals.
     image: https://pbs.twimg.com/profile_images/1418119697862594561/53YV5N0w_400x400.png
   -
@@ -8,9 +11,6 @@ news:
   -
     title: Serving as a reviewer in <a target="_blank" href="https://mc.manuscriptcentral.com/tpami-cs">Transactions on Pattern Analysis and Machine Intelligence (T-PAMI)</a>.
     image: https://ieeecs-media.computer.org/wp-media/2020/07/29223504/tpami-impact-2019-600x450.jpg
-  -
-    title: Gave an invited talk on "Diffusion Models" at <a target="_blank" href="https://github.com/PRIS-CV">PRIS-Lab, BUPT</a>.
-    image: https://lilianweng.github.io/posts/2021-07-11-diffusion-models/diffusion-example.png
 
 pubs:
   - 0
