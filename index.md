@@ -30,9 +30,9 @@ sources:
 </center>
 </div>
 
-> Glad to be [selected](https://neurips.cc/Conferences/2023/ProgramCommittee#top-reivewers) as a "Top Reviewer" at NeurIPS 2023.
+> Article accepted at [ICLR BlogPost Track](https://github.com/iclr-blogposts/2024) 2024. [Read it here](https://ayandas.me/2024/blog/diffusion-theory-from-scratch/).
 
-> **March 2, 2023:** Just joined the Deep Learning team of <a target="_blank" href="https://www.mtkresearch.com/en">MediaTek Research, Cambridge</a> as a full-time Senior Deep Learning researcher working on Diffusion Models.
+> Glad to be [selected](https://neurips.cc/Conferences/2023/ProgramCommittee#top-reivewers) as a "Top Reviewer" at NeurIPS 2023.
 
 > A research enthusiast, pursuing Doctor of Philosophy (Ph.D.) with fully-funded scholarship at [CVSSP, University of Surrey, UK](https://www.surrey.ac.uk/centre-vision-speech-signal-processing). I am currently a member of [SketchX Lab](http://sketchx.ai/), an elite group of researchers pioneering in sketch analysis, led by my Ph.D. supervisors [Dr Yi-Zhe Song](https://www.surrey.ac.uk/people/yi-zhe-song). My broad area of research/interest is the domain of Artifical Intelligence (A.I.) - specifically, the emerging field of Deep Learning applied mainly in (but not restricted to) Computer Vision tasks. Due to my tremendous love for mathamtics, I like to explore the theoretical aspect of DL as well. I love to share knowledge and so decided to maintain a <a href="{% link blogs.html %}">technical blog</a> in this website. I try my best to push quality contents for learners as frequently as I can, which ranges from programming tutorials to explanation of cutting-edge research papers. As professional service, I serve as reviewer in top graphics (ACM SIGGRAPH & SIGGRAPH Asia) and vision conferences (CVPR, ICCV, ECCV, BMVC) and journals (Elsevier Neural Networks, TMLR and T-PAMI). I have worked as an intern for [MediaTek Research UK](https://www.mtkresearch.com/en) focusing on Diffusion Models. As of today, I have joined the same team as a full-time senior research scientist. To know more about me, please read my [LinkedIn Bio](https://www.linkedin.com/in/ayan-das-a49928a7/) or <a href="{% link about.md %}">Curriculum Vitae</a>.
 
