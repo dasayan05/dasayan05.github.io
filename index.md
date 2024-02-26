@@ -30,7 +30,7 @@ sources:
 </center>
 </div>
 
-> Article accepted at [ICLR BlogPost Track](https://github.com/iclr-blogposts/2024) 2024. [Read it here](https://ayandas.me/2024/blog/diffusion-theory-from-scratch/).
+> Article accepted at [ICLR BlogPost Track](https://iclr-blogposts.github.io/2024/about/) 2024. [Read it here](https://ayandas.me/2024/blog/diffusion-theory-from-scratch/).
 
 > Glad to be [selected](https://neurips.cc/Conferences/2023/ProgramCommittee#top-reivewers) as a "Top Reviewer" at NeurIPS 2023.
 
